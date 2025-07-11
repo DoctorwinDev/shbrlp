@@ -63,3 +63,8 @@
     animation-delay: 600ms;
   }
 } 
+
+:focus-visible {
+  outline: 2px solid #ec4899 !important; /* Tailwind pink-500 */
+  outline-offset: 2px;
+} 

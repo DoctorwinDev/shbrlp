@@ -32,24 +32,6 @@ export default function Footer() {
       description: 'Comunidade Gratuita',
       badge: 'GRÁTIS',
       members: '+2.1K'
-    },
-    {
-      name: 'HotVips',
-      href: 'https://hotvips.com.br/zaramontana',
-      icon: Flame,
-      color: 'from-red-600 to-orange-500',
-      description: 'Swing Liberal',
-      badge: 'LIBERAL',
-      members: '+650'
-    },
-    {
-      name: 'Instagram',
-      href: 'https://www.instagram.com/zaramontannaoficial',
-      icon: Instagram,
-      color: 'from-purple-600 to-pink-500',
-      description: 'Fotos e Stories',
-      badge: 'OFICIAL',
-      members: '+52K'
     }
   ]
 
@@ -268,9 +250,9 @@ export default function Footer() {
       </div>
 
       {/* Aviso Legal */}
-      <div className="bg-red-900/20 border-t border-red-500/30">
-        <div className="max-w-7xl mx-auto px-4 py-3">
-          <p className="text-red-300 text-xs text-center">
+      <div className="bg-red-900/10 border-t border-red-500/10">
+        <div className="max-w-7xl mx-auto px-4 py-2">
+          <p className="text-red-200 text-xs text-center italic">
             ⚠️ AVISO: Este site contém material adulto. Acesso restrito a maiores de 18 anos. 
             Ao continuar, você declara ter mais de 18 anos e concorda com os termos de uso.
           </p>

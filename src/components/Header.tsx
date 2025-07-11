@@ -8,12 +8,12 @@ import Image from 'next/image'
 const menuItems = [
   { label: 'Início', href: '/' },
   { label: 'Privacy', href: '#privacy' },
-  { label: 'OnlyFans', href: '#onlyfans' },
-  { label: 'HotVips', href: '#hotvips' },
   { label: 'Telegram', href: '#telegram' },
+  { label: 'OnlyFans', href: '#onlyfans' },
   { label: 'Galeria', href: '#galeria' },
   { label: 'Agendar', href: '#agendar' },
-]
+  { label: 'Depoimentos', href: '#depoimentos' },
+];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -33,6 +33,7 @@ export default function Header() {
               key={item.label}
               href={item.href}
               className="relative px-3 py-2 text-sm font-bold text-white hover:text-[#ffb300] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb300]"
+              aria-label={item.label}
             >
               {item.label}
               {/* Sublinhado amarelo na ativa (exemplo: Página Principal) */}
@@ -76,6 +77,7 @@ export default function Header() {
               key={item.label}
               href={item.href}
               className="px-3 py-2 text-base font-bold text-white hover:text-[#ffb300] rounded transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb300]"
+              aria-label={item.label}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
