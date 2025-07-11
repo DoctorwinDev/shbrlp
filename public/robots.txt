@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive pages
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+Sitemap: https://shakirabr.com/sitemap.xml 
