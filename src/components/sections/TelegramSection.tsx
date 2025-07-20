@@ -1,43 +1,69 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { MessageCircle, Users, Star } from 'lucide-react';
+import { MessageCircle, Star, Users, Zap } from 'lucide-react';
 import React from 'react';
 
 const TelegramSection: React.FC = () => (
-  <section id="telegram" className="h-screen flex flex-col md:flex-row items-center justify-center gap-8 px-4 bg-gradient-to-br from-cyan-900/30 via-blue-900/20 to-black snap-start animate-fade-in-up">
-    <div className="flex-1 flex flex-col gap-6 max-w-xl bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-xl">
-      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-500 px-3 py-1 rounded-full text-xs font-bold uppercase text-white w-fit">
-        <MessageCircle className="w-3 h-3" /> GRÁTIS • Telegram VIP
-      </div>
-      <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-200 to-blue-200 bg-clip-text text-transparent">
-        Comunidade VIP<br />100% Gratuita
-      </h2>
-      <p className="text-xs text-cyan-200 mb-2">Acesso grátis, sem cartão, sem burocracia</p>
-      <p className="text-lg md:text-xl text-white/90 mb-4">
-        No <b>Telegram</b>, você recebe amostras grátis, novidades e interação direta com a modelo. Comunidade VIP, 100% gratuita e sem burocracia.
-      </p>
-      <div className="flex flex-wrap gap-3 mb-4">
-        <div className="flex items-center gap-2 bg-black/40 rounded-full px-3 py-1 text-sm">
-          <Users className="w-4 h-4 text-green-400" /> +2.100 membros
-        </div>
-        <div className="flex items-center gap-2 bg-black/40 rounded-full px-3 py-1 text-sm">
-          <Star className="w-4 h-4 text-yellow-300" /> Conteúdo grátis
-        </div>
-      </div>
-      <Link href="https://t.me/zaramontanavip" target="_blank" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-500 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:scale-105 transition-transform w-fit" aria-label="Entrar no Telegram" tabIndex={0}>
-        <MessageCircle className="w-5 h-5" /> Entrar no Telegram
-      </Link>
-    </div>
-    <div className="flex-1 flex items-center justify-center">
-      <div className="relative w-72 h-80 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-1">
+  <section id="telegram" className="h-screen flex flex-col md:flex-row items-center justify-center gap-8 px-4 bg-gradient-to-br from-blue-600 via-black to-blue-900 snap-start animate-fade-in-up">
+    <div className="flex-1 flex items-center justify-center order-2 md:order-1">
+      <div className="relative w-72 h-80 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-500 to-cyan-600 p-1">
         <Image
-          src="/WhatsApp Image 2025-06-22 at 16.56.00(1).jpeg"
-          alt="Preview Telegram"
+          src="/WhatsApp Image 2025-06-22 at 16.55.39.jpeg"
+          alt="Preview Telegram VIP"
           fill
-          className="object-cover rounded-xl"
+          className="object-cover rounded-2xl blur-sm"
         />
-        <div className="absolute top-3 right-3 bg-gradient-to-r from-cyan-400 to-blue-500 px-3 py-1 rounded-full text-xs font-bold uppercase">GRÁTIS</div>
+        <div className="absolute inset-0 bg-black/30 rounded-2xl" />
+        <div className="absolute top-4 right-4 bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 rounded-full text-sm font-bold uppercase">
+          VIP
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="bg-black/60 rounded-full p-6">
+            <MessageCircle className="w-10 h-10 text-white" />
+          </div>
+        </div>
       </div>
+    </div>
+    
+    <div className="flex-1 flex flex-col gap-6 max-w-xl bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-xl order-1 md:order-2">
+      <div className="flex items-center gap-4 mb-2">
+        <Image src="/telegram-logo.svg" alt="Logo Telegram" width={48} height={48} className="w-12 h-12 object-contain" />
+        <span className="inline-flex items-center gap-1 bg-black/70 text-cyan-200 px-3 py-1 rounded-lg text-sm font-bold" aria-label="Canal VIP">VIP</span>
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 rounded-full text-sm font-bold uppercase text-white">
+          <Star className="w-4 h-4 text-yellow-300" /> 
+          <span>Telegram Premium</span>
+        </div>
+      </div>
+      
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-200 to-white bg-clip-text text-transparent leading-tight">
+        Canal VIP Telegram<br />Conteúdo Exclusivo
+      </h2>
+      
+      <p className="text-lg text-white/90 mb-4 leading-relaxed">
+        Entre no meu canal <b className="text-cyan-300">Telegram VIP</b> e receba conteúdo exclusivo, fotos inéditas e vídeos que só os membros VIP têm acesso. Atualizações diárias e interação direta.
+      </p>
+      
+      <div className="flex flex-wrap gap-4 mb-6">
+        <div className="flex items-center gap-3 bg-black/40 rounded-full px-4 py-2 text-sm">
+          <Users className="w-4 h-4 text-cyan-400" /> 
+          <span className="font-medium">+500 membros VIP</span>
+        </div>
+        <div className="flex items-center gap-3 bg-black/40 rounded-full px-4 py-2 text-sm">
+          <Zap className="w-4 h-4 text-yellow-400" /> 
+          <span className="font-medium">Posts diários</span>
+        </div>
+      </div>
+      
+      <Link 
+        href="https://t.me/zaramontanaavip" 
+        target="_blank" 
+        className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 w-fit" 
+        aria-label="Entrar no Telegram VIP" 
+        tabIndex={0}
+      >
+        <MessageCircle className="w-5 h-5" /> 
+        <span>Entrar no Telegram</span>
+      </Link>
     </div>
   </section>
 );

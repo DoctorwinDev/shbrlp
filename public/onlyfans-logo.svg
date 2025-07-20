@@ -1,0 +1,21 @@
+<svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo preto -->
+  <rect width="200" height="60" fill="black"/>
+  
+  <!-- Ícone OF estilizado -->
+  <g fill="#00A3FF">
+    <!-- O estilizado com asas -->
+    <path d="M20 15 C25 10, 35 10, 40 15 C45 20, 45 30, 40 35 C35 40, 25 40, 20 35 C15 30, 15 20, 20 15 Z"/>
+    <!-- Asas do O -->
+    <path d="M15 20 Q10 15, 15 10 Q20 5, 25 10 Q30 15, 25 20 Q20 25, 15 20 Z"/>
+    <path d="M35 20 Q40 15, 35 10 Q30 5, 25 10 Q20 15, 25 20 Q30 25, 35 20 Z"/>
+    
+    <!-- F estilizado -->
+    <rect x="45" y="15" width="8" height="25" fill="#00A3FF"/>
+    <rect x="45" y="15" width="20" height="5" fill="#00A3FF"/>
+    <rect x="45" y="25" width="15" height="3" fill="#00A3FF"/>
+  </g>
+  
+  <!-- Texto OnlyFans -->
+  <text x="80" y="35" fill="#00A3FF" font-family="Arial, sans-serif" font-size="18" font-weight="bold">OnlyFans</text>
+</svg> 

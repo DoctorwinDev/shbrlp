@@ -1,28 +1,32 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { SITE_CONFIG, SEO_CONFIG } from '@/lib/constants'
+// import AnalyticsProvider from '@/components/AnalyticsProvider'
+
+const plusJakarta = Plus_Jakarta_Sans({ 
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+  weight: ['200', '300', '400', '500', '600', '700', '800']
+})
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-})
-
-const playfair = Playfair_Display({ 
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
+  weight: ['300', '400', '500', '600', '700']
 })
 
 export const metadata: Metadata = {
-  title: 'ShakiraBr - Modelo Exclusiva',
-  description: 'Conteúdo exclusivo da modelo ShakiraBr. Acesse fotos, vídeos e conteúdo premium.',
-  keywords: 'modelo,ShakiraBr,fotos,conteúdo exclusivo,premium',
-  authors: [{ name: 'ShakiraBr' }],
-  creator: 'ShakiraBr',
-  publisher: 'ShakiraBr',
+  title: SEO_CONFIG.defaultTitle,
+  description: SEO_CONFIG.description,
+  keywords: SITE_CONFIG.keywords.join(', '),
+  authors: [{ name: SITE_CONFIG.author }],
+  creator: SITE_CONFIG.author,
+  publisher: SITE_CONFIG.author,
   robots: 'index, follow',
   formatDetection: {
     telephone: false,
@@ -30,36 +34,50 @@ export const metadata: Metadata = {
     email: false,
   },
   verification: {
-    google: 'google-site-verification-code',
-    yandex: 'yandex-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
   },
   openGraph: {
-    title: 'ShakiraBr - Modelo Exclusiva',
-    description: 'Conteúdo exclusivo da modelo ShakiraBr. Acesse fotos, vídeos e conteúdo premium.',
-    url: 'https://shakirabr.com/',
-    siteName: 'ShakiraBr',
-    locale: 'pt_BR',
+    title: SEO_CONFIG.openGraph.title,
+    description: SEO_CONFIG.openGraph.description,
+    url: SEO_CONFIG.openGraph.url,
+    siteName: SEO_CONFIG.openGraph.siteName,
+    locale: SEO_CONFIG.openGraph.locale,
     type: 'website',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'ShakiraBr - Modelo Exclusiva',
-      },
-    ],
+    images: [...SEO_CONFIG.openGraph.images],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ShakiraBr - Modelo Exclusiva',
-    description: 'Conteúdo exclusivo da modelo ShakiraBr. Acesse fotos, vídeos e conteúdo premium.',
-    images: ['/og-image.jpg'],
+    title: SEO_CONFIG.openGraph.title,
+    description: SEO_CONFIG.openGraph.description,
+    images: [...SEO_CONFIG.openGraph.images],
+    creator: SEO_CONFIG.twitter.handle,
+    site: SEO_CONFIG.twitter.site,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
     apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
   },
   manifest: '/site.webmanifest',
+  alternates: {
+    canonical: SITE_CONFIG.url,
+    languages: {
+      'pt-BR': SITE_CONFIG.url,
+    },
+  },
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'apple-mobile-web-app-title': SITE_CONFIG.name,
+    'mobile-web-app-capable': 'yes',
+    'theme-color': '#000000',
+    'msapplication-TileColor': '#000000',
+    'msapplication-config': '/browserconfig.xml',
+  },
 }
 
 export default function RootLayout({
@@ -68,57 +86,119 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
-        {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        {/* Preconnect para melhor performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        
+        {/* DNS Prefetch para plataformas externas */}
+        <link rel="dns-prefetch" href="//onlyfans.com" />
+        <link rel="dns-prefetch" href="//privacy.com.br" />
+        <link rel="dns-prefetch" href="//t.me" />
+        
+        {/* Structured Data - JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_CONFIG.url}#website`,
+                  "url": SITE_CONFIG.url,
+                  "name": SITE_CONFIG.name,
+                  "description": SITE_CONFIG.description,
+                  "publisher": {
+                    "@id": `${SITE_CONFIG.url}#organization`
+                  },
+                  "potentialAction": [
+                    {
+                      "@type": "SearchAction",
+                      "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": `${SITE_CONFIG.url}/blog?q={search_term_string}`
+                      },
+                      "query-input": "required name=search_term_string"
+                    }
+                  ]
+                },
+                {
+                  "@type": "Organization",
+                  "@id": `${SITE_CONFIG.url}#organization`,
+                  "name": SITE_CONFIG.name,
+                  "url": SITE_CONFIG.url,
+                  "description": SITE_CONFIG.description,
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": SITE_CONFIG.email,
+                    "contactType": "customer service"
+                  },
+                  "sameAs": [
+                    "https://onlyfans.com/zaramontana",
+                    "https://privacy.com.br/profile/zaramontanaa",
+                    "https://t.me/zaramontanaavip"
+                  ]
+                },
+                {
+                  "@type": "Person",
+                  "@id": `${SITE_CONFIG.url}#person`,
+                  "name": "ShakiraBr",
+                  "alternateName": "Shakira BR",
+                  "description": "Modelo brasileira premium especializada em conteúdo exclusivo e fotografia artística",
+                  "url": SITE_CONFIG.url,
+                  "sameAs": [
+                    "https://onlyfans.com/zaramontana",
+                    "https://privacy.com.br/profile/zaramontanaa",
+                    "https://t.me/zaramontanaavip"
+                  ],
+                  "knowsAbout": [
+                    "Modelagem",
+                    "Fotografia",
+                    "Conteúdo Digital",
+                    "Marketing Digital"
+                  ]
+                }
+              ]
+            })
+          }}
+        />
       </head>
-      <body className={`bg-white text-gray-900`}>
+      <body className={`${plusJakarta.className} antialiased bg-black text-white min-h-screen`}>
+        {/* Analytics Provider - Carrega scripts de tracking */}
+        {/* <AnalyticsProvider /> */}
+        
+        {/* Header fixo */}
         <Header />
-        {children}
+        
+        {/* Conteúdo principal */}
+        <main role="main">
+          {children}
+        </main>
+        
+        {/* Footer */}
         <Footer />
-
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=undefined"></script>
+        
+        {/* Scripts inline para performance */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'undefined', {
-                page_title: document.title,
-                page_location: window.location.href,
-              });
-            `,
+              // Critical CSS carregado
+              document.documentElement.classList.add('js-loaded');
+              
+              // Lazy loading para imagens
+              if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                  img.src = img.dataset.src;
+                });
+              }
+            `
           }}
         />
-
-        {/* Facebook Pixel */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', 'undefined');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
-        <noscript>
-          <img height="1" width="1" style={{display:'none'}} 
-               src="https://www.facebook.com/tr?id=undefined&ev=PageView&noscript=1" />
-        </noscript>
       </body>
     </html>
   )

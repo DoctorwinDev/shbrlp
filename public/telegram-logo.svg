@@ -1,0 +1,13 @@
+<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo de fundo azul -->
+  <circle cx="60" cy="60" r="50" fill="#0088CC"/>
+  
+  <!-- Anel branco -->
+  <circle cx="60" cy="60" r="45" fill="none" stroke="white" stroke-width="2"/>
+  
+  <!-- Avião de papel branco -->
+  <path d="M35 45 L85 30 L75 70 L65 60 L55 80 L45 70 L55 50 Z" fill="white"/>
+  
+  <!-- Detalhes do avião -->
+  <path d="M55 50 L65 60 L75 70" stroke="white" stroke-width="1" fill="none"/>
+</svg> 

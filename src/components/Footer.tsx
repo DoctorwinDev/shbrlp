@@ -1,260 +1,217 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { Heart, Star, Mail, MessageCircle, Camera, Instagram, Shield, Lock, Crown, Flame, Calendar, Users, Globe, Phone } from 'lucide-react'
+import { Shield, ExternalLink, Star, Users, Globe, CheckCircle, Instagram } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const socialLinks = [
-    {
-      name: 'Privacy Premium',
-      href: 'https://privacy.com.br/profile/zaramontanaa',
-      icon: Lock,
-      color: 'from-pink-600 to-red-500',
-      description: 'Conteúdo +18 Exclusivo',
-      badge: 'HOT',
-      members: '+800'
-    },
-    {
-      name: 'OnlyFans',
-      href: 'https://onlyfans.com/zaramontana',
-      icon: Crown,
-      color: 'from-blue-600 to-indigo-500',
-      description: 'Vídeos Premium',
-      badge: 'PREMIUM',
-      members: '+1.2K'
-    },
-    {
-      name: 'Telegram VIP',
-      href: 'https://t.me/zaramontanavip',
-      icon: MessageCircle,
-      color: 'from-cyan-600 to-blue-500',
-      description: 'Comunidade Gratuita',
-      badge: 'GRÁTIS',
-      members: '+2.1K'
-    }
+  const platformLinks = [
+    { name: 'Privacy Premium', href: 'https://privacy.com.br/profile/zaramontanaa' },
+    { name: 'OnlyFans Oficial', href: 'https://onlyfans.com/zaramontana' },
+    { name: 'Telegram VIP', href: 'https://t.me/zaramontanaavip' }
   ]
 
   const quickLinks = [
-    { name: 'Início', href: '/' },
-    { name: 'Galeria', href: '#galeria' },
+    { name: 'Galeria Exclusiva', href: '#galeria' },
+    { name: 'Agendar Videochamada', href: '#agendar' },
     { name: 'Depoimentos', href: '#depoimentos' },
-    { name: 'Agendar Chamada', href: '#agendar' }
+    { name: 'FAQ', href: '#faq' }
   ]
 
   const legalLinks = [
     { name: 'Termos de Uso', href: '/termos-de-uso' },
     { name: 'Política de Privacidade', href: '/politica-de-privacidade' },
-    { name: 'Política de Cookies', href: '/politica-de-cookies' },
-    { name: 'Contato', href: 'mailto:contato@shakirabr.com' }
+    { name: 'LGPD', href: '/lgpd' }
   ]
 
-  const securityLogos = [
-    { src: '/norton-secure.svg', alt: 'Norton Secured', name: 'Norton' },
-    { src: '/ssl-secure.svg', alt: 'SSL Secure', name: 'SSL' },
-    { src: '/mcafee-secure.svg', alt: 'McAfee Secure', name: 'McAfee' }
+  const socialLinks = [
+    { 
+      name: 'Instagram', 
+      href: 'https://instagram.com/shakirabr_oficial',
+      icon: Instagram,
+      color: 'text-pink-400 hover:text-pink-300'
+    },
+    { 
+      name: 'X (Twitter)', 
+      href: 'https://x.com/shakirabr_',
+      icon: () => (
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      ),
+      color: 'text-gray-400 hover:text-white'
+    }
   ]
 
-  const paymentLogos = [
-    { src: '/pix-logo.svg', alt: 'Pix', name: 'Pix' },
-    { src: '/visa-logo.svg', alt: 'Visa', name: 'Visa' },
-    { src: '/mastercard-logo.svg', alt: 'Mastercard', name: 'Master' },
-    { src: '/stripe-logo.svg', alt: 'Stripe', name: 'Stripe' }
+  const trustIndicators = [
+    { text: 'SSL Certificado', verified: true },
+    { text: 'LGPD Compliance', verified: true },
+    { text: 'Verificação Real', verified: true }
   ]
 
   return (
-    <footer className="bg-gradient-to-b from-black via-gray-900 to-black border-t border-white/10">
-      {/* Seção Principal */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <footer className="bg-gray-950 border-t border-gray-800">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
-          {/* Coluna 1 - Branding */}
-          <div className="lg:col-span-1">
-            <div className="mb-6">
-              <Link href="/" className="flex items-center space-x-2 mb-4">
-                <span className="text-3xl font-extrabold tracking-tight text-white">Shakira</span>
-                <span className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text px-2 rounded">BR</span>
-              </Link>
-              <p className="text-white/80 text-sm leading-relaxed mb-4">
-                A experiência premium definitiva no Brasil. Conteúdo exclusivo, videochamadas personalizadas e acesso VIP ao universo mais desejado.
-              </p>
-              
-              {/* Stats Rápidas */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-white/5 rounded-lg p-3 text-center">
-                  <div className="text-xl font-bold text-pink-400">+5K</div>
-                  <div className="text-white/60 text-xs">Membros VIP</div>
-                </div>
-                <div className="bg-white/5 rounded-lg p-3 text-center">
-                  <div className="text-xl font-bold text-emerald-400">4.9★</div>
-                  <div className="text-white/60 text-xs">Avaliação</div>
-                </div>
+          {/* Brand & Company Info */}
+          <div className="md:col-span-1">
+            <h3 className="text-2xl font-bold text-white mb-3">
+              <span className="text-white">Shakira</span>
+              <span className="text-pink-400">BR</span>
+            </h3>
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              Plataforma premium de conteúdo exclusivo. Empresa registrada e verificada no Brasil.
+            </p>
+            
+            {/* Company Stats */}
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4 text-green-400" />
+                <span className="text-gray-300">Mais de 3.000 membros ativos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Star className="w-4 h-4 text-yellow-400" />
+                <span className="text-gray-300">Avaliação 4.9/5.0 estrelas</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-blue-400" />
+                <span className="text-gray-300">São Paulo, Brasil</span>
               </div>
             </div>
 
-            {/* Contato */}
-            <div className="space-y-3">
-              <h4 className="text-white font-semibold text-sm uppercase tracking-wide">Contato VIP</h4>
-              <div className="space-y-2">
-                <Link href="https://wa.me/5511999999999" className="flex items-center gap-2 text-white/70 hover:text-green-400 transition-colors text-sm">
-                  <Phone className="w-4 h-4" />
-                  <span>WhatsApp Exclusivo</span>
-                </Link>
-                <Link href="mailto:vip@shakirabr.com" className="flex items-center gap-2 text-white/70 hover:text-pink-400 transition-colors text-sm">
-                  <Mail className="w-4 h-4" />
-                  <span>vip@shakirabr.com</span>
-                </Link>
+            {/* Social Media Links */}
+            <div className="mt-6">
+              <h5 className="text-white font-medium text-sm mb-3">Redes Sociais</h5>
+              <div className="flex gap-3">
+                {socialLinks.map((social) => (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    className={`p-2 bg-gray-900/30 rounded-lg hover:bg-gray-900/60 transition-colors ${social.color}`}
+                    aria-label={`Seguir no ${social.name}`}
+                  >
+                    <social.icon />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Coluna 2 - Plataformas Premium */}
-          <div className="lg:col-span-2">
-            <h4 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
-              <Crown className="w-5 h-5 text-yellow-400" />
-              Plataformas Premium
-            </h4>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {socialLinks.map((platform) => (
+          {/* Platforms */}
+          <div className="md:col-span-1">
+            <h4 className="text-white font-semibold text-base mb-4">Plataformas Oficiais</h4>
+            <div className="space-y-3">
+              {platformLinks.map((platform) => (
                 <Link
                   key={platform.name}
                   href={platform.href}
                   target="_blank"
-                  className="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                  className="flex items-center justify-between group p-3 bg-gray-900/30 rounded-lg hover:bg-gray-900/60 transition-colors"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className={`w-10 h-10 bg-gradient-to-r ${platform.color} rounded-lg flex items-center justify-center`}>
-                      <platform.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h5 className="text-white font-semibold text-sm">{platform.name}</h5>
-                        <span className={`px-2 py-0.5 bg-gradient-to-r ${platform.color} text-white text-xs font-bold rounded-full`}>
-                          {platform.badge}
-                        </span>
-                      </div>
-                      <p className="text-white/60 text-xs mb-2">{platform.description}</p>
-                      <div className="flex items-center gap-1">
-                        <Users className="w-3 h-3 text-green-400" />
-                        <span className="text-green-400 text-xs font-semibold">{platform.members} membros</span>
-                      </div>
-                    </div>
-                  </div>
+                  <span className="text-gray-300 group-hover:text-white text-sm font-medium">
+                    {platform.name}
+                  </span>
+                  <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-gray-300" />
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Coluna 3 - Links e Segurança */}
-          <div className="lg:col-span-1">
-            {/* Links Rápidos */}
-            <div className="mb-8">
-              <h4 className="text-white font-semibold text-sm uppercase tracking-wide mb-4">Navegação</h4>
-              <div className="space-y-2">
-                {quickLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="block text-white/70 hover:text-pink-400 transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Segurança */}
-            <div className="mb-6">
-              <h4 className="text-white font-semibold text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
-                <Shield className="w-4 h-4 text-green-400" />
-                Segurança
-              </h4>
-              <div className="grid grid-cols-3 gap-2">
-                {securityLogos.map((logo) => (
-                  <div key={logo.name} className="bg-white/5 rounded-lg p-2 flex items-center justify-center">
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={24}
-                      height={24}
-                      className="opacity-70 hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Pagamentos */}
-            <div>
-              <h4 className="text-white font-semibold text-sm uppercase tracking-wide mb-4">Pagamentos</h4>
-              <div className="grid grid-cols-2 gap-2">
-                {paymentLogos.map((logo) => (
-                  <div key={logo.name} className="bg-white/5 rounded-lg p-2 flex items-center justify-center">
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={32}
-                      height={20}
-                      className="opacity-70 hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Seção Inferior */}
-      <div className="border-t border-white/10 bg-black/50">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-            
-            {/* Copyright */}
-            <div className="text-center lg:text-left">
-              <p className="text-white/60 text-sm">
-                © {currentYear} ShakiraBR. Todos os direitos reservados.
-              </p>
-              <p className="text-white/40 text-xs mt-1">
-                Conteúdo para maiores de 18 anos • Site seguro e verificado
-              </p>
-            </div>
-
-            {/* Links Legais */}
-            <div className="flex flex-wrap justify-center gap-4">
-              {legalLinks.map((link) => (
+          {/* Quick Links */}
+          <div className="md:col-span-1">
+            <h4 className="text-white font-semibold text-base mb-4">Navegação</h4>
+            <div className="space-y-2">
+              {quickLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-white/50 hover:text-white/80 transition-colors text-xs"
+                  className="block text-gray-400 hover:text-white transition-colors text-sm py-1"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
 
-            {/* Selo de Qualidade */}
-            <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1 bg-gradient-to-r from-green-600 to-emerald-500 px-3 py-1 rounded-full">
-                <Shield className="w-3 h-3 text-white" />
-                <span className="text-white text-xs font-semibold">Verificado</span>
+            <div className="mt-6">
+              <h5 className="text-white font-medium text-sm mb-3">Informações Legais</h5>
+              <div className="space-y-2">
+                {legalLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="block text-gray-400 hover:text-white transition-colors text-sm py-1"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </div>
-              <div className="flex items-center gap-1 bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full">
-                <Star className="w-3 h-3 text-white" />
-                <span className="text-white text-xs font-semibold">Premium</span>
-              </div>
+            </div>
+          </div>
+
+          {/* Trust & Contact */}
+          <div className="md:col-span-1">
+            <h4 className="text-white font-semibold text-base mb-4">Confiança & Segurança</h4>
+            
+            <div className="space-y-3 mb-6">
+              {trustIndicators.map((indicator, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span className="text-gray-300 text-sm">{indicator.text}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4 mb-4">
+              <h5 className="text-white font-medium text-sm mb-2">Contato Comercial</h5>
+              <Link 
+                href="mailto:contato@shakirabr.com"
+                className="text-pink-400 hover:text-pink-300 transition-colors text-sm"
+              >
+                contato@shakirabr.com
+              </Link>
+              <p className="text-gray-500 text-xs mt-1">
+                Suporte técnico e comercial
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 bg-green-600 px-3 py-2 rounded-lg">
+              <Shield className="w-4 h-4 text-white" />
+              <span className="text-white text-sm font-medium">Site Verificado</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Aviso Legal */}
-      <div className="bg-red-900/10 border-t border-red-500/10">
-        <div className="max-w-7xl mx-auto px-4 py-2">
-          <p className="text-red-200 text-xs text-center italic">
-            ⚠️ AVISO: Este site contém material adulto. Acesso restrito a maiores de 18 anos. 
-            Ao continuar, você declara ter mais de 18 anos e concorda com os termos de uso.
+      {/* Bottom */}
+      <div className="border-t border-gray-800 bg-black/50">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-sm">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 mb-1">
+                © {currentYear} ShakiraBR - Todos os direitos reservados.
+              </p>
+              <p className="text-gray-500 text-xs">
+                Empresa brasileira registrada e verificada
+              </p>
+            </div>
+            
+            <div className="flex items-center gap-4 text-xs">
+              <span className="text-gray-500">Desenvolvido no Brasil</span>
+              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span className="text-gray-500">Online 24/7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Age Verification */}
+      <div className="bg-red-950/20 border-t border-red-800/30">
+        <div className="max-w-7xl mx-auto px-6 py-3">
+          <p className="text-red-200 text-xs text-center">
+            <strong>AVISO LEGAL:</strong> Este site contém conteúdo adulto destinado exclusivamente a maiores de 18 anos. 
+            Acesso restrito conforme Lei Federal nº 8.069/90 (ECA).
           </p>
         </div>
       </div>

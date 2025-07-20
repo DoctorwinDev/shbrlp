@@ -1,0 +1,64 @@
+<svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- PayPal -->
+  <g transform="translate(10, 10)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <text x="40" y="25" text-anchor="middle" fill="#003087" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PayPal</text>
+    <text x="40" y="40" text-anchor="middle" fill="#003087" font-family="Arial, sans-serif" font-size="8">P</text>
+  </g>
+  
+  <!-- Mastercard -->
+  <g transform="translate(110, 10)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <circle cx="30" cy="25" r="12" fill="#EB001B"/>
+    <circle cx="50" cy="25" r="12" fill="#F79E1B"/>
+    <circle cx="40" cy="25" r="8" fill="#FF5F00"/>
+    <text x="40" y="45" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="8">mastercard</text>
+  </g>
+  
+  <!-- VISA -->
+  <g transform="translate(210, 10)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <text x="40" y="30" text-anchor="middle" fill="#1A1F71" font-family="Arial, sans-serif" font-size="16" font-weight="bold">VISA</text>
+    <rect x="25" y="15" width="4" height="8" fill="#F7B600"/>
+  </g>
+  
+  <!-- Maestro -->
+  <g transform="translate(310, 10)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <circle cx="30" cy="25" r="12" fill="#EB001B"/>
+    <circle cx="50" cy="25" r="12" fill="#0066CC"/>
+    <circle cx="40" cy="25" r="8" fill="#00A0DC"/>
+    <text x="40" y="45" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="8">maestro</text>
+  </g>
+  
+  <!-- Apple Pay -->
+  <g transform="translate(10, 70)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <circle cx="30" cy="30" r="8" fill="black"/>
+    <path d="M25 25 L35 25 L35 35 L25 35 Z" fill="black"/>
+    <text x="50" y="35" fill="black" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Pay</text>
+  </g>
+  
+  <!-- Amazon Pay -->
+  <g transform="translate(110, 70)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <text x="40" y="30" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="12" font-weight="bold">pay</text>
+    <path d="M25 40 Q40 35 55 40" stroke="#FF9900" stroke-width="3" fill="none"/>
+  </g>
+  
+  <!-- Google Pay -->
+  <g transform="translate(210, 70)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <circle cx="30" cy="30" r="8" fill="#4285F4"/>
+    <circle cx="40" cy="30" r="8" fill="#EA4335"/>
+    <circle cx="50" cy="30" r="8" fill="#FBBC05"/>
+    <circle cx="35" cy="40" r="8" fill="#34A853"/>
+    <text x="60" y="35" fill="#5F6368" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Pay</text>
+  </g>
+  
+  <!-- Stripe -->
+  <g transform="translate(310, 70)">
+    <rect width="80" height="50" rx="8" fill="white"/>
+    <text x="40" y="35" text-anchor="middle" fill="#6772E5" font-family="Arial, sans-serif" font-size="12" font-weight="bold">stripe</text>
+  </g>
+</svg> 

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo dourado com borda ondulada -->
+  <path d="M100 20 C120 15, 140 20, 150 30 C160 40, 165 60, 160 80 C155 100, 140 110, 120 115 C100 120, 80 115, 60 110 C40 105, 25 95, 20 80 C15 65, 20 45, 30 35 C40 25, 60 20, 80 15 C90 12, 95 10, 100 20 Z" fill="#FFD700"/>
+  
+  <!-- Anel interno preto -->
+  <circle cx="100" cy="100" r="35" fill="none" stroke="black" stroke-width="3"/>
+  
+  <!-- Faixa central dourada -->
+  <rect x="65" y="90" width="70" height="20" rx="10" fill="#FFD700"/>
+  
+  <!-- Texto CERTIFIED central -->
+  <text x="100" y="105" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CERTIFIED</text>
+  
+  <!-- Texto CURVADO superior -->
+  <path d="M65 70 Q100 60 135 70" fill="none" stroke="white" stroke-width="1"/>
+  <text x="100" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">CERTIFIED</text>
+  
+  <!-- Texto CURVADO inferior -->
+  <path d="M65 130 Q100 140 135 130" fill="none" stroke="white" stroke-width="1"/>
+  <text x="100" y="135" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">CERTIFIED</text>
+  
+  <!-- Estrelas douradas -->
+  <g fill="#FFD700">
+    <polygon points="70,60 72,65 77,65 73,68 75,73 70,70 65,73 67,68 63,65 68,65"/>
+    <polygon points="85,55 87,60 92,60 88,63 90,68 85,65 80,68 82,63 78,60 83,60"/>
+    <polygon points="115,55 117,60 122,60 118,63 120,68 115,65 110,68 112,63 108,60 113,60"/>
+    <polygon points="130,60 132,65 137,65 133,68 135,73 130,70 125,73 127,68 123,65 128,65"/>
+    <polygon points="70,140 72,145 77,145 73,148 75,153 70,150 65,153 67,148 63,145 68,145"/>
+    <polygon points="85,145 87,150 92,150 88,153 90,158 85,155 80,158 82,153 78,150 83,150"/>
+    <polygon points="115,145 117,150 122,150 118,153 120,158 115,155 110,158 112,153 108,150 113,150"/>
+    <polygon points="130,140 132,145 137,145 133,148 135,153 130,150 125,153 127,148 123,145 128,145"/>
+  </g>
+</svg> 
