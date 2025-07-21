@@ -175,6 +175,71 @@ export default function RootLayout({
         {/* Analytics Provider - Carrega scripts de tracking */}
         {/* <AnalyticsProvider /> */}
         
+        {/* Proteção contra cópia e download */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Bloquear menu de contexto (botão direito)
+              document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+              });
+              
+              // Bloquear teclas de atalho para salvar
+              document.addEventListener('keydown', function(e) {
+                // Ctrl+S, Ctrl+U, F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+                if (
+                  (e.ctrlKey && (e.key === 's' || e.key === 'u')) ||
+                  e.key === 'F12' ||
+                  (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+                ) {
+                  e.preventDefault();
+                  return false;
+                }
+              });
+              
+              // Bloquear arrastar imagens
+              document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                  e.preventDefault();
+                  return false;
+                }
+              });
+              
+              // Bloquear seleção de texto
+              document.addEventListener('selectstart', function(e) {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                  e.preventDefault();
+                  return false;
+                }
+              });
+              
+              // Bloquear print screen
+              document.addEventListener('keyup', function(e) {
+                if (e.key === 'PrintScreen') {
+                  e.preventDefault();
+                  return false;
+                }
+              });
+              
+              // Desabilitar DevTools
+              setInterval(function() {
+                if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+                  document.body.innerHTML = 'Acesso negado';
+                }
+              }, 1000);
+              
+              // Proteção contra inspeção
+              document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                  e.preventDefault();
+                  return false;
+                }
+              });
+            `
+          }}
+        />
+        
         {/* Header fixo */}
         <Header />
         

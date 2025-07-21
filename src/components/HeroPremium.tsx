@@ -13,6 +13,8 @@ const HeroPremium: React.FC = () => (
         className="object-cover"
         style={{ filter: 'blur(4px) brightness(0.4)' }}
         priority
+        draggable={false}
+        onContextMenu={(e) => e.preventDefault()}
       />
       {/* Overlay gradiente mais sutil */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-purple-950/60 to-black/70"></div>

@@ -189,6 +189,12 @@ const GaleriaExclusiva: React.FC = () => {
                   className={`object-cover rounded-xl transition-all duration-500 ${
                     submitted ? 'filter-none' : 'filter blur-md hover:blur-sm'
                   }`}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  style={{
+                    pointerEvents: 'none',
+                    userSelect: 'none'
+                  }}
                 />
                 {!submitted && (
                   <div className="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
