@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   description: 'Conteúdo exclusivo da modelo ShakiraBr. Acesse fotos, vídeos e conteúdo premium em plataformas verificadas.',
   url: process.env.SITE_URL || 'https://shakirabr.com',
   author: 'ShakiraBR',
-  email: 'contato@shakirabr.com',
+  email: 'contact@shakirabr.com',
   keywords: [
     'ShakiraBr',
     'modelo brasileira',

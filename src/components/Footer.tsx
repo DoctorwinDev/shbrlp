@@ -166,10 +166,10 @@ export default function Footer() {
             <div className="bg-gray-900/50 rounded-lg p-4 mb-4">
               <h5 className="text-white font-medium text-sm mb-2">Contato Comercial</h5>
               <Link 
-                href="mailto:contato@shakirabr.com"
+                href="mailto:contact@shakirabr.com"
                 className="text-pink-400 hover:text-pink-300 transition-colors text-sm"
               >
-                contato@shakirabr.com
+                contact@shakirabr.com
               </Link>
               <p className="text-gray-500 text-xs mt-1">
                 Suporte técnico e comercial
