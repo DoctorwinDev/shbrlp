@@ -140,7 +140,9 @@ export default function RootLayout({
                   "sameAs": [
                     "https://onlyfans.com/zaramontana",
                     "https://privacy.com.br/profile/zaramontanaa",
-                    "https://t.me/zaramontanaavip"
+                    "https://t.me/zaramontanavip",
+                    "https://www.instagram.com/ZARAMONTANNASECRETO/",
+                    "https://x.com/shakira_cam"
                   ]
                 },
                 {
@@ -153,7 +155,9 @@ export default function RootLayout({
                   "sameAs": [
                     "https://onlyfans.com/zaramontana",
                     "https://privacy.com.br/profile/zaramontanaa",
-                    "https://t.me/zaramontanaavip"
+                    "https://t.me/zaramontanavip",
+                    "https://www.instagram.com/ZARAMONTANNASECRETO/",
+                    "https://x.com/shakira_cam"
                   ],
                   "knowsAbout": [
                     "Modelagem",

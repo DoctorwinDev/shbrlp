@@ -99,7 +99,7 @@ const VideochamadaSection: React.FC = () => (
 
       {/* Botão CTA */}
       <Link 
-        href="https://wa.me/5511999999999?text=Oi%20amor!%20Quero%20agendar%20uma%20videochamada%20privada%20💕" 
+        href="https://t.me/VideoCallVIP" 
         className="group relative bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-500 hover:to-emerald-400 text-white font-bold py-3 px-6 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
       >
         <div className="flex items-center justify-center gap-2">

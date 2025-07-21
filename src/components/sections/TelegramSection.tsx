@@ -55,7 +55,7 @@ const TelegramSection: React.FC = () => (
       </div>
       
       <Link 
-        href="https://t.me/zaramontanaavip" 
+        href="https://t.me/zaramontanavip" 
         target="_blank" 
         className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 w-fit" 
         aria-label="Entrar no Telegram VIP" 

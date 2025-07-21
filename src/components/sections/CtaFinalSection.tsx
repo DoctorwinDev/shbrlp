@@ -68,7 +68,7 @@ const CtaFinalSection: React.FC = () => (
         </Link>
 
         <Link 
-          href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma videochamada exclusiva" 
+          href="https://t.me/VideoCallVIP" 
           target="_blank" 
           className="group relative bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-green-500/50 rounded-2xl p-6 transition-all duration-300 hover:scale-105"
         >
