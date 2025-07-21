@@ -15,6 +15,7 @@ const GaleriaExclusiva: React.FC = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const images = [
     "/galeria/preview1.jpg",
@@ -28,12 +29,61 @@ const GaleriaExclusiva: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
-      // Enviar dados do formulário aqui
+      setLoading(true);
+      
+      try {
+        // Opção 1: Google Sheets (recomendado)
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwJDW5JtCMsDHS5mMoV_FTsbkFJUk4kPhPkLiXehK0amsdu6ijtl6ZNE5Cpr1rMxXA/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            timestamp: new Date().toISOString(),
+            source: 'Galeria Exclusiva'
+          }),
+        });
+
+        if (response.ok) {
+          setSubmitted(true);
+          // Limpar formulário
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          // Fallback: Enviar por email
+          await sendEmailFallback();
+        }
+      } catch (error) {
+        console.error('Erro:', error);
+        // Fallback: Enviar por email
+        await sendEmailFallback();
+      } finally {
+        setLoading(false);
+      }
     }
+  };
+
+  const sendEmailFallback = async () => {
+    // Enviar email direto para contact@shakirabr.com
+    const emailBody = `
+      Novo Lead - Galeria Exclusiva
+      
+      Nome: ${formData.name}
+      Email: ${formData.email}
+      Mensagem: ${formData.message}
+      Data: ${new Date().toLocaleString('pt-BR')}
+    `;
+    
+    // Usar mailto para abrir cliente de email
+    window.open(`mailto:contact@shakirabr.com?subject=Novo Lead - Galeria Exclusiva&body=${encodeURIComponent(emailBody)}`);
+    
+    setSubmitted(true);
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -105,9 +155,19 @@ const GaleriaExclusiva: React.FC = () => {
               
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-pink-600 to-purple-500 hover:from-pink-700 hover:to-purple-600 py-3 rounded-xl font-bold text-white transition-all duration-300 hover:scale-105 shadow-lg"
+                disabled={loading}
+                className={`w-full bg-gradient-to-r from-pink-600 to-purple-500 hover:from-pink-700 hover:to-purple-600 py-3 rounded-xl font-bold text-white transition-all duration-300 hover:scale-105 shadow-lg ${
+                  loading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
               >
-                🔓 Desbloquear Galeria
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Enviando...
+                  </span>
+                ) : (
+                  '🔓 Desbloquear Galeria'
+                )}
               </button>
             </form>
           ) : (
