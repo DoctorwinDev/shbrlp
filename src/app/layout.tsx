@@ -1,24 +1,11 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { SITE_CONFIG, SEO_CONFIG } from '@/lib/constants'
 // import AnalyticsProvider from '@/components/AnalyticsProvider'
 
-const plusJakarta = Plus_Jakarta_Sans({ 
-  subsets: ['latin'],
-  variable: '--font-plus-jakarta',
-  display: 'swap',
-  weight: ['200', '300', '400', '500', '600', '700', '800']
-})
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700']
-})
 
 export const metadata: Metadata = {
   title: SEO_CONFIG.defaultTitle,
@@ -86,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${plusJakarta.variable}`}>
+          <html lang="pt-BR">
       <head>
         {/* Preconnect para melhor performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -171,7 +158,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${plusJakarta.className} antialiased bg-black text-white min-h-screen`}>
+      <body className="antialiased bg-black text-white min-h-screen">
         {/* Analytics Provider - Carrega scripts de tracking */}
         {/* <AnalyticsProvider /> */}
         
