@@ -8,12 +8,12 @@ import AnalyticsProvider from '@/components/AnalyticsProvider'
 
 
 export const metadata: Metadata = {
-  title: SEO_CONFIG.defaultTitle,
+  title: SEO_CONFIG.title,
   description: SEO_CONFIG.description,
-  keywords: SITE_CONFIG.keywords.join(', '),
-  authors: [{ name: SITE_CONFIG.author }],
-  creator: SITE_CONFIG.author,
-  publisher: SITE_CONFIG.author,
+  keywords: SEO_CONFIG.keywords.join(', '),
+  authors: [{ name: SEO_CONFIG.author }],
+  creator: SEO_CONFIG.author,
+  publisher: SEO_CONFIG.author,
   robots: 'index, follow',
   formatDetection: {
     telephone: false,
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
   },
   openGraph: {
-    title: SEO_CONFIG.openGraph.title,
-    description: SEO_CONFIG.openGraph.description,
-    url: SEO_CONFIG.openGraph.url,
+    title: SEO_CONFIG.title,
+    description: SEO_CONFIG.description,
+    url: SITE_CONFIG.url,
     siteName: SEO_CONFIG.openGraph.siteName,
     locale: SEO_CONFIG.openGraph.locale,
     type: 'website',
@@ -35,10 +35,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: SEO_CONFIG.openGraph.title,
-    description: SEO_CONFIG.openGraph.description,
+    title: SEO_CONFIG.title,
+    description: SEO_CONFIG.description,
     images: [...SEO_CONFIG.openGraph.images],
-    creator: SEO_CONFIG.twitter.handle,
+    creator: SEO_CONFIG.twitter.creator,
     site: SEO_CONFIG.twitter.site,
   },
   icons: {
@@ -121,7 +121,6 @@ export default function RootLayout({
                   "description": SITE_CONFIG.description,
                   "contactPoint": {
                     "@type": "ContactPoint",
-                    "email": SITE_CONFIG.email,
                     "contactType": "customer service"
                   },
                   "sameAs": [
