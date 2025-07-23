@@ -1,23 +1,17 @@
 // Configurações globais do site
 export const SITE_CONFIG = {
   name: 'ShakiraBr',
-  title: 'ShakiraBr - Modelo Exclusiva Premium',
-  description: 'Conteúdo exclusivo da modelo ShakiraBr. Acesse fotos, vídeos e conteúdo premium em plataformas verificadas.',
-  url: process.env.SITE_URL || 'https://shakirabr.com',
-  author: 'ShakiraBR',
-  email: 'contact@shakirabr.com',
-  keywords: [
-    'ShakiraBr',
-    'modelo brasileira',
-    'conteúdo premium',
-    'OnlyFans',
-    'Privacy',
-    'Telegram',
-    'fotos exclusivas',
-    'modelo webcam',
-    'brasil'
-  ]
-} as const
+  description: 'A modelo mais desejada do Brasil. Conteúdo exclusivo e experiências únicas em múltiplas plataformas.',
+  url: 'https://shakirabr.com',
+  ogImage: 'https://shakirabr.com/og-image.jpg',
+  links: {
+    onlyfans: 'https://onlyfans.com/zaramontana',
+    privacy: 'https://privacy.com.br/profile/zaramontanaa',
+    telegram: 'https://t.me/zaramontanavip',
+    instagram: 'https://www.instagram.com/zaramontannasecreto/',
+    twitter: 'https://x.com/shakira_cam'
+  }
+}
 
 // Links das plataformas (centralizados para fácil manutenção)
 export const PLATFORM_LINKS = {
@@ -30,10 +24,8 @@ export const PLATFORM_LINKS = {
 
 // Configurações de analytics e tracking
 export const ANALYTICS_CONFIG = {
-  googleAnalytics: process.env.NEXT_PUBLIC_GA_ID,
-  facebookPixel: process.env.NEXT_PUBLIC_FB_PIXEL_ID,
-  hotjar: process.env.NEXT_PUBLIC_HOTJAR_ID,
-  gtag: process.env.NEXT_PUBLIC_GTAG_ID
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX',
+  facebookPixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID || 'XXXXXXXXXX'
 } as const
 
 // Configurações para Meta Ads e Google Ads
@@ -61,57 +53,60 @@ export const MARKETING_CONFIG = {
 
 // Configurações de SEO
 export const SEO_CONFIG = {
-  titleTemplate: '%s | ShakiraBr',
-  defaultTitle: 'ShakiraBr - Modelo Exclusiva Premium',
-  description: SITE_CONFIG.description,
-  canonical: SITE_CONFIG.url,
-  
+  title: 'ShakiraBr - A Modelo Mais Desejada do Brasil',
+  description: 'Descubra a ShakiraBr, a modelo mais desejada do Brasil. Conteúdo exclusivo, fotos sensuais e experiências únicas em OnlyFans, Privacy e Telegram.',
+  keywords: [
+    'ShakiraBr',
+    'modelo brasileira',
+    'OnlyFans Brasil',
+    'Privacy Brasil',
+    'Telegram VIP',
+    'conteúdo exclusivo',
+    'fotos sensuais',
+    'modelo webcam',
+    'Shakira BR',
+    'modelo premium'
+  ],
+  author: 'ShakiraBr',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: SITE_CONFIG.url,
-    siteName: SITE_CONFIG.name,
-    title: SITE_CONFIG.title,
-    description: SITE_CONFIG.description,
+    siteName: 'ShakiraBr',
     images: [
       {
-        url: `${SITE_CONFIG.url}/og-image.jpg`,
+        url: 'https://shakirabr.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: SITE_CONFIG.title,
-        type: 'image/jpeg'
+        alt: 'ShakiraBr - A Modelo Mais Desejada do Brasil'
       }
-    ] as const
+    ]
   },
-  
   twitter: {
-    handle: '@shakirabr_oficial',
-    site: '@shakirabr_oficial',
-    cardType: 'summary_large_image'
+    card: 'summary_large_image',
+    site: '@shakira_cam',
+    creator: '@shakira_cam'
   },
-  
-  additionalMetaTags: [
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      name: 'author',
-      content: SITE_CONFIG.author
-    },
-    {
-      name: 'publisher',
-      content: SITE_CONFIG.author
-    },
-    {
-      name: 'robots',
-      content: 'index,follow'
-    },
-    {
-      name: 'googlebot',
-      content: 'index,follow'
-    }
-  ]
+  structuredData: {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'ShakiraBr',
+    alternateName: 'Shakira BR',
+    description: 'Modelo brasileira premium especializada em conteúdo exclusivo e fotografia artística',
+    url: 'https://shakirabr.com',
+    sameAs: [
+      'https://onlyfans.com/zaramontana',
+      'https://privacy.com.br/profile/zaramontanaa',
+      'https://t.me/zaramontanavip',
+      'https://www.instagram.com/zaramontannasecreto/',
+      'https://x.com/shakira_cam'
+    ],
+    knowsAbout: [
+      'Modelagem',
+      'Fotografia',
+      'Conteúdo Digital',
+      'Marketing Digital'
+    ]
+  }
 } as const
 
 // Eventos de conversão para tracking
@@ -158,3 +153,14 @@ export const PRICING_CONFIG = {
     }
   }
 } as const 
+
+export const LEGAL_CONFIG = {
+  companyName: 'ShakiraBr',
+  contactEmail: 'contato@shakirabr.com',
+  privacyPolicyUrl: '/politica-de-privacidade',
+  termsOfServiceUrl: '/termos-de-uso',
+  ageVerification: {
+    minimumAge: 18,
+    message: 'Este site contém conteúdo adulto destinado exclusivamente a maiores de 18 anos.'
+  }
+} 

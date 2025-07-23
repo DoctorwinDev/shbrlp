@@ -154,7 +154,7 @@ export default function BlogPost({ params }: BlogPageProps) {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="https://instagram.com/ZARAMONTANNASECRETO"
+              href="https://www.instagram.com/zaramontannasecreto/"
               target="_blank"
               rel="noopener"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-500 text-white px-4 py-2 rounded-lg font-medium hover:from-pink-700 hover:to-purple-600 transition-all"

@@ -19,7 +19,7 @@ const menuItems = [
 const socialLinks = [
   { 
     name: 'Instagram', 
-    href: 'https://instagram.com/shakirabr_oficial',
+    href: 'https://www.instagram.com/zaramontannasecreto/',
     icon: Instagram,
     color: 'text-pink-400 hover:text-pink-300'
   },
