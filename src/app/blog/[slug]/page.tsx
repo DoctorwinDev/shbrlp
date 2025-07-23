@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowLeft, Tag, User, Share2 } from 'lucide-react'
+import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { getPostBySlug, getAllPosts } from '@/data/blog-posts'
+import ShareButton from '@/components/ShareButton'
 
 interface BlogPageProps {
   params: {
@@ -184,22 +185,7 @@ export default function BlogPost({ params }: BlogPageProps) {
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-white">Compartilhar:</h3>
             <div className="flex gap-3">
-              <button
-                onClick={() => {
-                  const url = window.location.href
-                  const text = `${post.title} - ${post.excerpt}`
-                  if (navigator.share) {
-                    navigator.share({ title: post.title, text, url })
-                  } else {
-                    navigator.clipboard.writeText(url)
-                    alert('Link copiado!')
-                  }
-                }}
-                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors"
-              >
-                <Share2 className="w-4 h-4" />
-                Compartilhar
-              </button>
+              <ShareButton post={post} />
             </div>
           </div>
         </div>
