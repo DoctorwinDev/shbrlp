@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { SITE_CONFIG, SEO_CONFIG } from '@/lib/constants'
 import AnalyticsProvider from '@/components/AnalyticsProvider'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 
 
@@ -254,6 +255,9 @@ export default function RootLayout({
             `
           }}
         />
+        
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </body>
     </html>
   )
