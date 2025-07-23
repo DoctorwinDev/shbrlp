@@ -60,11 +60,11 @@ export default function Header() {
         className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-neutral-900 shadow-lg"
         role="banner"
       >
-        <div className="max-w-7xl mx-auto px-4 flex items-center h-16 justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center h-14 sm:h-16 justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2" aria-label="Página Principal">
-            <span className="text-2xl font-extrabold tracking-tight text-white">Shakira</span>
-            <span className="text-2xl font-extrabold tracking-tight bg-[#ffb300] text-black px-2 rounded">BR</span>
+            <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Shakira</span>
+            <span className="text-xl sm:text-2xl font-extrabold tracking-tight bg-[#ffb300] text-black px-1 sm:px-2 rounded">BR</span>
           </Link>
           
           {/* Desktop Menu */}
@@ -78,7 +78,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="relative px-3 py-2 text-sm font-bold text-white hover:text-[#ffb300] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black rounded"
+                className="relative px-2 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white hover:text-[#ffb300] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black rounded"
                 aria-label={item.label}
               >
                 {item.label}
@@ -91,7 +91,7 @@ export default function Header() {
           </nav>
           
           {/* Ações Direita */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Social Media Links - Desktop */}
             <div className="hidden lg:flex items-center gap-2">
               {socialLinks.map((social) => (
@@ -110,7 +110,7 @@ export default function Header() {
             {/* Botão CTA amarelo */}
             <Link 
               href="#agendar" 
-              className="hidden md:inline-flex items-center bg-[#ffb300] text-black font-bold px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black" 
+              className="hidden md:inline-flex items-center bg-[#ffb300] text-black font-bold px-3 sm:px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black text-xs sm:text-sm" 
               aria-label="Agende Chamada"
             >
               Agende Chamada
@@ -121,7 +121,7 @@ export default function Header() {
               className="ml-2 p-1 rounded-full border-2 border-[#ffb300] focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black"
               aria-label="Perfil da modelo"
             >
-              <Image src="/WhatsApp Image 2025-06-22 at 18.54.12.jpeg" alt="Avatar da modelo ShakiraBr" width={36} height={36} className="rounded-full object-cover" />
+              <Image src="/WhatsApp Image 2025-06-22 at 18.54.12.jpeg" alt="Avatar da modelo ShakiraBr" width={32} height={32} className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover" />
             </button>
             
             {/* Mobile menu button */}
@@ -132,7 +132,7 @@ export default function Header() {
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6 text-white" aria-hidden="true" /> : <Menu className="w-6 h-6 text-white" aria-hidden="true" />}
+              {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="px-3 py-2 text-base font-bold text-white hover:text-[#ffb300] rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black"
+                className="px-3 py-2 text-sm sm:text-base font-bold text-white hover:text-[#ffb300] rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black"
                 aria-label={item.label}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -159,7 +159,7 @@ export default function Header() {
             
             {/* Social Media Links - Mobile */}
             <div className="flex items-center gap-3 mt-4 px-3">
-              <span className="text-gray-400 text-sm">Redes sociais:</span>
+              <span className="text-gray-400 text-xs sm:text-sm">Redes sociais:</span>
               {socialLinks.map((social) => (
                 <Link
                   key={social.name}
@@ -176,7 +176,7 @@ export default function Header() {
 
             <Link 
               href="#agendar" 
-              className="mt-2 inline-flex items-center bg-[#ffb300] text-black font-bold px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black justify-center" 
+              className="mt-2 inline-flex items-center bg-[#ffb300] text-black font-bold px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black justify-center text-sm sm:text-base" 
               aria-label="Agende Chamada"
               onClick={() => setIsMenuOpen(false)}
             >

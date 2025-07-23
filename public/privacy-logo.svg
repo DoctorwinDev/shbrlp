@@ -1,1 +1,51 @@
-File not found: /v1/AUTH_mw/wikipedia-commons-local-public.43/4/43/PrivacyBadgerLogo.svg
+<svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo cinza escuro -->
+  <rect width="200" height="60" fill="#2A2A2A"/>
+  
+  <!-- Ícone de bolha de fala laranja -->
+  <g fill="url(#orangeGradient)">
+    <!-- Bolha de fala -->
+    <path d="M15 20 C20 15, 30 15, 35 20 C40 25, 40 35, 35 40 C30 45, 20 45, 15 40 C10 35, 10 25, 15 20 Z"/>
+    <!-- Fechadura dentro da bolha -->
+    <rect x="20" y="25" width="10" height="12" rx="2" fill="none" stroke="white" stroke-width="1"/>
+    <circle cx="25" cy="30" r="2" fill="white"/>
+    <rect x="24" y="32" width="2" height="4" fill="white"/>
+  </g>
+  
+  <!-- Gradiente laranja -->
+  <defs>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#FF8C42"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Texto privacy -->
+  <text x="50" y="35" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">privacy</text>
+  
+  <!-- Ponto do i em laranja -->
+  <circle cx="95" cy="25" r="2" fill="#FF6B35"/>
+  
+  <!-- Símbolo registrado -->
+  <text x="105" y="25" fill="white" font-family="Arial, sans-serif" font-size="8">®</text>
+  
+  <!-- Elementos de fundo sutis -->
+  <g opacity="0.3" fill="#FF6B35">
+    <!-- Linhas diagonais -->
+    <path d="M10 10 L20 20" stroke="#FF6B35" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M180 50 L190 40" stroke="#FF6B35" stroke-width="1" stroke-dasharray="2,2"/>
+    
+    <!-- Cédula de fundo -->
+    <rect x="30" y="45" width="40" height="8" rx="2" fill="none" stroke="#FF6B35" stroke-width="1"/>
+    <circle cx="35" cy="49" r="1" fill="#FF6B35"/>
+    
+    <!-- Figuras humanas -->
+    <circle cx="160" cy="15" r="2" fill="#FF6B35"/>
+    <circle cx="165" cy="15" r="2" fill="#FF6B35"/>
+    <circle cx="170" cy="15" r="2" fill="#FF6B35"/>
+    <path d="M160 18 L165 18 L170 18" stroke="#FF6B35" stroke-width="1"/>
+    <path d="M162 20 L163 22 L164 20" stroke="#FF6B35" stroke-width="1"/>
+    <path d="M167 20 L168 22 L169 20" stroke="#FF6B35" stroke-width="1"/>
+    <path d="M172 20 L173 22 L174 20" stroke="#FF6B35" stroke-width="1"/>
+  </g>
+</svg>

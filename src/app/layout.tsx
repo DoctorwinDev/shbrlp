@@ -3,7 +3,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { SITE_CONFIG, SEO_CONFIG } from '@/lib/constants'
-// import AnalyticsProvider from '@/components/AnalyticsProvider'
+import AnalyticsProvider from '@/components/AnalyticsProvider'
 
 
 
@@ -160,7 +160,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased bg-black text-white min-h-screen">
         {/* Analytics Provider - Carrega scripts de tracking */}
-        {/* <AnalyticsProvider /> */}
+        <AnalyticsProvider />
         
         {/* Proteção contra cópia e download */}
         <script
