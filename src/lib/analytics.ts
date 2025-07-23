@@ -23,7 +23,7 @@ const isBrowser = typeof window !== 'undefined'
 
 // Facebook Pixel Functions
 export const initFacebookPixel = () => {
-  if (!isBrowser || !ANALYTICS_CONFIG.facebookPixel) return
+  if (!isBrowser || !ANALYTICS_CONFIG.facebookPixelId) return
 
   // Inserir Facebook Pixel script
   const script = document.createElement('script')
@@ -36,7 +36,7 @@ export const initFacebookPixel = () => {
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '${ANALYTICS_CONFIG.facebookPixel}');
+    fbq('init', '${ANALYTICS_CONFIG.facebookPixelId}');
     fbq('track', 'PageView');
   `
   document.head.appendChild(script)
@@ -55,12 +55,12 @@ export const trackFacebookEvent = (eventName: string, data?: FacebookEventData) 
 
 // Google Analytics Functions
 export const initGoogleAnalytics = () => {
-  if (!isBrowser || !ANALYTICS_CONFIG.googleAnalytics) return
+  if (!isBrowser || !ANALYTICS_CONFIG.googleAnalyticsId) return
 
   // Inserir Google Analytics script
   const script1 = document.createElement('script')
   script1.async = true
-  script1.src = `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_CONFIG.googleAnalytics}`
+  script1.src = `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_CONFIG.googleAnalyticsId}`
   document.head.appendChild(script1)
 
   const script2 = document.createElement('script')
@@ -68,7 +68,7 @@ export const initGoogleAnalytics = () => {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${ANALYTICS_CONFIG.googleAnalytics}', {
+    gtag('config', '${ANALYTICS_CONFIG.googleAnalyticsId}', {
       page_title: document.title,
       page_location: window.location.href,
     });
@@ -92,23 +92,23 @@ export const trackGoogleAnalyticsEvent = (data: GoogleAnalyticsEventData) => {
   }
 }
 
-// Hotjar Functions
-export const initHotjar = () => {
-  if (!isBrowser || !ANALYTICS_CONFIG.hotjar) return
+// Hotjar Functions - Comentado pois não está configurado no ANALYTICS_CONFIG
+// export const initHotjar = () => {
+//   if (!isBrowser || !ANALYTICS_CONFIG.hotjar) return
 
-  const script = document.createElement('script')
-  script.innerHTML = `
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:${ANALYTICS_CONFIG.hotjar},hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  `
-  document.head.appendChild(script)
-}
+//   const script = document.createElement('script')
+//   script.innerHTML = `
+//     (function(h,o,t,j,a,r){
+//         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+//         h._hjSettings={hjid:${ANALYTICS_CONFIG.hotjar},hjsv:6};
+//         a=o.getElementsByTagName('head')[0];
+//         r=o.createElement('script');r.async=1;
+//         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+//         a.appendChild(r);
+//     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+//   `
+//   document.head.appendChild(script)
+// }
 
 // Funções específicas para conversões do site
 export const trackPlatformClick = (platform: string) => {
@@ -199,7 +199,7 @@ export const initAllAnalytics = () => {
   try {
     initGoogleAnalytics()
     initFacebookPixel()
-    initHotjar()
+    // initHotjar() // Comentado pois não está configurado
     
     console.log('Analytics initialized successfully')
   } catch (error) {
