@@ -1,9 +1,7 @@
 import { MetadataRoute } from 'next'
-import { getAllPosts } from '@/data/blog-posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://shakirabr.com' // Substitua pela sua URL
-  const posts = getAllPosts()
+  const baseUrl = 'https://shakirabr.com'
 
   // Páginas estáticas
   const staticPages = [
@@ -33,13 +31,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Posts do blog
-  const blogPages = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt),
-    changeFrequency: 'weekly' as const,
-    priority: post.featured ? 0.9 : 0.7,
-  }))
+  // Posts do blog (estáticos por enquanto)
+  const blogPages = [
+    {
+      url: `${baseUrl}/blog/ensaio-sensual-dicas-fotos-casa-guia-2025`,
+      lastModified: new Date('2025-01-15'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+  ]
 
   return [...staticPages, ...blogPages]
 } 

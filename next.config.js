@@ -4,7 +4,8 @@ const nextConfig = {
   swcMinify: true,
   
   images: {
-    domains: ['picsum.photos'],
+    domains: ['picsum.photos', 'shakirabr.com'],
+    formats: ['image/webp', 'image/avif'],
     unoptimized: false,
   },
 
