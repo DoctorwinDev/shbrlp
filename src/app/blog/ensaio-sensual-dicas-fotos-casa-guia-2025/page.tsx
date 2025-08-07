@@ -9,26 +9,27 @@ const structuredData = {
   "headline": "15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025]",
   "description": "Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas, poses que valorizam qualquer corpo e técnicas de iluminação.",
   "author": {
-    "@type": "Organization",
-    "name": "ShakiraBr"
+    "@type": "Person",
+    "name": "Shakira BR",
+    "url": "https://www.shakirabr.com"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "ShakiraBr",
+    "name": "Shakira BR",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://shakirabr.com/logo.png"
+      "url": "https://www.shakirabr.com/logo.png"
     }
   },
-  "datePublished": "2025-01-15",
-  "dateModified": "2025-01-15",
+  "datePublished": "2025-01-15T10:00:00.000Z",
+  "dateModified": "2025-01-15T10:00:00.000Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://shakirabr.com/blog/ensaio-sensual-dicas-fotos-casa-guia-2025"
+    "@id": "https://www.shakirabr.com/blog/ensaio-sensual-dicas-fotos-casa-guia-2025"
   },
   "image": {
     "@type": "ImageObject",
-    "url": "https://shakirabr.com/galeria/preview1.jpg",
+    "url": "https://www.shakirabr.com/galeria/preview1.jpg",
     "width": 1200,
     "height": 630
   },
@@ -82,44 +83,72 @@ const faqData = {
   ]
 }
 
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.shakirabr.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.shakirabr.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ensaio Sensual: Guia Completo",
+      "item": "https://www.shakirabr.com/blog/ensaio-sensual-dicas-fotos-casa-guia-2025"
+    }
+  ]
+}
+
 export const metadata: Metadata = {
-  title: "15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025] | ShakiraBr",
-  description: "Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas, poses que valorizam qualquer corpo, técnicas de iluminação e apps de edição.",
-  keywords: "ensaio sensual, fotos em casa, autoestima feminina, fotografia com celular, poses femininas, boudoir caseiro, empoderamento feminino, beleza natural, autoconfiança, fotografia íntima",
-  authors: [{ name: "ShakiraBr" }],
-  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  alternates: {
-    canonical: "https://shakirabr.com/blog/ensaio-sensual-dicas-fotos-casa-guia-2025"
-  },
+  title: '15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025]',
+  description: 'Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas, poses que valorizam qualquer corpo, técnicas de iluminação e apps de edição.',
+  keywords: 'ensaio sensual, fotos em casa, autoestima feminina, fotografia com celular, poses femininas, boudoir caseiro, empoderamento feminino, beleza natural, autoconfiança, fotografia íntima',
+  authors: [{ name: 'Shakira BR' }],
   openGraph: {
-    type: "article",
-    url: "https://shakirabr.com/blog/ensaio-sensual-dicas-fotos-casa-guia-2025",
-    title: "15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025]",
-    description: "Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas e técnicas de iluminação.",
+    title: '15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025]',
+    description: 'Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas e técnicas de iluminação.',
+    url: 'https://www.shakirabr.com/blog/ensaio-sensual-dicas-fotos-casa-guia-2025',
+    siteName: 'Shakira BR',
     images: [
       {
-        url: "https://shakirabr.com/galeria/preview1.jpg",
+        url: 'https://www.shakirabr.com/galeria/preview1.jpg',
         width: 1200,
         height: 630,
-        alt: "Mulher fazendo ensaio sensual em casa com iluminação natural"
-      }
+        alt: 'Mulher fazendo ensaio sensual em casa com iluminação natural',
+      },
     ],
-    siteName: "ShakiraBr",
-    locale: "pt_BR",
-    publishedTime: "2025-01-15T10:00:00.000Z",
-    modifiedTime: "2025-01-15T10:00:00.000Z",
-    authors: ["ShakiraBr"],
-    section: "Lifestyle",
-    tags: ["ensaio sensual", "fotografia", "autoestima"]
+    locale: 'pt_BR',
+    type: 'article',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa",
-    description: "Guia completo para fazer ensaio sensual em casa: 15 dicas práticas, poses para todos os corpos, técnicas de iluminação e edição.",
-    images: ["https://shakirabr.com/galeria/preview1.jpg"],
-    creator: "@shakira_cam",
-    site: "@shakira_cam"
-  }
+    card: 'summary_large_image',
+    title: '15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa',
+    description: 'Guia completo para fazer ensaio sensual em casa: 15 dicas práticas, poses para todos os corpos, técnicas de iluminação e edição.',
+    images: ['https://www.shakirabr.com/galeria/preview1.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://www.shakirabr.com/blog/ensaio-sensual-dicas-fotos-casa-guia-2025',
+  },
 }
 
 export default function EnsaioSensualGuia() {
@@ -133,6 +162,10 @@ export default function EnsaioSensualGuia() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
       />
 
       {/* Breadcrumb */}
@@ -157,12 +190,12 @@ export default function EnsaioSensualGuia() {
           </h1>
           
           <div className="flex items-center justify-center space-x-6 text-gray-600 mb-8">
-            <span className="flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-              </svg>
-              Última atualização: Janeiro 2025
-            </span>
+                          <span className="flex items-center">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                Última atualização: Agosto 2025
+              </span>
             <span className="flex items-center">
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -329,6 +362,22 @@ export default function EnsaioSensualGuia() {
                   </ul>
                 </div>
               </div>
+
+              {/* Exemplo de Iluminação */}
+              <div className="mb-8">
+                <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/galeria/preview2.jpg"
+                    alt="Exemplo de iluminação natural para ensaio sensual"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 mt-2 text-center">
+                  Exemplo de iluminação natural criando sombras suaves e elegantes
+                </p>
+              </div>
             </section>
 
             {/* Section 5 - Poses */}
@@ -428,6 +477,22 @@ export default function EnsaioSensualGuia() {
                   </div>
                 </div>
               </div>
+
+              {/* Exemplo de Poses */}
+              <div className="mb-8">
+                <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/galeria/preview4.jpg"
+                    alt="Exemplo de poses elegantes para ensaio sensual"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 mt-2 text-center">
+                  Poses que valorizam a silhueta e criam linhas elegantes
+                </p>
+              </div>
             </section>
 
             {/* FAQ Section */}
@@ -494,6 +559,22 @@ export default function EnsaioSensualGuia() {
                   💖 Sua beleza merece ser celebrada. Comece hoje mesmo!
                 </p>
               </div>
+
+              {/* Imagem Final Inspiracional */}
+              <div className="mt-8">
+                <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-xl">
+                  <Image
+                    src="/galeria/preview5.jpg"
+                    alt="Mulher confiante celebrando sua beleza - inspiração para ensaio sensual"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 100vw"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 mt-2 text-center">
+                  Sua confiança é sua maior beleza - celebre quem você é!
+                </p>
+              </div>
             </section>
 
           </article>
@@ -521,11 +602,36 @@ export default function EnsaioSensualGuia() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="bg-pink-600 text-white py-12">
+      {/* CTA Principal */}
+      <section className="bg-gradient-to-r from-pink-600 to-purple-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-4">Receba Mais Dicas de Beleza e Autoestima</h2>
-          <p className="mb-6 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Quer Fazer um Ensaio Profissional?</h2>
+          <p className="mb-8 max-w-2xl mx-auto text-lg">
+            Agende uma sessão fotográfica profissional comigo e tenha um ensaio sensual 
+            de qualidade profissional com todas as dicas que você aprendeu aqui!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/agendar" 
+              className="bg-white text-pink-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+            >
+              🎯 Agendar Ensaio Profissional
+            </Link>
+            <Link 
+              href="/galeria" 
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-pink-600 transition-colors"
+            >
+              📸 Ver Galeria Completa
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter CTA */}
+      <section className="bg-gray-50 py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">Receba Mais Dicas de Beleza e Autoestima</h2>
+          <p className="mb-6 max-w-2xl mx-auto text-gray-600">
             Cadastre-se na nossa newsletter e receba semanalmente conteúdos exclusivos sobre fotografia, 
             autoestima e empoderamento feminino.
           </p>
@@ -533,9 +639,9 @@ export default function EnsaioSensualGuia() {
             <input 
               type="email" 
               placeholder="Seu melhor email" 
-              className="flex-1 px-4 py-2 rounded text-gray-900"
+              className="flex-1 px-4 py-2 rounded text-gray-900 border border-gray-300"
             />
-            <button className="bg-white text-pink-600 px-6 py-2 rounded font-bold hover:bg-gray-100">
+            <button className="bg-pink-600 text-white px-6 py-2 rounded font-bold hover:bg-pink-700 transition-colors">
               Cadastrar
             </button>
           </div>
