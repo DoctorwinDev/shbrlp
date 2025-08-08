@@ -13,8 +13,9 @@ const websiteStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Shakira BR",
-  "description": "Conteúdo exclusivo e premium para adultos. Galeria de fotos, blog com dicas e muito mais.",
+  "description": "Exclusive and premium adult content. Photo gallery, blog with tips and much more.",
   "url": "https://www.shakirabr.com",
+  "inLanguage": ["pt-BR", "en-US", "es-ES"],
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://www.shakirabr.com/search?q={search_term_string}",
@@ -44,17 +45,21 @@ const organizationStructuredData = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "availableLanguage": "Portuguese"
+    "availableLanguage": ["Portuguese", "English", "Spanish"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
   }
 }
 
 export const metadata: Metadata = {
   title: {
-    default: 'Shakira BR - Conteúdo Exclusivo e Premium',
+    default: 'Shakira BR - Exclusive and Premium Content',
     template: '%s | Shakira BR'
   },
-  description: 'Conteúdo exclusivo e premium para adultos. Galeria de fotos sensuais, blog com dicas e muito mais. Acesse agora!',
-  keywords: 'shakira br, conteúdo adulto, galeria fotos, blog sensual, premium, exclusivo',
+  description: 'Exclusive and premium adult content. Sensual photo gallery, blog with tips and much more. Access now!',
+  keywords: 'shakira br, adult content, photo gallery, sensual blog, premium, exclusive, brazilian model, adult entertainment',
   authors: [{ name: 'Shakira BR' }],
   creator: 'Shakira BR',
   publisher: 'Shakira BR',
@@ -66,6 +71,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://shakirabr.com'),
   alternates: {
     canonical: 'https://shakirabr.com',
+    languages: {
+      'pt-BR': 'https://shakirabr.com',
+      'en-US': 'https://shakirabr.com/en',
+      'es-ES': 'https://shakirabr.com/es',
+    },
   },
   robots: {
     index: true,
@@ -82,26 +92,45 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     url: 'https://shakirabr.com',
-    title: 'Shakira BR - Conteúdo Exclusivo e Premium',
-    description: 'Conteúdo exclusivo e premium para adultos. Galeria de fotos sensuais, blog com dicas e muito mais.',
+    title: 'Shakira BR - Exclusive and Premium Content',
+    description: 'Exclusive and premium adult content. Sensual photo gallery, blog with tips and much more.',
     siteName: 'Shakira BR',
     images: [
       {
         url: 'https://shakirabr.com/hero-latest-image.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Shakira BR - Conteúdo Exclusivo',
+        alt: 'Shakira BR - Exclusive Content',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shakira BR - Conteúdo Exclusivo e Premium',
-    description: 'Conteúdo exclusivo e premium para adultos. Galeria de fotos sensuais, blog com dicas e muito mais.',
+    title: 'Shakira BR - Exclusive and Premium Content',
+    description: 'Exclusive and premium adult content. Sensual photo gallery, blog with tips and much more.',
     images: ['https://shakirabr.com/hero-latest-image.jpeg'],
   },
   verification: {
     google: 'your-google-verification-code',
+  },
+  other: {
+    'geo.region': 'BR',
+    'geo.placename': 'Brazil',
+    'geo.position': '-14.235004;-51.92528',
+    'ICBM': '-14.235004, -51.92528',
+    'DC.title': 'Shakira BR - Exclusive Adult Content',
+    'DC.creator': 'Shakira BR',
+    'DC.subject': 'Adult Content, Photo Gallery, Blog',
+    'DC.description': 'Exclusive and premium adult content from Brazil',
+    'DC.publisher': 'Shakira BR',
+    'DC.contributor': 'Shakira BR',
+    'DC.date': '2025-01-15',
+    'DC.type': 'InteractiveResource',
+    'DC.format': 'text/html',
+    'DC.identifier': 'https://shakirabr.com',
+    'DC.language': 'pt-BR',
+    'DC.coverage': 'Worldwide',
+    'DC.rights': 'Copyright 2025 Shakira BR',
   },
 }
 
@@ -132,14 +161,44 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Shakira BR" />
         
+        {/* Meta tags para SEO internacional */}
+        <meta name="language" content="Portuguese" />
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="adult" />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        {/* Meta tags para redes sociais */}
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:locale:alternate" content="es_ES" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Shakira BR" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
+        
+        {/* Twitter Card específico */}
+        <meta name="twitter:site" content="@shakira_cam" />
+        <meta name="twitter:creator" content="@shakira_cam" />
+        
         {/* Preconnect para performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        
+        {/* Hreflang para SEO internacional */}
+        <link rel="alternate" href="https://shakirabr.com" hrefLang="pt-BR" />
+        <link rel="alternate" href="https://shakirabr.com/en" hrefLang="en-US" />
+        <link rel="alternate" href="https://shakirabr.com/es" hrefLang="es-ES" />
+        <link rel="alternate" href="https://shakirabr.com" hrefLang="x-default" />
       </head>
       <body className={inter.className}>
         <AnalyticsProvider />
