@@ -9,14 +9,14 @@ export type Locale = (typeof locales)[number]
 export const defaultLocale: Locale = 'pt'
 
 // Função para verificar se o locale é válido
-export function isValidLocale(locale: string): locale is Locale {
-  return locales.includes(locale as Locale)
+export function isValidLocale(locale: string | undefined): locale is Locale {
+  return locale !== undefined && locales.includes(locale as Locale)
 }
 
 // Configuração do next-intl
 export default getRequestConfig(async ({ locale }) => {
   // Verificar se o locale é válido
-  if (!locale || !isValidLocale(locale)) {
+  if (!isValidLocale(locale)) {
     notFound()
   }
 
