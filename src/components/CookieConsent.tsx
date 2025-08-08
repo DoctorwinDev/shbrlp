@@ -15,9 +15,9 @@ export default function CookieConsent() {
   const [showSettings, setShowSettings] = useState(false)
   const [consent, setConsent] = useState({
     essential: true,
-    analytics: false,
-    marketing: false,
-    personalization: false
+    analytics: true,
+    marketing: true,
+    personalization: true
   })
 
   useEffect(() => {
@@ -98,7 +98,7 @@ export default function CookieConsent() {
               </h3>
               <p className="text-gray-300 text-sm">
                 Utilizamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo. 
-                Você pode controlar suas preferências a qualquer momento.
+                Todos os cookies estão ativados por padrão. Você pode desativar qualquer categoria a qualquer momento.
               </p>
             </div>
             
@@ -114,13 +114,13 @@ export default function CookieConsent() {
                 onClick={handleRejectAll}
                 className="px-4 py-2 text-sm text-gray-300 hover:text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Rejeitar Todos
+                Desativar Todos
               </button>
               <button
                 onClick={handleAcceptAll}
                 className="px-4 py-2 text-sm bg-[#ffb300] text-black font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Aceitar Todos
+                Manter Todos
               </button>
             </div>
           </div>
