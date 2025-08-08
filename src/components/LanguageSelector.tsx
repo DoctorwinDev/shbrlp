@@ -1,36 +1,19 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ChevronDown, Globe } from 'lucide-react'
 import { localeConfig, type Locale } from '@/i18n/config'
 
 export default function LanguageSelector() {
-  const [isClient, setIsClient] = useState(false)
+  // Mover todos os hooks para o topo
+  const locale = useLocale() as Locale
+  const router = useRouter()
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
-  
-  // Hooks condicionais para evitar erros SSR
-  let locale: Locale = 'pt'
-  let router: any = null
-  let pathname = ''
-  
-  try {
-    locale = (useLocale() as Locale) || 'pt'
-    router = useRouter()
-    pathname = usePathname() || ''
-  } catch (error) {
-    // Fallback para SSR
-    console.warn('Next.js hooks not available during SSR')
-  }
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
 
   const handleLanguageChange = (newLocale: Locale) => {
-    if (!isClient || !router) return
-    
     setIsOpen(false)
     
     // Remover locale atual da pathname
@@ -43,18 +26,6 @@ export default function LanguageSelector() {
   }
 
   const currentLanguage = localeConfig[locale]
-
-  // Renderizar apenas no cliente para evitar hidratação mismatch
-  if (!isClient) {
-    return (
-      <div className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-300">
-        <Globe className="w-4 h-4" />
-        <span>🇧🇷</span>
-        <span className="hidden sm:inline">Português</span>
-        <ChevronDown className="w-3 h-3" />
-      </div>
-    )
-  }
 
   return (
     <div className="relative">
