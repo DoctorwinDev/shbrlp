@@ -1,193 +1,226 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { X, Settings, Shield, BarChart3, Megaphone } from 'lucide-react'
+import { X, Settings, CheckCircle } from 'lucide-react'
 
-interface CookiePreferences {
-  essential: boolean
-  analytics: boolean
-  marketing: boolean
+// Declaração do tipo para window.updateConsent
+declare global {
+  interface Window {
+    updateConsent?: (consent: any) => void
+  }
 }
 
-const CookieConsent: React.FC = () => {
+export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
-  const [preferences, setPreferences] = useState<CookiePreferences>({
+  const [consent, setConsent] = useState({
     essential: true,
     analytics: false,
-    marketing: false
+    marketing: false,
+    personalization: false
   })
 
   useEffect(() => {
-    const hasConsent = localStorage.getItem('cookie_consent')
-    if (!hasConsent) {
+    // Verificar se já existe consentimento salvo
+    const savedConsent = localStorage.getItem('cookie-consent')
+    if (!savedConsent) {
       setShowBanner(true)
+    } else {
+      const parsedConsent = JSON.parse(savedConsent)
+      setConsent(parsedConsent)
+      updateGoogleConsent(parsedConsent)
     }
   }, [])
 
-  const handleAcceptAll = () => {
-    const allPreferences = {
-      essential: true,
-      analytics: true,
-      marketing: true
+  const updateGoogleConsent = (userConsent: any) => {
+    if (typeof window !== 'undefined' && window.updateConsent) {
+      window.updateConsent({
+        ad_storage: userConsent.marketing ? 'granted' : 'denied',
+        analytics_storage: userConsent.analytics ? 'granted' : 'denied',
+        functionality_storage: userConsent.essential ? 'granted' : 'denied',
+        personalization_storage: userConsent.personalization ? 'granted' : 'denied'
+      })
     }
-    localStorage.setItem('cookie_consent', JSON.stringify(allPreferences))
-    localStorage.setItem('cookie_consent_date', new Date().toISOString())
-    setShowBanner(false)
-    setPreferences(allPreferences)
   }
 
-  const handleAcceptSelected = () => {
-    localStorage.setItem('cookie_consent', JSON.stringify(preferences))
-    localStorage.setItem('cookie_consent_date', new Date().toISOString())
+  const handleAcceptAll = () => {
+    const newConsent = {
+      essential: true,
+      analytics: true,
+      marketing: true,
+      personalization: true
+    }
+    setConsent(newConsent)
+    localStorage.setItem('cookie-consent', JSON.stringify(newConsent))
+    updateGoogleConsent(newConsent)
     setShowBanner(false)
   }
 
   const handleRejectAll = () => {
-    const minimalPreferences = {
+    const newConsent = {
       essential: true,
       analytics: false,
-      marketing: false
+      marketing: false,
+      personalization: false
     }
-    localStorage.setItem('cookie_consent', JSON.stringify(minimalPreferences))
-    localStorage.setItem('cookie_consent_date', new Date().toISOString())
+    setConsent(newConsent)
+    localStorage.setItem('cookie-consent', JSON.stringify(newConsent))
+    updateGoogleConsent(newConsent)
     setShowBanner(false)
-    setPreferences(minimalPreferences)
   }
 
-  if (!showBanner) return null
+  const handleSaveSettings = () => {
+    localStorage.setItem('cookie-consent', JSON.stringify(consent))
+    updateGoogleConsent(consent)
+    setShowSettings(false)
+    setShowBanner(false)
+  }
+
+  const handleToggle = (type: keyof typeof consent) => {
+    if (type === 'essential') return // Essential sempre true
+    setConsent(prev => ({
+      ...prev,
+      [type]: !prev[type]
+    }))
+  }
+
+  if (!showBanner && !showSettings) return null
 
   return (
     <>
       {/* Banner Principal */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 p-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      {showBanner && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-black border-t border-gray-800 p-4">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Shield className="w-5 h-5 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Privacidade e Cookies</h3>
-              </div>
-              <p className="text-sm text-gray-600 mb-3">
+              <h3 className="text-white font-semibold mb-2">
+                🍪 Gerenciamento de Cookies
+              </h3>
+              <p className="text-gray-300 text-sm">
                 Utilizamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo. 
-                Você pode controlar quais cookies aceitar. 
-                <a href="/politica-de-privacidade" className="text-blue-600 hover:underline ml-1">
-                  Saiba mais
-                </a>
+                Você pode controlar suas preferências a qualquer momento.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-2">
               <button
                 onClick={() => setShowSettings(true)}
-                className="px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-4 py-2 text-sm text-gray-300 hover:text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors"
               >
-                <Settings className="w-4 h-4 inline mr-1" />
-                Configurar
+                <Settings className="w-4 h-4 inline mr-2" />
+                Configurações
               </button>
               <button
                 onClick={handleRejectAll}
-                className="px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-4 py-2 text-sm text-gray-300 hover:text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Rejeitar Todos
               </button>
               <button
                 onClick={handleAcceptAll}
-                className="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 text-sm bg-[#ffb300] text-black font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
                 Aceitar Todos
               </button>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Modal de Configurações */}
       {showSettings && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6">
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+          <div className="bg-black border border-gray-800 rounded-lg max-w-md w-full p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-900">Configurações de Cookies</h3>
+              <h3 className="text-white font-semibold text-lg">
+                🍪 Configurações de Cookies
+              </h3>
               <button
                 onClick={() => setShowSettings(false)}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-gray-400 hover:text-white"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="space-y-4 mb-6">
+            <div className="space-y-4">
               {/* Cookies Essenciais */}
-              <div className="border border-gray-200 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-green-600" />
-                    <span className="font-medium text-gray-900">Cookies Essenciais</span>
-                  </div>
-                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                    Sempre Ativo
-                  </span>
+              <div className="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
+                <div>
+                  <h4 className="text-white font-medium">Cookies Essenciais</h4>
+                  <p className="text-gray-400 text-sm">Necessários para o funcionamento do site</p>
                 </div>
-                <p className="text-sm text-gray-600">
-                  Necessários para o funcionamento básico do site. Não podem ser desativados.
-                </p>
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
+                  <span className="text-green-400 text-sm">Sempre ativo</span>
+                </div>
               </div>
 
               {/* Cookies de Analytics */}
-              <div className="border border-gray-200 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <BarChart3 className="w-4 h-4 text-blue-600" />
-                    <span className="font-medium text-gray-900">Cookies de Analytics</span>
-                  </div>
-                  <label className="relative inline-flex items-center cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={preferences.analytics}
-                      onChange={(e) => setPreferences({...preferences, analytics: e.target.checked})}
-                      className="sr-only peer"
-                    />
-                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                  </label>
+              <div className="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
+                <div>
+                  <h4 className="text-white font-medium">Analytics</h4>
+                  <p className="text-gray-400 text-sm">Nos ajudam a entender como você usa o site</p>
                 </div>
-                <p className="text-sm text-gray-600">
-                  Nos ajudam a entender como você usa o site para melhorar nossos serviços.
-                </p>
+                <button
+                  onClick={() => handleToggle('analytics')}
+                  className={`w-12 h-6 rounded-full transition-colors ${
+                    consent.analytics ? 'bg-[#ffb300]' : 'bg-gray-600'
+                  }`}
+                >
+                  <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
+                    consent.analytics ? 'translate-x-6' : 'translate-x-1'
+                  }`} />
+                </button>
               </div>
 
               {/* Cookies de Marketing */}
-              <div className="border border-gray-200 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Megaphone className="w-4 h-4 text-purple-600" />
-                    <span className="font-medium text-gray-900">Cookies de Marketing</span>
-                  </div>
-                  <label className="relative inline-flex items-center cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={preferences.marketing}
-                      onChange={(e) => setPreferences({...preferences, marketing: e.target.checked})}
-                      className="sr-only peer"
-                    />
-                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
-                  </label>
+              <div className="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
+                <div>
+                  <h4 className="text-white font-medium">Marketing</h4>
+                  <p className="text-gray-400 text-sm">Personalizar anúncios e conteúdo</p>
                 </div>
-                <p className="text-sm text-gray-600">
-                  Usados para personalizar anúncios e conteúdo baseado em seus interesses.
-                </p>
+                <button
+                  onClick={() => handleToggle('marketing')}
+                  className={`w-12 h-6 rounded-full transition-colors ${
+                    consent.marketing ? 'bg-[#ffb300]' : 'bg-gray-600'
+                  }`}
+                >
+                  <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
+                    consent.marketing ? 'translate-x-6' : 'translate-x-1'
+                  }`} />
+                </button>
+              </div>
+
+              {/* Cookies de Personalização */}
+              <div className="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
+                <div>
+                  <h4 className="text-white font-medium">Personalização</h4>
+                  <p className="text-gray-400 text-sm">Lembrar suas preferências</p>
+                </div>
+                <button
+                  onClick={() => handleToggle('personalization')}
+                  className={`w-12 h-6 rounded-full transition-colors ${
+                    consent.personalization ? 'bg-[#ffb300]' : 'bg-gray-600'
+                  }`}
+                >
+                  <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
+                    consent.personalization ? 'translate-x-6' : 'translate-x-1'
+                  }`} />
+                </button>
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setShowSettings(false)}
-                className="flex-1 px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 px-4 py-2 text-sm text-gray-300 hover:text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Cancelar
               </button>
               <button
-                onClick={handleAcceptSelected}
-                className="flex-1 px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                onClick={handleSaveSettings}
+                className="flex-1 px-4 py-2 text-sm bg-[#ffb300] text-black font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
                 Salvar Preferências
               </button>
@@ -198,5 +231,3 @@ const CookieConsent: React.FC = () => {
     </>
   )
 }
-
-export default CookieConsent
