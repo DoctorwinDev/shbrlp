@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X, Instagram } from 'lucide-react'
 import Image from 'next/image'
+import LanguageSelector from './LanguageSelector'
 
 const menuItems = [
   { label: 'Início', href: '/' },
@@ -92,6 +93,11 @@ export default function Header() {
           
           {/* Ações Direita */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Language Selector - Desktop */}
+            <div className="hidden lg:block">
+              <LanguageSelector />
+            </div>
+            
             {/* Social Media Links - Desktop */}
             <div className="hidden lg:flex items-center gap-2">
               {socialLinks.map((social) => (
@@ -106,83 +112,59 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-
-            {/* Botão CTA amarelo */}
-            <Link 
-              href="#agendar" 
-              className="hidden md:inline-flex items-center bg-[#ffb300] text-black font-bold px-3 sm:px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black text-xs sm:text-sm" 
-              aria-label="Agende Chamada"
-            >
-              Agende Chamada
-            </Link>
             
-            {/* Avatar */}
-            <button 
-              className="ml-2 p-1 rounded-full border-2 border-[#ffb300] focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black"
-              aria-label="Perfil da modelo"
-            >
-              <Image src="/WhatsApp Image 2025-06-22 at 18.54.12.jpeg" alt="Avatar da modelo ShakiraBr" width={32} height={32} className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover" />
-            </button>
-            
-            {/* Mobile menu button */}
-            <button 
-              className="lg:hidden ml-2 p-2 rounded-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black" 
-              onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 text-white hover:text-[#ffb300] transition-colors focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black rounded"
+              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
-        
+
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav 
-            id="mobile-menu"
-            className="lg:hidden bg-black/95 backdrop-blur-sm border-t border-neutral-900 px-4 py-4 flex flex-col gap-2"
-            role="navigation"
-            aria-label="Menu mobile"
-          >
-            {menuItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="px-3 py-2 text-sm sm:text-base font-bold text-white hover:text-[#ffb300] rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black"
-                aria-label={item.label}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            
-            {/* Social Media Links - Mobile */}
-            <div className="flex items-center gap-3 mt-4 px-3">
-              <span className="text-gray-400 text-xs sm:text-sm">Redes sociais:</span>
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  className={`p-2 rounded-lg hover:bg-neutral-800 transition-colors ${social.color}`}
-                  aria-label={`Seguir no ${social.name}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <social.icon />
-                </Link>
-              ))}
+          <div className="lg:hidden bg-black border-t border-neutral-900">
+            <div className="px-4 py-4 space-y-4">
+              {/* Language Selector - Mobile */}
+              <div className="flex justify-center pb-4 border-b border-neutral-800">
+                <LanguageSelector />
+              </div>
+              
+              {/* Menu Items */}
+              <nav className="space-y-2">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-4 py-3 text-white hover:text-[#ffb300] hover:bg-neutral-800 transition-colors rounded-lg font-medium"
+                    aria-label={item.label}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+              
+              {/* Social Media Links - Mobile */}
+              <div className="flex justify-center gap-4 pt-4 border-t border-neutral-800">
+                {socialLinks.map((social) => (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    className={`p-3 rounded-lg hover:bg-neutral-800 transition-colors ${social.color}`}
+                    aria-label={`Seguir no ${social.name}`}
+                  >
+                    <social.icon />
+                  </Link>
+                ))}
+              </div>
             </div>
-
-            <Link 
-              href="#agendar" 
-              className="mt-2 inline-flex items-center bg-[#ffb300] text-black font-bold px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition focus:outline-none focus:ring-2 focus:ring-[#ffb300] focus:ring-offset-2 focus:ring-offset-black justify-center text-sm sm:text-base" 
-              aria-label="Agende Chamada"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Agende Chamada
-            </Link>
-          </nav>
+          </div>
         )}
       </header>
     </>
