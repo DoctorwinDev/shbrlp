@@ -17,375 +17,156 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'como-ser-modelo-webcam-iniciante',
-    title: 'Como Ser Modelo Webcam: Guia Completo Para Iniciantes',
-    excerpt: 'Descubra tudo sobre como começar na carreira de modelo webcam. Dicas essenciais, plataformas, equipamentos e como ganhar dinheiro online.',
-    metaDescription: 'Guia completo para começar como modelo webcam no Brasil. Dicas de equipamentos, plataformas, ganhos e como se tornar uma cam girl de sucesso.',
-    publishedAt: '2024-01-15',
-    updatedAt: '2024-01-15',
-    author: 'ShakiraBr',
-    category: 'Carreira',
-    tags: ['modelo webcam', 'cam girl', 'carreira', 'dinheiro online', 'trabalho em casa'],
-    keywords: ['modelo webcam', 'cam girl', 'como ser modelo webcam', 'trabalho em casa', 'renda extra', 'carreira online'],
-    readTime: 15,
-    featured: true,
-    content: `
-# Como Ser Modelo Webcam: Guia Completo Para Iniciantes
-
-Decidir se tornar **modelo webcam** pode ser o primeiro passo para uma carreira lucrativa e independente. Como modelo brasileira há mais de 3 anos, vou compartilhar tudo que aprendi nessa jornada.
-
-## Por Que Ser Modelo Webcam?
-
-- **Flexibilidade total**: Você define seus horários
-- **Renda alta**: Possibilidade de ganhar R$ 5.000 a R$ 50.000+ por mês
-- **Trabalho em casa**: Sem deslocamentos ou chefes
-- **Independência financeira**: Controle total sobre seus ganhos
-
-## 1. Equipamentos Essenciais
-
-### 1.1 Câmera HD
-- **Webcam Logitech C920**: Padrão da indústria (R$ 400-600)
-- **Webcam 4K**: Para qualidade superior (R$ 800-1200)
-- **Smartphone**: Pode ser usado no início
-
-### 1.2 Iluminação
-- **Ring Light**: Fundamental para boa imagem (R$ 150-300)
-- **Softbox**: Para luz mais suave (R$ 200-400)
-- **LED Panels**: Iluminação profissional (R$ 300-600)
-
-### 1.3 Áudio
-- **Microfone USB**: Audio-Technica ou Blue Yeti (R$ 300-800)
-- **Headset gamer**: Alternativa mais barata (R$ 100-300)
-
-### 1.4 Computador
-- **Processador**: Intel i5/AMD Ryzen 5 mínimo
-- **RAM**: 8GB mínimo, 16GB recomendado
-- **Internet**: 10Mbps upload mínimo
-
-## 2. Melhores Plataformas Para Modelos Brasileiras
-
-### 2.1 Chaturbate
-- **Comissão**: 50-60% para modelo
-- **Pagamento**: Semanal, USD
-- **Público**: Internacional
-- **Vantagem**: Grande audiência
-
-### 2.2 Cam4
-- **Comissão**: 50-65%
-- **Pagamento**: Quinzenal
-- **Público**: Latino/Internacional
-- **Vantagem**: Interface amigável
-
-### 2.3 StripChat
-- **Comissão**: 50-70%
-- **Pagamento**: Semanal/Quinzenal
-- **Público**: Global
-- **Vantagem**: Bons recursos para privados
-
-## 3. Como Começar (Passo a Passo)
-
-### Passo 1: Documentação
-- **RG e CPF**: Documentos brasileiros
-- **Conta bancária**: Para receber pagamentos
-- **Idade**: 18+ anos obrigatório
-
-### Passo 2: Registro nas Plataformas
-- Cadastre-se em 2-3 plataformas inicialmente
-- Complete todo o processo de verificação
-- Configure seu perfil com fotos atraentes
-
-### Passo 3: Setup do Ambiente
-- **Quarto limpo e organizado**
-- **Boa iluminação**
-- **Ângulo da câmera**: Ligeiramente acima
-- **Background atrativo**
-
-## 4. Dicas Para Ganhar Mais
-
-### 4.1 Interação
-- **Seja conversível**: Converse com todos
-- **Aprenda inglês básico**: Expande sua audiência
-- **Crie conexão**: Lembre-se de usuários regulares
-
-### 4.2 Shows Privados
-- **Defina preços**: Não aceite valores baixos
-- **Seja criativa**: Ofereça experiências únicas
-- **Estabeleça limites**: Deixe claro o que faz/não faz
-
-## 5. Segurança e Privacidade
-
-### 5.1 Proteção Pessoal
-- **Nunca revele**: Nome real, endereço, telefone
-- **Use nome artístico**: Crie uma persona
-- **Geoblocking**: Bloqueie sua cidade/estado
-
-### 5.2 Proteção Digital
-- **VPN**: Para mascarar localização
-- **Senhas fortes**: Use gerenciador de senhas
-
-## Conclusão
-
-Ser **modelo webcam** pode ser uma carreira muito lucrativa para quem está disposta a se dedicar. Lembre-se:
-
-- **Seja consistente**: Apareça regularmente
-- **Seja profissional**: Trate como um negócio
-- **Seja autêntica**: Personalidade importa mais que aparência
-- **Seja paciente**: Resultados vêm com tempo
-
-Com dedicação e as estratégias certas, você pode construir uma renda sólida e independente trabalhando de casa.
-
-*Quer mais dicas sobre como ser modelo webcam? Me segue nas redes sociais e acompanha meu conteúdo exclusivo!* 💕
-    `
-  },
-  {
-    slug: 'onlyfans-brasil-como-ganhar-dinheiro',
-    title: 'OnlyFans Brasil: Como Ganhar Dinheiro Sendo Modelo em 2024',
-    excerpt: 'Guia completo sobre OnlyFans no Brasil. Descubra como criar perfil, ganhar dinheiro, estratégias de marketing e dicas para modelo brasileira.',
-    metaDescription: 'Aprenda como ganhar dinheiro no OnlyFans Brasil. Guia completo com dicas de criação de conteúdo, marketing e estratégias para modelos brasileiras.',
-    publishedAt: '2024-01-20',
-    updatedAt: '2024-01-20',
-    author: 'ShakiraBr',
-    category: 'Plataformas',
-    tags: ['onlyfans', 'modelo brasil', 'conteúdo premium', 'renda online', 'marketing digital'],
-    keywords: ['onlyfans brasil', 'como ganhar dinheiro onlyfans', 'modelo onlyfans', 'conteúdo premium', 'marketing onlyfans'],
+    slug: 'ensaio-sensual-dicas-fotos-casa-guia-2025',
+    title: '15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025]',
+    excerpt: 'Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas, poses que valorizam qualquer corpo e técnicas de iluminação.',
+    metaDescription: 'Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas, poses que valorizam qualquer corpo, técnicas de iluminação e apps de edição.',
+    publishedAt: '2025-01-15',
+    updatedAt: '2025-01-15',
+    author: 'Shakira BR',
+    category: 'Lifestyle',
+    tags: ['ensaio sensual', 'fotos em casa', 'autoestima feminina', 'fotografia com celular', 'poses femininas', 'boudoir caseiro'],
+    keywords: ['ensaio sensual', 'fotos em casa', 'autoestima feminina', 'fotografia com celular', 'poses femininas', 'boudoir caseiro', 'empoderamento feminino', 'beleza natural', 'autoconfiança', 'fotografia íntima'],
     readTime: 12,
     featured: true,
+    image: '/galeria/preview1.jpg',
     content: `
-# OnlyFans Brasil: Como Ganhar Dinheiro Sendo Modelo em 2024
+# 15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025]
 
-O **OnlyFans** se tornou uma das principais plataformas para modelos brasileiras ganharem dinheiro com conteúdo premium. Vou te ensinar tudo sobre como começar e ter sucesso.
+Você já sonhou em fazer um **ensaio sensual** profissional, mas não sabe por onde começar? Talvez a ideia de contratar um fotógrafo te deixe nervosa, ou o orçamento esteja apertado.
 
-## O Que é OnlyFans?
+A boa notícia é que você pode criar fotos incríveis no conforto da sua casa, usando apenas o celular e algumas técnicas simples que vou compartilhar neste guia completo.
 
-O OnlyFans é uma plataforma de assinatura onde criadores de conteúdo podem monetizar diretamente com seus fãs. É especialmente popular para:
+## O Que é um Ensaio Sensual?
 
-- **Conteúdo adulto exclusivo**
-- **Fotos e vídeos premium** 
-- **Interação direta com fãs**
-- **Lives privadas**
-- **Conteúdo personalizado**
+Um **ensaio sensual** é uma sessão de fotos que tem como objetivo capturar a beleza, sensualidade e personalidade de uma pessoa de forma artística e elegante. Diferente do que muitos pensam, sensual não significa vulgar – é sobre **empoderamento**, **autoestima** e **arte**.
 
-## Como Funciona o OnlyFans Brasil
+## Por Que Fazer um Ensaio Sensual?
 
-### 1. Criação de Conta
-- **Verificação de idade**: 18+ obrigatório
-- **Documentos**: RG, CPF, comprovante de endereço
-- **Verificação bancária**: Para receber pagamentos
+### Benefícios Comprovados:
 
-### 2. Sistema de Pagamentos
-- **Assinatura mensal**: Valor fixo definido por você
-- **Tips**: Gorjetas dos fãs
-- **Pay-per-view**: Conteúdo pago individual
-- **Comissão**: OnlyFans fica com 20%
+- **✨ Autoestima elevada**: 89% das mulheres relatam maior confiança após o ensaio
+- **💖 Reconexão com o próprio corpo**: Redescobrir sua beleza única
+- **🎁 Presente especial**: Para você mesma ou para alguém especial
+- **📸 Memórias duradouras**: Registrar um momento único da sua vida
 
-## Estratégias Para Ganhar Dinheiro
+## Como se Preparar Para o Ensaio Sensual
 
-### 1. Preço da Assinatura
-- **Iniciantes**: R$ 15-30/mês
-- **Intermediário**: R$ 30-60/mês  
-- **Experiente**: R$ 60-150/mês
+### 1. Planejamento Mental
+Antes de qualquer coisa, defina o **estilo** que você quer alcançar:
+- Romântico e delicado
+- Ousado e marcante
+- Clássico e elegante
+- Moderno e despojado
 
-### 2. Tipos de Conteúdo
-- **Fotos sensuais profissionais**
-- **Vídeos exclusivos**
-- **Behind the scenes**
-- **Conteúdo personalizado**
-- **Lives interativas**
+### 2. Cuidados com o Corpo
 
-### 3. Marketing Digital
-- **Instagram**: Para divulgação (cuidado com as regras)
-- **Twitter**: Mais liberado para adult content
-- **TikTok**: Para alcance orgânico
-- **Telegram**: Canal para fãs
+**Uma semana antes:**
+- Hidrate bem a pele
+- Faça esfoliação suave
+- Cuide das unhas
+- Evite procedimentos que possam causar vermelhidão
 
-## Dicas Para Ter Sucesso
+**No dia do ensaio:**
+- Tome um banho relaxante
+- Use um hidratante que você já conhece
+- Evite roupas que marquem a pele antes das fotos
 
-### 1. Consistência
-- **Poste diariamente**: Mantenha os fãs engajados
-- **Horários fixos**: Crie uma rotina
-- **Qualidade**: Sempre priorize
+## Iluminação - O Segredo das Fotos Perfeitas
 
-### 2. Interação
-- **Responda mensagens**: Fãs pagam por atenção
-- **Pergunte o que querem**: Ouça feedback
-- **Seja autêntica**: Personalidade vende
+💡 A **iluminação** é 70% do sucesso do seu ensaio sensual. Aqui estão as melhores opções:
 
-### 3. Diversificação
-- **Múltiplas plataformas**: Não dependa só do OnlyFans
-- **Produtos físicos**: Roupas, fotos impressas
-- **Serviços**: Videochamadas, custom content
+### Luz Natural (Recomendada)
+- Próximo a janelas grandes
+- Melhor horário: 16h às 18h (golden hour)
+- Use cortinas brancas para suavizar a luz
 
-## Aspectos Legais no Brasil
+### Luz Artificial
+- Evite luz amarelada do teto
+- Use abajures ou ring lights
+- Posicione a luz na diagonal
 
-### 1. Tributação
-- **MEI**: Até R$ 81.000/ano
-- **Pessoa Física**: Declare na categoria de serviços
-- **Consulte contador**: Para orientação específica
+## 15 Poses Que Valorizam Qualquer Corpo
 
-### 2. Privacidade
-- **Use nome artístico**
-- **Proteja informações pessoais**
-- **Configure privacidade nas redes**
+### Poses em Pé
+1. **A Clássica Curvinha**: Peso numa perna só, mão na cintura, ombros relaxados
+2. **Contra a Parede**: Encoste as costas na parede, um pé apoiado na parede, braços relaxados
+3. **Silhueta na Janela**: De perfil ou 3/4, luz natural criando contorno, pose contemplativa
 
-## Quanto É Possível Ganhar?
+### Poses Sentada
+4. **Na Beirada da Cama**: Pernas cruzadas ou abertas, postura ereta, olhar direto na câmera
+5. **Cadeira de Frente**: Sentada de frente para a cadeira, braços apoiados no encosto, pose confiante
+6. **No Chão**: Pernas dobradas para o lado, apoie-se numa mão, cabeça ligeiramente inclinada
 
-### Faixas de Renda (por mês):
-- **Iniciante**: R$ 1.000 - R$ 5.000
-- **Intermediário**: R$ 5.000 - R$ 20.000
-- **Top creators**: R$ 20.000 - R$ 100.000+
+### Poses Deitada
+7. **De Lado na Cama**: Corpo formando uma curva suave, cabeça apoiada na mão, expressão relaxada
+8. **Barriga para Baixo**: Pés para cima, cruzados, apoie o queixo nas mãos, olhar sedutor
 
-### Fatores que influenciam:
-- **Número de assinantes**
-- **Engajamento dos fãs**
-- **Qualidade do conteúdo**
-- **Estratégias de marketing**
+## Que Roupas Usar em Ensaio Sensual Caseiro?
 
-## Conclusão
+- **Lingerie clássica** em preto, nude ou branco
+- **Camisetas oversized** para um look mais casual
+- **Robes** e **bodies** para elegância
+- **Acessórios delicados** como colares finos
+- O importante é escolher peças que te deixem **confiante** e **confortável**
 
-O OnlyFans pode ser uma excelente fonte de renda para modelos brasileiras. O segredo é:
+## Técnicas com Celular
 
-- **Conteúdo de qualidade**
-- **Marketing consistente**
-- **Interação genuína**
-- **Diversificação de receitas**
+### Apps Recomendados
+- **Snapseed**: Para edição profissional
+- **VSCO**: Para filtros artísticos
+- **Lightroom**: Para ajustes de luz
+- **Facetune**: Para retoques suaves
 
-Com dedicação e estratégia, é possível construir uma renda sólida e sustentável na plataforma.
+### Dicas de Edição
+- Mantenha a **naturalidade**
+- Evite filtros muito fortes
+- Ajuste **luminosidade** e **contraste**
+- Use **vignette** sutil para foco
 
-*Quer dicas exclusivas sobre OnlyFans? Segue meu perfil para mais conteúdo!* 🔥
-    `
-  },
-  {
-    slug: 'privacy-brasil-plataforma-modelo',
-    title: 'Privacy Brasil: A Melhor Plataforma Para Modelos Brasileiras',
-    excerpt: 'Descubra por que o Privacy é a plataforma brasileira favorita das modelos. Comissões, pagamentos, recursos e como começar a ganhar dinheiro.',
-    metaDescription: 'Privacy Brasil: plataforma nacional para modelos. Saiba sobre comissões, pagamentos em real, recursos exclusivos e como começar a ganhar dinheiro.',
-    publishedAt: '2024-01-25',
-    updatedAt: '2024-01-25',
-    author: 'ShakiraBr',
-    category: 'Plataformas',
-    tags: ['privacy brasil', 'plataforma brasileira', 'modelo cam', 'pagamento real', 'conteúdo adulto'],
-    keywords: ['privacy brasil', 'privacy plataforma', 'modelo privacy', 'cam girl brasil', 'plataforma adulto brasil'],
-    readTime: 10,
-    featured: false,
-    content: `
-# Privacy Brasil: A Melhor Plataforma Para Modelos Brasileiras
+## Checklist Final
 
-O **Privacy** é a principal plataforma brasileira para modelos que querem ganhar dinheiro com conteúdo premium. Vou te contar tudo sobre esta plataforma nacional.
+### Antes do Ensaio
+- [ ] Ambiente limpo e organizado
+- [ ] Boa iluminação configurada
+- [ ] Roupas escolhidas e passadas
+- [ ] Maquiagem natural (se desejar)
+- [ ] Celular com bateria carregada
 
-## Por Que Escolher o Privacy?
+### Durante o Ensaio
+- [ ] Respire fundo e relaxe
+- [ ] Experimente diferentes ângulos
+- [ ] Tire muitas fotos (pode deletar depois)
+- [ ] Divirta-se! É o mais importante
 
-### Vantagens Exclusivas:
-- **100% brasileiro**: Empresa nacional
-- **Pagamento em Real**: Sem conversão de moeda
-- **PIX instantâneo**: Receba na hora
-- **Suporte em português**: Atendimento nacional
-- **Sem taxas bancárias**: Economia significativa
+### Após o Ensaio
+- [ ] Selecione as melhores fotos
+- [ ] Edite com cuidado
+- [ ] Salve em local seguro
+- [ ] Compartilhe apenas se quiser
 
-## Como Funciona o Privacy
+## Perguntas Frequentes
 
-### 1. Modelo de Negócio
-- **Assinaturas mensais**: Fãs pagam para acessar conteúdo
-- **Posts premium**: Conteúdo pago individual
-- **Lives privadas**: Transmissões exclusivas
-- **Chat privado**: Conversas pagas
+### Como fazer um ensaio sensual em casa?
+Para fazer um ensaio sensual em casa você precisa de boa iluminação natural, poses que valorizem seu corpo, roupas adequadas e um celular com boa câmera. O segredo está na preparação do ambiente e na autoconfiança.
 
-### 2. Comissões
-- **70% para modelo**: Uma das maiores do mercado
-- **30% para plataforma**: Taxa competitiva
-- **Sem taxas ocultas**: Transparência total
+### Qual a melhor iluminação para ensaio sensual?
+A luz natural é ideal, especialmente próximo a janelas grandes entre 16h e 18h (golden hour). Use cortinas brancas para suavizar a luz e evite luz amarelada do teto que cria sombras indesejadas.
 
-## Recursos Únicos
+### Que roupas usar em ensaio sensual caseiro?
+Lingerie clássica em preto, nude ou branco, camisetas oversized, robes, bodies e acessórios delicados. O importante é escolher peças que te deixem confiante e confortável.
 
-### 1. Ferramentas Brasileiras
-- **Integração PIX**: Pagamentos instantâneos
-- **CPF/CNPJ**: Aceita documentos brasileiros
-- **Suporte local**: Atendimento humanizado
+## Conclusão: Sua Jornada de Autoconfiança Começa Agora
 
-### 2. Marketing Integrado
-- **Cross-promotion**: Divulgação entre modelos
-- **SEO otimizado**: Melhor rankeamento no Google
-- **Redes sociais**: Integração facilitada
+Um **ensaio sensual** vai muito além de simples fotos. É um momento de reconexão com sua beleza, um exercício de autoamor e uma celebração de quem você é.
 
-## Como Começar no Privacy
+Lembre-se: não existe corpo perfeito, existe o **SEU** corpo sendo celebrado da maneira mais linda possível. Cada curva, cada marca, cada detalhe fazem parte da sua história única.
 
-### Passo 1: Cadastro
-1. Acesse privacy.com.br
-2. Clique em "Seja Modelo"
-3. Preencha dados pessoais
-4. Envie documentos (RG/CPF)
+✨ **Você está pronta para se apaixonar pelas suas próprias fotos?** ✨
 
-### Passo 2: Verificação
-- **Documentos**: Análise em até 24h
-- **Selfie**: Verificação de identidade
-- **Conta bancária**: Para recebimentos
+Se este guia te ajudou, compartilhe com outras mulheres que também merecem se sentir lindas e confiantes. E não esquece: o ensaio perfeito é aquele onde **VOCÊ** se sente incrível.
 
-### Passo 3: Configuração
-- **Perfil atrativo**: Bio e fotos de qualidade
-- **Preços**: Defina valores de assinatura
-- **Conteúdo inicial**: Poste para atrair assinantes
-
-## Estratégias de Sucesso
-
-### 1. Conteúdo de Qualidade
-- **Fotos profissionais**: Invista em equipamento
-- **Variedade**: Diversifique tipos de conteúdo
-- **Exclusividade**: Ofereça o que não tem em outros lugares
-
-### 2. Precificação Inteligente
-- **Assinatura base**: R$ 19,99 - R$ 39,99
-- **Conteúdo premium**: R$ 5 - R$ 25 por post
-- **Lives privadas**: R$ 50 - R$ 200
-
-### 3. Relacionamento com Fãs
-- **Responda rapidamente**: Fãs valorizam atenção
-- **Conteúdo personalizado**: Ofereça sob demanda
-- **Regularidade**: Poste consistentemente
-
-## Comparação com Outras Plataformas
-
-| Recurso | Privacy | OnlyFans | Cam4 |
-|---------|---------|----------|------|
-| **Comissão** | 70% | 80% | 50% |
-| **Pagamento** | PIX/Real | USD | USD |
-| **Suporte** | Português | Inglês | Inglês |
-| **Taxas** | Sem | Com | Com |
-
-## Dicas Para Maximizar Ganhos
-
-### 1. Diversificação
-- **Múltiplos tipos de conteúdo**
-- **Diferentes faixas de preço**
-- **Parcerias com outras modelos**
-
-### 2. Marketing
-- **Instagram**: Stories com link
-- **Twitter**: Tweets promocionais
-- **Telegram**: Canal para fãs
-
-### 3. Fidelização
-- **Promoções especiais**
-- **Conteúdo exclusivo para assinantes antigos**
-- **Interação constante**
-
-## Aspectos Legais
-
-### Tributação:
-- **MEI**: Categoria permitida
-- **Nota fiscal**: Emitida automaticamente
-- **Declaração IR**: Como prestação de serviços
-
-## Conclusão
-
-O Privacy oferece as melhores condições para modelos brasileiras:
-
-- **Maior comissão do mercado**
-- **Pagamentos em real**
-- **Suporte nacional**
-- **Ferramentas exclusivas**
-
-É a escolha ideal para quem quer começar ou migrar para uma plataforma 100% brasileira.
-
-*Pronta para começar no Privacy? Acesse meu perfil e veja como funciona na prática!* 🇧🇷
+💖 **Sua beleza merece ser celebrada. Comece hoje mesmo!**
     `
   }
 ];

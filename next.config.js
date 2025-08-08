@@ -1,35 +1,47 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  
   images: {
-    domains: ['picsum.photos', 'shakirabr.com'],
-    formats: ['image/webp', 'image/avif'],
-    unoptimized: false,
+    domains: ['shakirabr.com', 'www.shakirabr.com'],
   },
-
-  // Configuração para produção
-  trailingSlash: false,
-  poweredByHeader: false,
-  
-  // Headers de segurança
+  async redirects() {
+    return [
+      // Redirecionamentos para páginas antigas removidas
+      {
+        source: '/old-blog',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/old-post',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/galeria-antiga',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/contato-antigo',
+        destination: '/',
+        permanent: true,
+      },
+      // Redirecionamentos de URLs antigas para novas
+      {
+        source: '/blog/:slug*',
+        destination: '/blog/:slug*',
+        permanent: false,
+      },
+    ]
+  },
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
+            key: 'X-Robots-Tag',
+            value: 'index, follow',
           },
         ],
       },

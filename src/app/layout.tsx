@@ -1,70 +1,106 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { SITE_CONFIG, SEO_CONFIG } from '@/lib/constants'
 import AnalyticsProvider from '@/components/AnalyticsProvider'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
+const inter = Inter({ subsets: ['latin'] })
 
+// Dados estruturados para o site
+const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Shakira BR",
+  "description": "Conteúdo exclusivo e premium para adultos. Galeria de fotos, blog com dicas e muito mais.",
+  "url": "https://www.shakirabr.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.shakirabr.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shakira BR",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.shakirabr.com/logo.png"
+    }
+  }
+}
+
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Shakira BR",
+  "url": "https://www.shakirabr.com",
+  "logo": "https://www.shakirabr.com/logo.png",
+  "sameAs": [
+    "https://www.instagram.com/zaramontannasecreto/",
+    "https://x.com/shakira_cam",
+    "https://t.me/zaramontanavip"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": "Portuguese"
+  }
+}
 
 export const metadata: Metadata = {
-  title: SEO_CONFIG.title,
-  description: SEO_CONFIG.description,
-  keywords: SEO_CONFIG.keywords.join(', '),
-  authors: [{ name: SEO_CONFIG.author }],
-  creator: SEO_CONFIG.author,
-  publisher: SEO_CONFIG.author,
-  robots: 'index, follow',
-  formatDetection: {
-    telephone: false,
-    address: false,
-    email: false,
+  title: {
+    default: 'Shakira BR - Conteúdo Exclusivo e Premium',
+    template: '%s | Shakira BR'
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+  description: 'Conteúdo exclusivo e premium para adultos. Galeria de fotos sensuais, blog com dicas e muito mais. Acesse agora!',
+  keywords: 'shakira br, conteúdo adulto, galeria fotos, blog sensual, premium, exclusivo',
+  authors: [{ name: 'Shakira BR' }],
+  creator: 'Shakira BR',
+  publisher: 'Shakira BR',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://shakirabr.com'),
+  alternates: {
+    canonical: 'https://shakirabr.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
-    title: SEO_CONFIG.title,
-    description: SEO_CONFIG.description,
-    url: SITE_CONFIG.url,
-    siteName: SEO_CONFIG.openGraph.siteName,
-    locale: SEO_CONFIG.openGraph.locale,
     type: 'website',
-    images: [...SEO_CONFIG.openGraph.images],
+    locale: 'pt_BR',
+    url: 'https://shakirabr.com',
+    title: 'Shakira BR - Conteúdo Exclusivo e Premium',
+    description: 'Conteúdo exclusivo e premium para adultos. Galeria de fotos sensuais, blog com dicas e muito mais.',
+    siteName: 'Shakira BR',
+    images: [
+      {
+        url: 'https://shakirabr.com/hero-latest-image.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Shakira BR - Conteúdo Exclusivo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: SEO_CONFIG.title,
-    description: SEO_CONFIG.description,
-    images: [...SEO_CONFIG.openGraph.images],
-    creator: SEO_CONFIG.twitter.creator,
-    site: SEO_CONFIG.twitter.site,
+    title: 'Shakira BR - Conteúdo Exclusivo e Premium',
+    description: 'Conteúdo exclusivo e premium para adultos. Galeria de fotos sensuais, blog com dicas e muito mais.',
+    images: ['https://shakirabr.com/hero-latest-image.jpeg'],
   },
-  icons: {
-    icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: '/apple-touch-icon.png',
-    shortcut: '/favicon.ico',
-  },
-  manifest: '/site.webmanifest',
-  alternates: {
-    canonical: SITE_CONFIG.url,
-    languages: {
-      'pt-BR': SITE_CONFIG.url,
-    },
-  },
-  other: {
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'black-translucent',
-    'apple-mobile-web-app-title': SITE_CONFIG.name,
-    'mobile-web-app-capable': 'yes',
-    'theme-color': '#000000',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
+  verification: {
+    google: 'your-google-verification-code',
   },
 }
 
@@ -74,190 +110,44 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-          <html lang="pt-BR">
+    <html lang="pt-BR">
       <head>
-        {/* Preconnect para melhor performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://connect.facebook.net" />
-        
-        {/* DNS Prefetch para plataformas externas */}
-        <link rel="dns-prefetch" href="//onlyfans.com" />
-        <link rel="dns-prefetch" href="//privacy.com.br" />
-        <link rel="dns-prefetch" href="//t.me" />
-        
-        {/* Structured Data - JSON-LD */}
+        {/* Dados Estruturados */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "WebSite",
-                  "@id": `${SITE_CONFIG.url}#website`,
-                  "url": SITE_CONFIG.url,
-                  "name": SITE_CONFIG.name,
-                  "description": SITE_CONFIG.description,
-                  "publisher": {
-                    "@id": `${SITE_CONFIG.url}#organization`
-                  },
-                  "potentialAction": [
-                    {
-                      "@type": "SearchAction",
-                      "target": {
-                        "@type": "EntryPoint",
-                        "urlTemplate": `${SITE_CONFIG.url}/blog?q={search_term_string}`
-                      },
-                      "query-input": "required name=search_term_string"
-                    }
-                  ]
-                },
-                {
-                  "@type": "Organization",
-                  "@id": `${SITE_CONFIG.url}#organization`,
-                  "name": SITE_CONFIG.name,
-                  "url": SITE_CONFIG.url,
-                  "description": SITE_CONFIG.description,
-                  "contactPoint": {
-                    "@type": "ContactPoint",
-                    "contactType": "customer service"
-                  },
-                  "sameAs": [
-                    "https://onlyfans.com/zaramontana",
-                    "https://privacy.com.br/profile/zaramontanaa",
-                    "https://t.me/zaramontanavip",
-                    "https://www.instagram.com/ZARAMONTANNASECRETO/",
-                    "https://x.com/shakira_cam"
-                  ]
-                },
-                {
-                  "@type": "Person",
-                  "@id": `${SITE_CONFIG.url}#person`,
-                  "name": "ShakiraBr",
-                  "alternateName": "Shakira BR",
-                  "description": "Modelo brasileira premium especializada em conteúdo exclusivo e fotografia artística",
-                  "url": SITE_CONFIG.url,
-                  "sameAs": [
-                    "https://onlyfans.com/zaramontana",
-                    "https://privacy.com.br/profile/zaramontanaa",
-                    "https://t.me/zaramontanavip",
-                    "https://www.instagram.com/ZARAMONTANNASECRETO/",
-                    "https://x.com/shakira_cam"
-                  ],
-                  "knowsAbout": [
-                    "Modelagem",
-                    "Fotografia",
-                    "Conteúdo Digital",
-                    "Marketing Digital"
-                  ]
-                }
-              ]
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+        />
+        
+        {/* Meta tags adicionais */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ec4899" />
+        <meta name="msapplication-TileColor" content="#ec4899" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Shakira BR" />
+        
+        {/* Preconnect para performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className="antialiased bg-black text-white min-h-screen">
-        {/* Analytics Provider - Carrega scripts de tracking */}
+      <body className={inter.className}>
         <AnalyticsProvider />
-        
-        {/* Proteção contra cópia e download */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Bloquear menu de contexto (botão direito)
-              document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                return false;
-              });
-              
-              // Bloquear teclas de atalho para salvar
-              document.addEventListener('keydown', function(e) {
-                // Ctrl+S, Ctrl+U, F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-                if (
-                  (e.ctrlKey && (e.key === 's' || e.key === 'u')) ||
-                  e.key === 'F12' ||
-                  (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
-                ) {
-                  e.preventDefault();
-                  return false;
-                }
-              });
-              
-              // Bloquear arrastar imagens
-              document.addEventListener('dragstart', function(e) {
-                if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
-                  e.preventDefault();
-                  return false;
-                }
-              });
-              
-              // Bloquear seleção de texto
-              document.addEventListener('selectstart', function(e) {
-                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-                  e.preventDefault();
-                  return false;
-                }
-              });
-              
-              // Bloquear print screen
-              document.addEventListener('keyup', function(e) {
-                if (e.key === 'PrintScreen') {
-                  e.preventDefault();
-                  return false;
-                }
-              });
-              
-              // Desabilitar DevTools
-              setInterval(function() {
-                if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
-                  document.body.innerHTML = 'Acesso negado';
-                }
-              }, 1000);
-              
-              // Proteção contra inspeção
-              document.addEventListener('keydown', function(e) {
-                if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                  e.preventDefault();
-                  return false;
-                }
-              });
-            `
-          }}
-        />
-        
-        {/* Header fixo */}
-        <Header />
-        
-        {/* Conteúdo principal */}
-        <main role="main">
-          {children}
-        </main>
-        
-        {/* Footer */}
-        <Footer />
-        
-        {/* Scripts inline para performance */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Critical CSS carregado
-              document.documentElement.classList.add('js-loaded');
-              
-              // Lazy loading para imagens
-              if ('loading' in HTMLImageElement.prototype) {
-                const images = document.querySelectorAll('img[loading="lazy"]');
-                images.forEach(img => {
-                  img.src = img.dataset.src;
-                });
-              }
-            `
-          }}
-        />
-        
-        {/* Vercel Speed Insights */}
-        <SpeedInsights />
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   )

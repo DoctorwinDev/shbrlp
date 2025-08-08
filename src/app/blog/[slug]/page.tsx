@@ -6,9 +6,9 @@ import { getPostBySlug, getAllPosts } from '@/data/blog-posts'
 import ShareButton from '@/components/ShareButton'
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -19,13 +19,17 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
-  const post = getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = getPostBySlug(slug)
   
   if (!post) {
     return {
       title: 'Post não encontrado',
     }
   }
+
+  const baseUrl = 'https://shakirabr.com'
+  const postUrl = `${baseUrl}/blog/${post.slug}`
 
   return {
     title: post.title,
@@ -35,6 +39,8 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     openGraph: {
       title: post.title,
       description: post.metaDescription,
+      url: postUrl,
+      siteName: 'Shakira BR',
       type: 'article',
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
@@ -46,18 +52,107 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
       title: post.title,
       description: post.metaDescription,
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    alternates: {
+      canonical: postUrl,
+    },
   }
 }
 
-export default function BlogPost({ params }: BlogPageProps) {
-  const post = getPostBySlug(params.slug)
+export default async function BlogPost({ params }: BlogPageProps) {
+  const { slug } = await params
+  const post = getPostBySlug(slug)
 
   if (!post) {
     notFound()
   }
 
+  // Dados estruturados para SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.metaDescription,
+    "author": {
+      "@type": "Person",
+      "name": post.author,
+      "url": "https://www.shakirabr.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shakira BR",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.shakirabr.com/logo.png"
+      }
+    },
+    "datePublished": post.publishedAt,
+    "dateModified": post.updatedAt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.shakirabr.com/blog/${post.slug}`
+    },
+    "image": post.image ? {
+      "@type": "ImageObject",
+      "url": post.image,
+      "width": 1200,
+      "height": 630
+    } : undefined,
+    "articleSection": post.category,
+    "keywords": post.keywords.join(', '),
+    "about": post.tags.map(tag => ({
+      "@type": "Thing",
+      "name": tag
+    }))
+  }
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.shakirabr.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.shakirabr.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": `https://www.shakirabr.com/blog/${post.slug}`
+      }
+    ]
+  }
+
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Dados Estruturados */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+
       {/* Header */}
       <header className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4">
