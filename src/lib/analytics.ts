@@ -71,6 +71,9 @@ export const initGoogleAnalytics = () => {
     gtag('config', '${ANALYTICS_CONFIG.googleAnalyticsId}', {
       page_title: document.title,
       page_location: window.location.href,
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
     });
   `
   document.head.appendChild(script2)

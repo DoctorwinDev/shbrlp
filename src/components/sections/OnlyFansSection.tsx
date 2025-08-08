@@ -2,8 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Play, Star, Users, Heart, Crown } from 'lucide-react';
 import React from 'react';
+import { useExitWarning } from '@/hooks/useExitWarning';
 
-const OnlyFansSection: React.FC = () => (
+const OnlyFansSection: React.FC = () => {
+  const { handleExternalLink } = useExitWarning();
+
+  return (
   <section id="onlyfans" className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 py-8 lg:py-0 bg-gradient-to-br from-blue-900 via-black to-purple-900 snap-start animate-fade-in-up">
     <div className="flex-1 flex flex-col gap-4 sm:gap-6 max-w-xl bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl order-2 lg:order-1">
       <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-2">
@@ -38,16 +42,15 @@ const OnlyFansSection: React.FC = () => (
         </div>
       </div>
       
-      <Link 
-        href="https://onlyfans.com/zaramontana" 
-        target="_blank" 
+      <button 
+        onClick={() => handleExternalLink('https://onlyfans.com/zaramontana', 'OnlyFans')}
         className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-600 to-purple-500 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg shadow-xl hover:scale-105 transition-all duration-300 w-full sm:w-auto" 
         aria-label="Acessar OnlyFans" 
         tabIndex={0}
       >
         <Play className="w-4 h-4 sm:w-5 sm:h-5" /> 
         <span>Acessar OnlyFans</span>
-      </Link>
+      </button>
     </div>
     
     <div className="flex-1 flex items-center justify-center order-1 lg:order-2">
@@ -70,6 +73,7 @@ const OnlyFansSection: React.FC = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default OnlyFansSection; 

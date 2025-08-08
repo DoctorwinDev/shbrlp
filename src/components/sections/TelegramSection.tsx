@@ -2,8 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MessageCircle, Star, Users, Zap } from 'lucide-react';
 import React from 'react';
+import { useExitWarning } from '@/hooks/useExitWarning';
 
-const TelegramSection: React.FC = () => (
+const TelegramSection: React.FC = () => {
+  const { handleExternalLink } = useExitWarning();
+
+  return (
   <section id="telegram" className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 py-8 lg:py-0 bg-gradient-to-br from-blue-600 via-black to-blue-900 snap-start animate-fade-in-up">
     <div className="flex-1 flex items-center justify-center order-2 lg:order-1">
       <div className="relative w-64 h-72 sm:w-72 sm:h-80 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-500 to-cyan-600 p-1">
@@ -54,18 +58,18 @@ const TelegramSection: React.FC = () => (
         </div>
       </div>
       
-      <Link 
-        href="https://t.me/zaramontanavip" 
-        target="_blank" 
+      <button 
+        onClick={() => handleExternalLink('https://t.me/zaramontanavip', 'Telegram')}
         className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg shadow-xl hover:scale-105 transition-all duration-300 w-full sm:w-auto" 
         aria-label="Entrar no Telegram VIP" 
         tabIndex={0}
       >
         <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" /> 
         <span>Entrar no Telegram</span>
-      </Link>
+      </button>
     </div>
   </section>
-);
+  );
+};
 
 export default TelegramSection; 

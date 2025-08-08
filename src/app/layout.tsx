@@ -124,6 +124,7 @@ export default function RootLayout({
         
         {/* Meta tags adicionais */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="rating" content="adult" />
         <meta name="theme-color" content="#ec4899" />
         <meta name="msapplication-TileColor" content="#ec4899" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
