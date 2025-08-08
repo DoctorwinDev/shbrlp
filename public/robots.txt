@@ -3,5 +3,8 @@ Disallow: /go/
 Disallow: /api/
 Allow: /blog/
 Allow: /
+Allow: /_next/
+Allow: /static/
+Allow: /galeria/
 
 Sitemap: https://shakirabr.com/sitemap.xml 
