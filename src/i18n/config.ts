@@ -16,7 +16,7 @@ export function isValidLocale(locale: string): locale is Locale {
 // Configuração do next-intl
 export default getRequestConfig(async ({ locale }) => {
   // Verificar se o locale é válido
-  if (!isValidLocale(locale)) {
+  if (!locale || !isValidLocale(locale)) {
     notFound()
   }
 
