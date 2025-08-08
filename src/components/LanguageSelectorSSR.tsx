@@ -9,7 +9,6 @@ import { localeConfig, type Locale } from '@/i18n/config'
 export default function LanguageSelectorSSR() {
   const [isClient, setIsClient] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [currentLocale, setCurrentLocale] = useState<Locale>('pt')
 
   useEffect(() => {
     setIsClient(true)
@@ -38,12 +37,40 @@ export default function LanguageSelectorSSR() {
 }
 
 function LanguageSelectorClient() {
-  const locale = useLocale() as Locale
-  const router = useRouter()
-  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+  const [currentLocale, setCurrentLocale] = useState<Locale>('pt')
+
+  // Hooks com try-catch para evitar erros
+  let locale: Locale = 'pt'
+  let router: any = null
+  let pathname = ''
+
+  try {
+    locale = useLocale() as Locale
+    router = useRouter()
+    pathname = usePathname()
+    setCurrentLocale(locale)
+  } catch (error) {
+    console.warn('Next.js hooks not available')
+    return (
+      <div className="relative">
+        <button
+          className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-300 rounded-lg"
+          aria-label="Selecionar idioma"
+          disabled
+        >
+          <Globe className="w-4 h-4" />
+          <span>🇧🇷</span>
+          <span className="hidden sm:inline">Português</span>
+          <ChevronDown className="w-3 h-3" />
+        </button>
+      </div>
+    )
+  }
 
   const handleLanguageChange = (newLocale: Locale) => {
+    if (!router) return
+    
     setIsOpen(false)
     
     // Remover locale atual da pathname
@@ -55,7 +82,7 @@ function LanguageSelectorClient() {
     router.push(newPath)
   }
 
-  const currentLanguage = localeConfig[locale]
+  const currentLanguage = localeConfig[currentLocale]
 
   return (
     <div className="relative">
@@ -78,12 +105,12 @@ function LanguageSelectorClient() {
                 key={code}
                 onClick={() => handleLanguageChange(code as Locale)}
                 className={`w-full flex items-center gap-3 px-4 py-2 text-sm text-left hover:bg-neutral-800 transition-colors ${
-                  code === locale ? 'text-white bg-neutral-800' : 'text-gray-300'
+                  code === currentLocale ? 'text-white bg-neutral-800' : 'text-gray-300'
                 }`}
               >
                 <span className="text-lg">{config.flag}</span>
                 <span>{config.name}</span>
-                {code === locale && (
+                {code === currentLocale && (
                   <span className="ml-auto text-xs text-green-400">✓</span>
                 )}
               </button>

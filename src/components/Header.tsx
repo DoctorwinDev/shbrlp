@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X, Instagram } from 'lucide-react'
 import Image from 'next/image'
-import LanguageSelectorSSR from './LanguageSelectorSSR'
 
 const menuItems = [
   { label: 'Início', href: '/' },
@@ -93,11 +92,6 @@ export default function Header() {
           
           {/* Ações Direita */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Language Selector - Desktop */}
-            <div className="hidden lg:block">
-              <LanguageSelectorSSR />
-            </div>
-            
             {/* Social Media Links - Desktop */}
             <div className="hidden lg:flex items-center gap-2">
               {socialLinks.map((social) => (
@@ -129,11 +123,6 @@ export default function Header() {
         {isMenuOpen && (
           <div className="lg:hidden bg-black border-t border-neutral-900">
             <div className="px-4 py-4 space-y-4">
-              {/* Language Selector - Mobile */}
-              <div className="flex justify-center pb-4 border-b border-neutral-800">
-                <LanguageSelectorSSR />
-              </div>
-              
               {/* Menu Items */}
               <nav className="space-y-2">
                 {menuItems.map((item) => (
