@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X, Instagram } from 'lucide-react'
 import Image from 'next/image'
-import LanguageSelector from './LanguageSelector'
+import LanguageSelectorSSR from './LanguageSelectorSSR'
 
 const menuItems = [
   { label: 'Início', href: '/' },
@@ -95,7 +95,7 @@ export default function Header() {
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Language Selector - Desktop */}
             <div className="hidden lg:block">
-              <LanguageSelector />
+              <LanguageSelectorSSR />
             </div>
             
             {/* Social Media Links - Desktop */}
@@ -131,7 +131,7 @@ export default function Header() {
             <div className="px-4 py-4 space-y-4">
               {/* Language Selector - Mobile */}
               <div className="flex justify-center pb-4 border-b border-neutral-800">
-                <LanguageSelector />
+                <LanguageSelectorSSR />
               </div>
               
               {/* Menu Items */}

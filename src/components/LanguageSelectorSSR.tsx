@@ -1,13 +1,43 @@
 'use client'
 
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronDown, Globe } from 'lucide-react'
 import { localeConfig, type Locale } from '@/i18n/config'
 
-export default function LanguageSelector() {
-  // Mover todos os hooks para o topo
+export default function LanguageSelectorSSR() {
+  const [isClient, setIsClient] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [currentLocale, setCurrentLocale] = useState<Locale>('pt')
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Renderização SSR-safe sem hooks
+  if (!isClient) {
+    return (
+      <div className="relative">
+        <button
+          className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-300 rounded-lg"
+          aria-label="Selecionar idioma"
+          disabled
+        >
+          <Globe className="w-4 h-4" />
+          <span>🇧🇷</span>
+          <span className="hidden sm:inline">Português</span>
+          <ChevronDown className="w-3 h-3" />
+        </button>
+      </div>
+    )
+  }
+
+  // Componente cliente
+  return <LanguageSelectorClient />
+}
+
+function LanguageSelectorClient() {
   const locale = useLocale() as Locale
   const router = useRouter()
   const pathname = usePathname()
