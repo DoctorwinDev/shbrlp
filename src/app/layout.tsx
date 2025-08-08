@@ -49,6 +49,10 @@ const organizationStructuredData = {
   },
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Rua Felipe Schmidt, 123",
+    "addressLocality": "Florianópolis",
+    "addressRegion": "SC",
+    "postalCode": "88010-001",
     "addressCountry": "BR"
   }
 }
