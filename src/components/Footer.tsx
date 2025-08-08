@@ -20,7 +20,13 @@ export default function Footer() {
   const legalLinks = [
     { name: 'Termos de Uso', href: '/termos-de-uso' },
     { name: 'Política de Privacidade', href: '/politica-de-privacidade' },
-    { name: 'LGPD', href: '/lgpd' }
+    { name: 'Cookies', href: '/cookies' }
+  ]
+
+  const complianceLinks = [
+    { name: 'LGPD Compliance', href: '/politica-de-privacidade#lgpd' },
+    { name: 'Direitos do Titular', href: '/politica-de-privacidade#direitos' },
+    { name: 'DPO', href: 'mailto:dpo@shakirabr.com' }
   ]
 
   const socialLinks = [
@@ -131,6 +137,20 @@ export default function Footer() {
             <h4 className="text-sm font-bold mb-3 text-gray-300">Legal</h4>
             <ul className="space-y-2">
               {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="text-sm font-bold mb-3 text-gray-300 mt-4">Compliance</h4>
+            <ul className="space-y-2">
+              {complianceLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
