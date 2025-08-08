@@ -26,12 +26,6 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
-      // Redirecionamentos de URLs antigas para novas
-      {
-        source: '/blog/:slug*',
-        destination: '/blog/:slug*',
-        permanent: false,
-      },
     ]
   },
   async headers() {
