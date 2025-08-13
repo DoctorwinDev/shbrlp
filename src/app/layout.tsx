@@ -204,6 +204,11 @@ export default function RootLayout({
         <link rel="alternate" href="https://shakirabr.com/en" hrefLang="en-US" />
         <link rel="alternate" href="https://shakirabr.com/es" hrefLang="es-ES" />
         <link rel="alternate" href="https://shakirabr.com" hrefLang="x-default" />
+        
+        {/* Script de teste de responsividade (apenas em desenvolvimento) */}
+        {process.env.NODE_ENV === 'development' && (
+          <script src="/responsive-test.js" defer></script>
+        )}
       </head>
       <body className={inter.className}>
         <AnalyticsProvider />

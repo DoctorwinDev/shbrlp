@@ -34,24 +34,24 @@ const FaqSection: React.FC = () => {
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6 sm:mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
         Perguntas Frequentes
       </h2>
-      <div className="space-y-3 max-h-96 overflow-y-auto">
+      <div className="space-y-2 sm:space-y-3 max-h-80 sm:max-h-96 overflow-y-auto">
         {faqs.map((faq, idx) => (
-          <div key={idx} className="border border-purple-200/20 rounded-xl bg-white/5 overflow-hidden">
+          <div key={idx} className="border border-purple-200/20 rounded-lg sm:rounded-xl bg-white/5 overflow-hidden">
             <button
               type="button"
-              className="w-full flex justify-between items-center px-6 py-3 text-left font-bold text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full flex justify-between items-center px-4 sm:px-6 py-3 text-left font-bold text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
               onClick={() => handleToggle(idx)}
               aria-expanded={open === idx}
               aria-controls={`faq-${idx}`}
             >
-              <span className="text-sm md:text-base">{faq.question}</span>
-              <span className={`ml-4 transition-transform text-purple-400 ${open === idx ? 'rotate-180' : ''}`}>▼</span>
+              <span className="text-sm sm:text-base pr-2">{faq.question}</span>
+              <span className={`ml-2 sm:ml-4 transition-transform text-purple-400 flex-shrink-0 ${open === idx ? 'rotate-180' : ''}`}>▼</span>
             </button>
             {open === idx && (
-              <div id={`faq-${idx}`} className="px-6 pb-3 text-white/90 text-sm md:text-base animate-fade-in">
+              <div id={`faq-${idx}`} className="px-4 sm:px-6 pb-3 text-white/90 text-sm sm:text-base animate-fade-in">
                 {faq.answer}
               </div>
             )}

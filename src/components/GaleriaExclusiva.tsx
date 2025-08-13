@@ -72,17 +72,17 @@ const GaleriaExclusiva: React.FC = () => {
   return (
     <section 
       id="galeria"
-      className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 py-8 lg:py-0 bg-gradient-to-br from-purple-900 via-black to-pink-900"
+      className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 py-8 lg:py-0 bg-gradient-to-br from-purple-900 via-black to-pink-900"
     >
       {/* Lado Esquerdo - Formulário */}
-      <div className="flex-1 flex flex-col gap-4 sm:gap-6 max-w-xl order-2 lg:order-1">
+      <div className="flex-1 flex flex-col gap-4 sm:gap-6 max-w-xl w-full order-2 lg:order-1">
         <div className="text-center lg:text-left">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-500 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold uppercase text-white mb-4">
             <ImageIcon className="w-3 h-3 sm:w-4 sm:h-4" /> 
             <span>Galeria Exclusiva</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-200 to-purple-200 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-200 to-purple-200 bg-clip-text text-transparent leading-tight">
             Fotos Exclusivas<br className="hidden sm:block" />Desbloqueie Agora
           </h2>
           
@@ -95,7 +95,7 @@ const GaleriaExclusiva: React.FC = () => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
                   <input
@@ -172,19 +172,19 @@ const GaleriaExclusiva: React.FC = () => {
       </div>
 
       {/* Lado Direito - Galeria */}
-      <div className="flex-1 flex items-center justify-center order-1 lg:order-2">
-        <div className="w-full max-w-sm sm:max-w-lg">
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+      <div className="flex-1 flex items-center justify-center order-1 lg:order-2 w-full">
+        <div className="w-full max-w-xs sm:max-w-sm lg:max-w-lg">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
             {images.map((src, index) => (
               <div 
                 key={index} 
-                className="relative aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-1"
+                className="relative aspect-[3/4] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-1"
               >
                 <Image
                   src={src}
                   alt={`Preview ${index + 1}`}
                   fill
-                  className={`object-cover rounded-lg sm:rounded-xl transition-all duration-500 ${
+                  className={`object-cover rounded-md sm:rounded-lg lg:rounded-xl transition-all duration-500 ${
                     submitted ? 'filter-none' : 'filter blur-md hover:blur-sm'
                   }`}
                   draggable={false}
@@ -195,14 +195,14 @@ const GaleriaExclusiva: React.FC = () => {
                   }}
                 />
                 {!submitted && (
-                  <div className="absolute inset-0 bg-black/40 rounded-lg sm:rounded-xl flex items-center justify-center">
-                    <div className="bg-black/60 rounded-full p-3 sm:p-4">
-                      <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                  <div className="absolute inset-0 bg-black/40 rounded-md sm:rounded-lg lg:rounded-xl flex items-center justify-center">
+                    <div className="bg-black/60 rounded-full p-2 sm:p-3 lg:p-4">
+                      <Lock className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                     </div>
                   </div>
                 )}
                 {!submitted && (
-                  <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-gradient-to-r from-pink-500 to-purple-500 px-2 sm:px-3 py-1 rounded-full text-xs font-bold uppercase">
+                  <div className="absolute top-1 sm:top-2 lg:top-3 right-1 sm:right-2 lg:right-3 bg-gradient-to-r from-pink-500 to-purple-500 px-1 sm:px-2 lg:px-3 py-1 rounded-full text-xs font-bold uppercase">
                     VIP
                   </div>
                 )}
@@ -211,12 +211,12 @@ const GaleriaExclusiva: React.FC = () => {
           </div>
           
           {/* Stats */}
-          <div className="flex justify-center items-center gap-4 sm:gap-6 mt-4 sm:mt-6">
-            <div className="flex items-center gap-2 text-white/70">
+          <div className="flex justify-center items-center gap-3 sm:gap-4 lg:gap-6 mt-3 sm:mt-4 lg:mt-6">
+            <div className="flex items-center gap-1 sm:gap-2 text-white/70">
               <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-pink-400" />
               <span className="text-xs sm:text-sm font-medium">50+ fotos</span>
             </div>
-            <div className="flex items-center gap-2 text-white/70">
+            <div className="flex items-center gap-1 sm:gap-2 text-white/70">
               <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" />
               <span className="text-xs sm:text-sm font-medium">Exclusivas</span>
             </div>
