@@ -60,11 +60,11 @@ const organizationStructuredData = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Shakira BR - Exclusive and Premium Content',
+    default: 'Shakira BR - Modelo Premium Brasileira | Conteúdo Exclusivo',
     template: '%s | Shakira BR'
   },
-  description: 'Exclusive and premium adult content. Sensual photo gallery, blog with tips and much more. Access now!',
-  keywords: 'shakira br, adult content, photo gallery, sensual blog, premium, exclusive, brazilian model, adult entertainment',
+  description: 'Conteúdo exclusivo da modelo brasileira Shakira. Privacy, OnlyFans, Telegram VIP. Acesso seguro e discreto. Galeria de fotos sensual e blog com dicas.',
+  keywords: 'modelo brasileira, conteúdo premium, shakira br, privacy, onlyfans, telegram vip, galeria sensual, blog, ensaio sensual, fotos exclusivas, modelo adulto, conteúdo exclusivo, brazilian model, adult content',
   authors: [{ name: 'Shakira BR' }],
   creator: 'Shakira BR',
   publisher: 'Shakira BR',
@@ -97,36 +97,38 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     url: 'https://shakirabr.com',
-    title: 'Shakira BR - Exclusive and Premium Content',
-    description: 'Exclusive and premium adult content. Sensual photo gallery, blog with tips and much more.',
+    title: 'Shakira BR - Modelo Premium Brasileira | Conteúdo Exclusivo',
+    description: 'Conteúdo exclusivo da modelo brasileira Shakira. Privacy, OnlyFans, Telegram VIP. Acesso seguro e discreto.',
     siteName: 'Shakira BR',
     images: [
       {
         url: 'https://shakirabr.com/hero-latest-image.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Shakira BR - Exclusive Content',
+        alt: 'Shakira BR - Modelo Premium Brasileira',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shakira BR - Exclusive and Premium Content',
-    description: 'Exclusive and premium adult content. Sensual photo gallery, blog with tips and much more.',
+    title: 'Shakira BR - Modelo Premium Brasileira | Conteúdo Exclusivo',
+    description: 'Conteúdo exclusivo da modelo brasileira Shakira. Privacy, OnlyFans, Telegram VIP. Acesso seguro e discreto.',
     images: ['https://shakirabr.com/hero-latest-image.jpeg'],
+    site: '@shakira_cam',
+    creator: '@shakira_cam',
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.GOOGLE_VERIFICATION || '',
   },
   other: {
     'geo.region': 'BR',
     'geo.placename': 'Brazil',
     'geo.position': '-14.235004;-51.92528',
     'ICBM': '-14.235004, -51.92528',
-    'DC.title': 'Shakira BR - Exclusive Adult Content',
+    'DC.title': 'Shakira BR - Modelo Premium Brasileira',
     'DC.creator': 'Shakira BR',
-    'DC.subject': 'Adult Content, Photo Gallery, Blog',
-    'DC.description': 'Exclusive and premium adult content from Brazil',
+    'DC.subject': 'Modelo Brasileira, Conteúdo Premium, Adult Content, Photo Gallery, Blog',
+    'DC.description': 'Conteúdo exclusivo da modelo brasileira Shakira. Privacy, OnlyFans, Telegram VIP.',
     'DC.publisher': 'Shakira BR',
     'DC.contributor': 'Shakira BR',
     'DC.date': '2025-01-15',
@@ -136,6 +138,9 @@ export const metadata: Metadata = {
     'DC.language': 'pt-BR',
     'DC.coverage': 'Worldwide',
     'DC.rights': 'Copyright 2025 Shakira BR',
+    'rating': 'adult',
+    'distribution': 'global',
+    'revisit-after': '1 days',
   },
 }
 
