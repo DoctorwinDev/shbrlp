@@ -40,7 +40,7 @@ const organizationStructuredData = {
   "logo": "https://www.shakirabr.com/logo.png",
   "sameAs": [
     "https://www.instagram.com/zaramontannasecreto/",
-    "https://x.com/shakira_cam",
+        "https://x.com/shakirabr_cam",
     "https://t.me/zaramontanavip"
   ],
   "contactPoint": {
@@ -114,8 +114,8 @@ export const metadata: Metadata = {
     title: 'Shakira BR - Modelo Premium Brasileira | Conteúdo Exclusivo',
     description: 'Conteúdo exclusivo da modelo brasileira Shakira. Privacy, OnlyFans, Telegram VIP. Acesso seguro e discreto.',
     images: ['https://shakirabr.com/hero-latest-image.jpeg'],
-    site: '@shakira_cam',
-    creator: '@shakira_cam',
+    site: '@shakirabr_cam',
+    creator: '@shakirabr_cam',
   },
   verification: {
     google: process.env.GOOGLE_VERIFICATION || '',
@@ -190,8 +190,8 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/jpeg" />
         
         {/* Twitter Card específico */}
-        <meta name="twitter:site" content="@shakira_cam" />
-        <meta name="twitter:creator" content="@shakira_cam" />
+        <meta name="twitter:site" content="@shakirabr_cam" />
+        <meta name="twitter:creator" content="@shakirabr_cam" />
         
         {/* Preconnect para performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

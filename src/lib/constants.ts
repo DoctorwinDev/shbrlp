@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
     privacy: 'https://privacy.com.br/profile/zaramontanaa',
     telegram: 'https://t.me/zaramontanavip',
     instagram: 'https://www.instagram.com/zaramontannasecreto/',
-    twitter: 'https://x.com/shakira_cam'
+    twitter: 'https://x.com/shakirabr_cam'
   }
 }
 
@@ -83,8 +83,8 @@ export const SEO_CONFIG = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@shakira_cam',
-    creator: '@shakira_cam'
+    site: '@shakirabr_cam',
+    creator: '@shakirabr_cam'
   },
   structuredData: {
     '@context': 'https://schema.org',
@@ -98,7 +98,7 @@ export const SEO_CONFIG = {
       'https://privacy.com.br/profile/zaramontanaa',
       'https://t.me/zaramontanavip',
       'https://www.instagram.com/zaramontannasecreto/',
-      'https://x.com/shakira_cam'
+      'https://x.com/shakirabr_cam'
     ],
     knowsAbout: [
       'Modelagem',

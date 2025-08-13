@@ -62,8 +62,8 @@ export const internationalSEOConfig = {
       'og:locale:alternate': ['en_US', 'es_ES'],
       'og:type': 'website',
       'og:site_name': 'Shakira BR',
-      'twitter:site': '@shakira_cam',
-      'twitter:creator': '@shakira_cam',
+          'twitter:site': '@shakirabr_cam',
+    'twitter:creator': '@shakirabr_cam',
     },
   },
 
@@ -207,7 +207,7 @@ export const getStructuredData = (type: 'website' | 'organization' | 'article') 
       'logo': 'https://www.shakirabr.com/logo.png',
       'sameAs': [
         'https://www.instagram.com/zaramontannasecreto/',
-        'https://x.com/shakira_cam',
+        'https://x.com/shakirabr_cam',
         'https://t.me/zaramontanavip',
       ],
       'contactPoint': {

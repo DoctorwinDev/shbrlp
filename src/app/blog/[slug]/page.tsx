@@ -257,7 +257,7 @@ export default async function BlogPost({ params }: BlogPageProps) {
               📸 Instagram
             </Link>
             <Link
-              href="https://x.com/shakira_cam"
+              href="https://x.com/shakirabr_cam"
               target="_blank"
               rel="noopener"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-500 text-white px-4 py-2 rounded-lg font-medium hover:from-cyan-700 hover:to-blue-600 transition-all"

@@ -27,8 +27,8 @@ export const seoConfig = {
 
   // Configurações para Twitter Card
   twitter: {
-    handle: '@shakira_cam',
-    site: '@shakira_cam',
+    handle: '@shakirabr_cam',
+    site: '@shakirabr_cam',
     cardType: 'summary_large_image',
   },
 
@@ -48,7 +48,7 @@ export const seoConfig = {
   // Configurações para redes sociais
   social: {
     instagram: 'https://www.instagram.com/zaramontannasecreto/',
-    twitter: 'https://x.com/shakira_cam',
+    twitter: 'https://x.com/shakirabr_cam',
     telegram: 'https://t.me/zaramontanavip',
     onlyfans: 'https://onlyfans.com/zaramontana',
     privacy: 'https://privacy.com.br/profile/zaramontanaa',
@@ -100,7 +100,7 @@ export const seoConfig = {
       "logo": "https://shakirabr.com/logo.png",
       "sameAs": [
         "https://www.instagram.com/zaramontannasecreto/",
-        "https://x.com/shakira_cam",
+        "https://x.com/shakirabr_cam",
         "https://t.me/zaramontanavip"
       ],
       "contactPoint": {
