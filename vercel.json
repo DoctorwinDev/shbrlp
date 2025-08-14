@@ -50,6 +50,11 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "https://www.shakirabr.com/(.*)",
+      "destination": "https://shakirabr.com/$1",
+      "permanent": true
     }
   ],
   "rewrites": [

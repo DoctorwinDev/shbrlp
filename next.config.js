@@ -5,6 +5,22 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Redirects de posts antigos que não existem mais
+      {
+        source: '/blog/como-ser-modelo-webcam-iniciante',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/onlyfans-brasil-como-ganhar-dinheiro',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/privacy-brasil-plataforma-modelo',
+        destination: '/blog',
+        permanent: true,
+      },
       // Redirecionamentos para páginas antigas removidas
       {
         source: '/old-blog',
