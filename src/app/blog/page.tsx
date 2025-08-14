@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Clock, User, ArrowRight, Sparkles } from 'lucide-react'
+import { getAllPosts } from '@/data/blog-posts'
 
 export const metadata: Metadata = {
   title: 'Blog | ShakiraBr',
@@ -18,20 +19,18 @@ export const metadata: Metadata = {
   },
 }
 
-const blogPosts = [
-  {
-    id: '1',
-    title: '15 Dicas de Ensaio Sensual: Como Fazer Fotos Incríveis em Casa [Guia 2025]',
-    slug: 'ensaio-sensual-dicas-fotos-casa-guia-2025',
-    excerpt: 'Descubra como fazer um ensaio sensual profissional em casa usando apenas o celular. Guia completo com 15 dicas práticas, poses que valorizam qualquer corpo e técnicas de iluminação.',
-    category: 'Lifestyle',
-    tags: ['ensaio sensual', 'fotografia', 'autoestima'],
-    featuredImage: '/galeria/preview1.jpg',
-    publishDate: '2025-01-15',
-    author: 'ShakiraBr',
-    readTime: 12
-  }
-]
+const blogPosts = getAllPosts().map(post => ({
+  id: post.slug,
+  title: post.title,
+  slug: post.slug,
+  excerpt: post.excerpt,
+  category: post.category,
+  tags: post.tags,
+  featuredImage: post.image || '/galeria/preview1.jpg',
+  publishDate: post.publishedAt,
+  author: post.author,
+  readTime: post.readTime
+}))
 
 export default function BlogPage() {
   return (

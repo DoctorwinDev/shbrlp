@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ['camera prive', 'camera privê', 'plataforma webcam brasil', 'cadastro camera prive', 'tokens camera prive', 'webcam brasil', 'entretenimento adulto online', 'shakirabr'],
     readTime: 15,
     featured: true,
-    image: '/blog/images/camera-prive-guia-2025-header.jpg',
+    image: '/blog/images/camera-prive-brasil.jpg',
     content: `
 # Camera Prive: Guia Definitivo 2025 - Tudo Que Você Precisa Saber
 
