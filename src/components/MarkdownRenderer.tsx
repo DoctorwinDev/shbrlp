@@ -137,7 +137,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
           hr: ({ ...props }) => (
             <hr className="border-white/20 my-8" {...props} />
           ),
-          img: ({ src, alt, ...props }) => {
+          img: ({ src, alt }) => {
             if (!src) return null
             return (
               <div className="my-6">
@@ -147,7 +147,6 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                   width={800}
                   height={400}
                   className="rounded-lg border border-white/10 w-full h-auto"
-                  {...props}
                 />
               </div>
             )
