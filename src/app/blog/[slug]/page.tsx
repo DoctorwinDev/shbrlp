@@ -89,6 +89,10 @@ export default async function BlogPost({ params }: BlogPageProps) {
     notFound()
   }
 
+  const baseUrl = 'https://shakirabr.com'
+  const postUrl = `${baseUrl}/blog/${post.slug}`
+  const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/hero-latest-image.jpeg`
+
   // Dados estruturados para SEO
   const structuredData = {
     "@context": "https://schema.org",
