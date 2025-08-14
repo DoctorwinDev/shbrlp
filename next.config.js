@@ -1,11 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Performance Optimizations
-  experimental: {
-    optimizeCss: true,
-    gzipSize: true,
-  },
-
   // Image Optimization
   images: {
     domains: ['shakirabr.com', 'www.shakirabr.com'],
