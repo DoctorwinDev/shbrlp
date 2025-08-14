@@ -2,6 +2,10 @@
 const nextConfig = {
   images: {
     domains: ['shakirabr.com', 'www.shakirabr.com'],
+    formats: ['image/webp'],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   async redirects() {
     return [

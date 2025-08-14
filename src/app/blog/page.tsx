@@ -60,23 +60,25 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {blogPosts.map((post) => (
             <article key={post.id} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-              {post.featuredImage && (
-                <div className="relative aspect-video overflow-hidden">
-                  <Image
-                    src={post.featuredImage}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
-                      {post.category}
-                    </span>
-                  </div>
+              <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-pink-100 to-purple-100">
+                <Image
+                  src={post.featuredImage}
+                  alt={post.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={false}
+                  onError={(e) => {
+                    e.currentTarget.src = '/galeria/preview1.jpg';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                    {post.category}
+                  </span>
                 </div>
-              )}
+              </div>
               
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
