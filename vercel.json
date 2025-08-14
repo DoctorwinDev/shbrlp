@@ -42,18 +42,13 @@
       "permanent": true
     },
     {
-      "source": "https://shakirabr.com/(.*)",
-      "destination": "https://www.shakirabr.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "http://shakirabr.com/(.*)",
-      "destination": "https://www.shakirabr.com/$1",
+      "source": "https://www.shakirabr.com/(.*)",
+      "destination": "https://shakirabr.com/$1",
       "permanent": true
     },
     {
       "source": "http://www.shakirabr.com/(.*)",
-      "destination": "https://www.shakirabr.com/$1",
+      "destination": "https://shakirabr.com/$1",
       "permanent": true
     }
   ],
