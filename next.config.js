@@ -14,11 +14,6 @@ const nextConfig = {
   // Compression
   compress: true,
 
-  // Bundle optimization para mobile
-  experimental: {
-    optimizePackageImports: ['lucide-react', 'clsx', 'tailwind-merge'],
-  },
-
   // Redirects
   async redirects() {
     return [
@@ -104,11 +99,6 @@ const nextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=31536000; includeSubDomains; preload',
           },
-          // Preconnect para performance mobile
-          {
-            key: 'Link',
-            value: '<https://www.googletagmanager.com>; rel=preconnect, <https://www.google-analytics.com>; rel=preconnect',
-          },
         ],
       },
       {
@@ -134,16 +124,6 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=86400, s-maxage=604800',
-          },
-        ],
-      },
-      // Cache otimizado para imagens mobile
-      {
-        source: '/_next/image/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
