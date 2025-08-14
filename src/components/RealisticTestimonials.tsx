@@ -85,7 +85,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
     }`}>
       {/* Header */}
       <div className={`px-3 sm:px-4 py-2 sm:py-3 flex items-center space-x-2 sm:space-x-3 ${
-        isWhatsApp ? 'bg-green-700' : 'bg-gradient-to-r from-purple-700 to-pink-700'
+        isWhatsApp ? 'bg-green-800' : 'bg-gradient-to-r from-purple-800 to-pink-800'
       }`}>
         {isWhatsApp ? (
           <PlatformIcons.WhatsApp className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
@@ -103,9 +103,9 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
               </div>
             )}
           </div>
-          <p className="text-white/90 text-xs truncate">{location}</p>
+          <p className="text-white text-xs truncate">{location}</p>
         </div>
-        <span className="text-white/90 text-xs flex-shrink-0">{timestamp}</span>
+        <span className="text-white text-xs flex-shrink-0">{timestamp}</span>
       </div>
       
       {/* Message */}

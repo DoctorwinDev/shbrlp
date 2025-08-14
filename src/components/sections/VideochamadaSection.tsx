@@ -16,6 +16,8 @@ const VideochamadaSection: React.FC = () => (
             height={600}
             className="w-full h-auto object-cover"
             priority
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+            quality={75}
           />
           {/* Overlay com gradiente */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -30,7 +32,7 @@ const VideochamadaSection: React.FC = () => (
           
           {/* Badge de segurança */}
           <div className="absolute top-4 right-4">
-            <div className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+            <div className="bg-green-700 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
               <Shield className="w-3 h-3" />
               SEGURO
             </div>

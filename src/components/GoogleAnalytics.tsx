@@ -11,6 +11,7 @@ export default function GoogleAnalytics() {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="lazyOnload"
         async
+        defer
       />
       <Script id="google-analytics" strategy="lazyOnload">
         {`
@@ -26,16 +27,25 @@ export default function GoogleAnalytics() {
             'security_storage': 'granted'
           });
           
-          // Configuração otimizada do GA4
+          // Configuração otimizada do GA4 para mobile
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_title: document.title,
             page_location: window.location.href,
             anonymize_ip: true,
             cookie_flags: 'SameSite=None;Secure',
-            // Otimizações de performance
+            // Otimizações de performance mobile
             send_page_view: false,
             transport_type: 'beacon',
-            use_amp_client_id: false
+            use_amp_client_id: false,
+            // Configurações mobile
+            custom_map: {
+              'dimension1': 'device_type',
+              'dimension2': 'connection_speed'
+            },
+            // Detectar tipo de dispositivo
+            device_type: /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'mobile' : 'desktop',
+            // Detectar velocidade de conexão
+            connection_speed: navigator.connection ? navigator.connection.effectiveType : 'unknown'
           });
           
           // Função para atualizar consentimento
@@ -53,6 +63,14 @@ export default function GoogleAnalytics() {
           window.sendPageView = function() {
             gtag('event', 'page_view');
           };
+          
+          // Otimização para mobile - enviar dados apenas quando necessário
+          if (navigator.connection && navigator.connection.effectiveType === 'slow-2g') {
+            // Em conexões muito lentas, não enviar dados imediatamente
+            setTimeout(() => {
+              gtag('event', 'page_view');
+            }, 5000);
+          }
         `}
       </Script>
     </>
