@@ -9,9 +9,10 @@ export default function GoogleAnalytics() {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
+        async
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -25,12 +26,16 @@ export default function GoogleAnalytics() {
             'security_storage': 'granted'
           });
           
-          // Configuração do GA4
+          // Configuração otimizada do GA4
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_title: document.title,
             page_location: window.location.href,
             anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure'
+            cookie_flags: 'SameSite=None;Secure',
+            // Otimizações de performance
+            send_page_view: false,
+            transport_type: 'beacon',
+            use_amp_client_id: false
           });
           
           // Função para atualizar consentimento
@@ -42,6 +47,11 @@ export default function GoogleAnalytics() {
               'personalization_storage': consent.personalization_storage || 'denied',
               'security_storage': 'granted'
             });
+          };
+          
+          // Enviar pageview apenas após consentimento
+          window.sendPageView = function() {
+            gtag('event', 'page_view');
           };
         `}
       </Script>

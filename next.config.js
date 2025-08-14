@@ -3,7 +3,7 @@ const nextConfig = {
   // Image Optimization
   images: {
     domains: ['shakirabr.com', 'www.shakirabr.com'],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -14,21 +14,14 @@ const nextConfig = {
   // Compression
   compress: true,
 
-  // Bundle size optimization
-  webpack: (config, { isServer }) => {
-    // Optimize bundle size
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-      }
-    }
-    
-    return config
-  },
+  // Redirects
   async redirects() {
     return [
-      // Redirects de posts antigos que não existem mais
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
       {
         source: '/blog/como-ser-modelo-webcam-iniciante',
         destination: '/blog',
@@ -44,7 +37,6 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
-      // Redirecionamentos para páginas antigas removidas
       {
         source: '/old-blog',
         destination: '/blog',
@@ -67,17 +59,17 @@ const nextConfig = {
       },
     ]
   },
+
+  // Headers
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // SEO and Robots
           {
             key: 'X-Robots-Tag',
             value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
           },
-          // Security Headers
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
@@ -96,44 +88,11 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(), payment=()',
-          },
-          {
-            key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://vitals.vercel-insights.com; frame-src 'self' https://vercel.live; object-src 'none'; base-uri 'self'; form-action 'self';",
+            value: 'camera=(), microphone=(), geolocation=()',
           },
           {
             key: 'Strict-Transport-Security',
             value: 'max-age=31536000; includeSubDomains; preload',
-          },
-        ],
-      },
-      // Static Assets Caching
-      {
-        source: '/images/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      // Blog images caching
-      {
-        source: '/blog/images/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -160,6 +119,16 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=86400, s-maxage=604800',
+          },
+        ],
+      },
+      // Cache para imagens
+      {
+        source: '/_next/image/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

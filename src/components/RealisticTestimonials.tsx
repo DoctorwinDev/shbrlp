@@ -1,5 +1,5 @@
 import React from 'react';
-import { InstagramIcon, WhatsAppIcon } from './PlatformIcons';
+import { PlatformIcons } from './PremiumIcons';
 
 interface TestimonialProps {
   platform: 'whatsapp' | 'instagram';
@@ -85,12 +85,12 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
     }`}>
       {/* Header */}
       <div className={`px-3 sm:px-4 py-2 sm:py-3 flex items-center space-x-2 sm:space-x-3 ${
-        isWhatsApp ? 'bg-green-600' : 'bg-gradient-to-r from-purple-600 to-pink-600'
+        isWhatsApp ? 'bg-green-700' : 'bg-gradient-to-r from-purple-700 to-pink-700'
       }`}>
         {isWhatsApp ? (
-          <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+          <PlatformIcons.WhatsApp className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
         ) : (
-          <InstagramIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+          <PlatformIcons.Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
         )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center space-x-1 sm:space-x-2">
@@ -103,52 +103,40 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
               </div>
             )}
           </div>
-          <p className="text-white/80 text-xs truncate">{location}</p>
+          <p className="text-white/90 text-xs truncate">{location}</p>
         </div>
-        <span className="text-white/70 text-xs flex-shrink-0">{timestamp}</span>
+        <span className="text-white/90 text-xs flex-shrink-0">{timestamp}</span>
       </div>
-
-      {/* Avatar */}
-      <div className="px-3 sm:px-4 py-2 sm:py-3 flex items-start space-x-2 sm:space-x-3">
-        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center flex-shrink-0">
-          <span className="text-white font-bold text-xs sm:text-sm">
-            {name.charAt(0)}
-          </span>
-        </div>
-        
-        {/* Message */}
-        <div className="flex-1 min-w-0">
-          <div className={`rounded-xl sm:rounded-2xl p-2 sm:p-3 ${
-            isWhatsApp 
-              ? 'bg-white shadow-sm' 
-              : 'bg-white shadow-sm'
-          }`}>
-            <p className="text-gray-800 text-xs sm:text-sm leading-relaxed">
-              {message}
-            </p>
-          </div>
-          
-          {/* Reaction */}
-          <div className="flex items-center justify-end mt-1 sm:mt-2 space-x-1">
-            <span className="text-xs text-gray-500">
-              {isWhatsApp ? '✓✓' : '❤️ 47'}
-            </span>
-          </div>
-        </div>
+      
+      {/* Message */}
+      <div className="p-3 sm:p-4">
+        <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{message}</p>
       </div>
     </div>
   );
 };
 
-export const Depoimentos: React.FC = () => {
+const RealisticTestimonials: React.FC = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6 sm:mb-8 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Depoimentos Reais</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} {...testimonial} />
-        ))}
+    <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            O Que Dizem Nossos Membros
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Depoimentos reais de quem já experimentou o conteúdo premium ShakiraBR
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} {...testimonial} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
-}; 
+};
+
+export default RealisticTestimonials; 

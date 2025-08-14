@@ -1,86 +1,79 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Video, ShieldCheck, Clock, Users, Star, Heart, Zap } from 'lucide-react';
-import React from 'react';
+import { Calendar, Star, Users, Heart, Shield, Crown } from 'lucide-react';
 
 const VideochamadaSection: React.FC = () => (
   <section id="agendar" className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 px-4 py-8 lg:py-0 bg-gradient-to-br from-green-900/40 via-emerald-900/30 to-black snap-start animate-fade-in-up">
-    
     {/* Coluna Esquerda - Imagem */}
-    <div className="flex-1 flex items-center justify-center order-2 lg:order-1 w-full lg:w-auto">
-      <div className="relative w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-green-500 to-emerald-600 p-1">
-        <Image
-          src="/WhatsApp Image 2025-06-22 at 16.55.39.jpeg"
-          alt="Preview Videochamada"
-          fill
-          className="object-cover rounded-xl lg:rounded-2xl blur-sm"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-xl lg:rounded-2xl"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-green-500/90 backdrop-blur-sm rounded-full p-3 lg:p-4 shadow-xl">
-            <Video className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+    <div className="flex-1 flex justify-center lg:justify-end">
+      <div className="relative w-full max-w-md lg:max-w-lg">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <Image 
+            src="/WhatsApp Image 2025-06-22 at 16.58.02.jpeg" 
+            alt="ShakiraBR Videochamada Premium" 
+            width={500}
+            height={600}
+            className="w-full h-auto object-cover"
+            priority
+          />
+          {/* Overlay com gradiente */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          
+          {/* Badge de qualidade */}
+          <div className="absolute top-4 left-4">
+            <div className="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+              <Star className="w-3 h-3" />
+              HD QUALITY
+            </div>
           </div>
-        </div>
-        <div className="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-          <div className="bg-black/70 backdrop-blur-sm rounded-lg p-2 text-center">
-            <div className="text-green-400 text-xs font-bold">🔴 AO VIVO</div>
+          
+          {/* Badge de segurança */}
+          <div className="absolute top-4 right-4">
+            <div className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+              <Shield className="w-3 h-3" />
+              SEGURO
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    {/* Coluna Direita - Informações */}
-    <div className="flex-1 flex flex-col gap-3 lg:gap-4 max-w-lg w-full bg-white/5 backdrop-blur-sm rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-xl order-1 lg:order-2">
-      
-      {/* Badge Exclusivo */}
-      <div className="flex flex-wrap items-center gap-2 lg:gap-3 mb-1">
-        <div className="inline-flex items-center gap-1 lg:gap-2 bg-gradient-to-r from-green-600 to-emerald-500 px-2 lg:px-3 py-1 rounded-lg text-xs font-bold text-white shadow-lg">
-          <Video className="w-3 h-3" />
-          <span className="hidden sm:inline">VIDEOCHAMADA PRIVADA</span>
-          <span className="sm:hidden">VIDEOCHAMADA</span>
+    {/* Coluna Direita - Conteúdo */}
+    <div className="flex-1 flex flex-col gap-4 lg:gap-6 max-w-md lg:max-w-lg">
+      {/* Header */}
+      <div className="text-center lg:text-left">
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-500 px-4 py-2 rounded-full text-sm font-bold text-white mb-4">
+          <Crown className="w-4 h-4" />
+          <span>VIDEOCHAMADA PREMIUM</span>
         </div>
-        <div className="inline-flex items-center gap-1 bg-black/70 text-green-300 px-2 py-1 rounded-lg text-xs font-bold">
-          <Zap className="w-3 h-3" />
-          AGORA
-        </div>
-      </div>
-
-      {/* Título Principal */}
-      <div className="space-y-2">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold bg-gradient-to-r from-white via-green-200 to-emerald-300 bg-clip-text text-transparent drop-shadow-xl leading-tight">
-          Chamada Privada
+        
+        <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
+          Conecte-se<br />
+          <span className="bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">
+            Diretamente Comigo
+          </span>
         </h2>
-        <h3 className="text-base lg:text-lg font-bold text-green-300">
-          Só Você e Eu ❤️
-        </h3>
-        <p className="text-white/90 text-sm lg:text-base leading-relaxed">
-          Momento íntimo e exclusivo. Atenção 100% personalizada só para você.
+        
+        <p className="text-lg text-white/90 mb-6 leading-relaxed">
+          Experiência única e personalizada. Videochamadas privadas com a modelo mais desejada do Brasil. Conteúdo exclusivo e interação real.
         </p>
       </div>
 
-      {/* Features Rápidas */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 my-3">
-        <div className="flex items-center gap-2 bg-black/30 rounded-lg px-3 py-2">
-          <ShieldCheck className="w-3 h-3 text-green-400 flex-shrink-0" />
-          <span className="text-xs text-white/90">100% Privado</span>
-        </div>
-        <div className="flex items-center gap-2 bg-black/30 rounded-lg px-3 py-2">
-          <Heart className="w-3 h-3 text-pink-400 flex-shrink-0" />
-          <span className="text-xs text-white/90">Só Nós Dois</span>
-        </div>
-      </div>
-
       {/* Estatísticas */}
-      <div className="flex flex-wrap items-center gap-3 lg:gap-4 mb-3">
-        <div className="flex items-center gap-1">
-          <Star className="w-3 h-3 text-yellow-400 fill-current" />
-          <span className="text-base lg:text-lg font-bold text-white">4.9</span>
+      <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="text-center">
+          <div className="text-2xl lg:text-3xl font-bold text-green-400">500+</div>
+          <div className="text-sm text-white/80">Videochamadas</div>
         </div>
-        <div className="flex items-center gap-1">
-          <Users className="w-3 h-3 text-green-400" />
-          <span className="text-xs text-white/90">+200 Chamadas</span>
+        <div className="text-center">
+          <div className="text-2xl lg:text-3xl font-bold text-green-400">98%</div>
+          <div className="text-sm text-white/80">Satisfação</div>
         </div>
-        <div className="text-xs text-green-300 font-bold">98% Satisfação</div>
+        <div className="text-center">
+          <div className="text-2xl lg:text-3xl font-bold text-green-400">24/7</div>
+          <div className="text-sm text-white/80">Disponível</div>
+        </div>
       </div>
 
       {/* Preços */}
@@ -91,7 +84,7 @@ const VideochamadaSection: React.FC = () => (
         </div>
         <div className="bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-400 rounded-xl p-3 text-center relative">
           <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-            <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">POPULAR</span>
+            <span className="bg-green-700 text-white text-xs px-2 py-1 rounded-full font-bold">POPULAR</span>
           </div>
           <div className="text-base lg:text-lg font-bold text-white">R$ 200</div>
           <div className="text-xs text-green-300">20 minutos</div>
@@ -111,23 +104,24 @@ const VideochamadaSection: React.FC = () => (
 
       {/* Depoimentos Mini */}
       <div className="space-y-2 mt-3">
-        <div className="bg-black/20 rounded-lg p-2">
-          <div className="flex items-center gap-1 mb-1">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-2 h-2 text-yellow-400 fill-current" />
-            ))}
+        <div className="flex items-center gap-2 text-sm text-white/80">
+          <div className="flex -space-x-2">
+            <div className="w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+              <span className="text-white text-xs font-bold">C</span>
+            </div>
+            <div className="w-6 h-6 bg-blue-500 rounded-full border-2 border-white flex items-center justify-center">
+              <span className="text-white text-xs font-bold">B</span>
+            </div>
+            <div className="w-6 h-6 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center">
+              <span className="text-white text-xs font-bold">A</span>
+            </div>
           </div>
-          <p className="text-xs text-white/80">"Experiência incrível! Muito carinhosa"</p>
-          <span className="text-xs text-green-300">- Carlos M.</span>
+          <span>+200 clientes satisfeitos</span>
         </div>
-        <div className="bg-black/20 rounded-lg p-2">
-          <div className="flex items-center gap-1 mb-1">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-2 h-2 text-yellow-400 fill-current" />
-            ))}
-          </div>
-          <p className="text-xs text-white/80">"Atendimento personalizado. Voltarei!"</p>
-          <span className="text-xs text-green-300">- João P.</span>
+        
+        <div className="flex items-center gap-2 text-sm text-white/80">
+          <Heart className="w-4 h-4 text-red-400" />
+          <span>100% privado e seguro</span>
         </div>
       </div>
     </div>
