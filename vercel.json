@@ -46,7 +46,6 @@
       "permanent": true
     }
   ],
-  "domains": ["shakirabr.com", "www.shakirabr.com"],
   "rewrites": [
     {
       "source": "/sitemap.xml",
