@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   },
 }
 
+// Garantir que todas as imagens tenham fallback correto
 const blogPosts = getAllPosts().map(post => ({
   id: post.slug,
   title: post.title,
@@ -26,7 +27,7 @@ const blogPosts = getAllPosts().map(post => ({
   excerpt: post.excerpt,
   category: post.category,
   tags: post.tags,
-  featuredImage: post.image || '/galeria/preview1.jpg',
+  featuredImage: post.image && post.image.startsWith('/blog/images/') ? post.image : '/galeria/preview1.jpg',
   publishDate: post.publishedAt,
   author: post.author,
   readTime: post.readTime
@@ -68,9 +69,6 @@ export default function BlogPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority={false}
-                  onError={(e) => {
-                    e.currentTarget.src = '/galeria/preview1.jpg';
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute top-4 left-4">

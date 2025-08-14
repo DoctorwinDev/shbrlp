@@ -147,6 +147,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                   width={800}
                   height={400}
                   className="rounded-lg border border-white/10 w-full h-auto"
+                  unoptimized={false}
                 />
               </div>
             )

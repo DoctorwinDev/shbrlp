@@ -240,15 +240,12 @@ export default async function BlogPost({ params }: BlogPageProps) {
         <div className="mb-8">
           <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br from-pink-900/20 to-purple-900/20">
             <Image
-              src={post.image || '/hero-latest-image.jpeg'}
+              src={post.image || '/galeria/preview1.jpg'}
               alt={post.title}
               fill
               className="object-cover"
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-              onError={(e) => {
-                e.currentTarget.src = '/galeria/preview1.jpg';
-              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
