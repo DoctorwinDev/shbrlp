@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos para highlight de código */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6a994e;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  color: #ec4899;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #f97316;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #22c55e;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  color: #d4d4d4;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #8b5cf6;
+  font-weight: bold;
+}
+
 /* Proteção contra download e cópia de imagens/vídeos */
 img, video {
   -webkit-user-select: none;

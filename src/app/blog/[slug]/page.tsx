@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, Clock, ArrowLeft, Tag, User } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { getPostBySlug, getAllPosts } from '@/data/blog-posts'
 import ShareButton from '@/components/ShareButton'
+import MarkdownRenderer from '@/components/MarkdownRenderer'
 
 interface BlogPageProps {
   params: Promise<{
@@ -30,6 +32,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 
   const baseUrl = 'https://shakirabr.com'
   const postUrl = `${baseUrl}/blog/${post.slug}`
+  const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/hero-latest-image.jpeg`
 
   return {
     title: post.title,
@@ -46,11 +49,20 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
       modifiedTime: post.updatedAt,
       authors: [post.author],
       tags: post.tags,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.metaDescription,
+      images: [imageUrl],
     },
     robots: {
       index: true,
@@ -102,12 +114,13 @@ export default async function BlogPost({ params }: BlogPageProps) {
       "@type": "WebPage",
       "@id": `https://www.shakirabr.com/blog/${post.slug}`
     },
-    "image": post.image ? {
+    "image": {
       "@type": "ImageObject",
-      "url": post.image,
+      "url": imageUrl,
       "width": 1200,
-      "height": 630
-    } : undefined,
+      "height": 630,
+      "caption": post.title
+    },
     "articleSection": post.category,
     "keywords": post.keywords.join(', '),
     "about": post.tags.map(tag => ({
@@ -219,25 +232,25 @@ export default async function BlogPost({ params }: BlogPageProps) {
           </div>
         </header>
 
+        {/* Imagem do post */}
+        {post.image && (
+          <div className="mb-8">
+            <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+          </div>
+        )}
+
         {/* Conteúdo */}
-        <div 
-          className="prose prose-invert prose-pink max-w-none
-            prose-headings:text-white 
-            prose-h1:text-3xl prose-h1:font-bold prose-h1:mb-6 prose-h1:mt-8
-            prose-h2:text-2xl prose-h2:font-bold prose-h2:mb-4 prose-h2:mt-6 prose-h2:text-pink-300
-            prose-h3:text-xl prose-h3:font-semibold prose-h3:mb-3 prose-h3:mt-5 prose-h3:text-pink-400
-            prose-p:text-white/90 prose-p:leading-relaxed prose-p:mb-4
-            prose-strong:text-pink-300 prose-strong:font-semibold
-            prose-ul:text-white/90 prose-ul:mb-4
-            prose-li:mb-2 prose-li:leading-relaxed
-            prose-a:text-pink-400 prose-a:no-underline hover:prose-a:text-pink-300
-            prose-blockquote:border-l-pink-500 prose-blockquote:bg-white/5 prose-blockquote:rounded-r-lg prose-blockquote:p-4
-            prose-code:text-pink-300 prose-code:bg-white/10 prose-code:px-2 prose-code:py-1 prose-code:rounded
-            prose-table:border-white/20 prose-th:bg-white/10 prose-th:text-pink-300 prose-th:font-semibold
-            prose-td:border-white/10 prose-td:p-3
-          "
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <MarkdownRenderer content={post.content} />
 
         {/* Call to Action */}
         <div className="mt-12 p-6 bg-gradient-to-r from-pink-600/20 to-purple-600/20 rounded-2xl border border-pink-500/30">
