@@ -3,7 +3,7 @@ export const seoConfig = {
   // Configurações básicas do site
   site: {
     name: 'Shakira BR',
-    url: 'https://shakirabr.com',
+    url: 'https://www.shakirabr.com',
     description: 'Exclusive and premium adult content. Sensual photo gallery, blog with tips and much more.',
     keywords: 'shakira br, adult content, photo gallery, sensual blog, premium, exclusive, brazilian model, adult entertainment',
     author: 'Shakira BR',
@@ -17,7 +17,7 @@ export const seoConfig = {
     siteName: 'Shakira BR',
     images: [
       {
-        url: 'https://shakirabr.com/hero-latest-image.jpeg',
+        url: 'https://www.shakirabr.com/hero-latest-image.jpeg',
         width: 1200,
         height: 630,
         alt: 'Shakira BR - Exclusive Content',
@@ -96,8 +96,8 @@ export const seoConfig = {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Shakira BR",
-      "url": "https://shakirabr.com",
-      "logo": "https://shakirabr.com/logo.png",
+      "url": "https://www.shakirabr.com",
+      "logo": "https://www.shakirabr.com/logo.png",
       "sameAs": [
         "https://www.instagram.com/zaramontannasecreto/",
         "https://x.com/shakirabr_cam",
@@ -122,11 +122,11 @@ export const seoConfig = {
       "@type": "WebSite",
       "name": "Shakira BR",
       "description": "Exclusive and premium adult content. Photo gallery, blog with tips and much more.",
-      "url": "https://shakirabr.com",
+      "url": "https://www.shakirabr.com",
       "inLanguage": ["pt-BR", "en-US", "es-ES"],
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://shakirabr.com/search?q={search_term_string}",
+        "target": "https://www.shakirabr.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
       "publisher": {
@@ -134,7 +134,7 @@ export const seoConfig = {
         "name": "Shakira BR",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://shakirabr.com/logo.png"
+          "url": "https://www.shakirabr.com/logo.png"
         }
       }
     }
