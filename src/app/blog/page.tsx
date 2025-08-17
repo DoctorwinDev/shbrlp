@@ -8,14 +8,25 @@ export const metadata: Metadata = {
   title: 'Blog | ShakiraBr',
   description: 'Explore os últimos posts do blog da ShakiraBr. Conteúdo exclusivo sobre lifestyle, beleza e muito mais.',
   alternates: {
-    canonical: 'https://shakirabr.com/blog',
+    canonical: 'https://www.shakirabr.com/blog',
   },
   openGraph: {
     title: 'Blog | ShakiraBr',
     description: 'Explore os últimos posts do blog da ShakiraBr',
-    url: 'https://shakirabr.com/blog',
+    url: 'https://www.shakirabr.com/blog',
     siteName: 'ShakiraBr',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

@@ -75,6 +75,9 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
         'max-snippet': -1,
       },
     },
+    other: {
+      'google-site-verification': process.env.GOOGLE_SITE_VERIFICATION || '',
+    },
     alternates: {
       canonical: postUrl,
     },
@@ -93,12 +96,13 @@ export default async function BlogPost({ params }: BlogPageProps) {
   const postUrl = `${baseUrl}/blog/${post.slug}`
   const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/hero-latest-image.jpeg`
 
-  // Dados estruturados para SEO
+  // Dados estruturados para SEO - BlogPosting é melhor que Article para indexação
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": post.title,
     "description": post.metaDescription,
+    "keywords": post.keywords.join(', '),
     "author": {
       "@type": "Person",
       "name": post.author,
