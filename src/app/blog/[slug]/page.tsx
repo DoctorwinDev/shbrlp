@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     }
   }
 
-  const baseUrl = 'https://shakirabr.com'
+  const baseUrl = 'https://www.shakirabr.com'
   const postUrl = `${baseUrl}/blog/${post.slug}`
   const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/hero-latest-image.jpeg`
 
@@ -89,7 +89,7 @@ export default async function BlogPost({ params }: BlogPageProps) {
     notFound()
   }
 
-  const baseUrl = 'https://shakirabr.com'
+  const baseUrl = 'https://www.shakirabr.com'
   const postUrl = `${baseUrl}/blog/${post.slug}`
   const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/hero-latest-image.jpeg`
 

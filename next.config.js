@@ -17,18 +17,6 @@ const nextConfig = {
   // Redirects
   async redirects() {
     return [
-      // Redirect www to non-www para consistência SEO
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.shakirabr.com',
-          },
-        ],
-        destination: 'https://shakirabr.com/:path*',
-        permanent: true,
-      },
       {
         source: '/home',
         destination: '/',

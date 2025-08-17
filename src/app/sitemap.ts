@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/data/blog-posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://shakirabr.com'
+  const baseUrl = 'https://www.shakirabr.com'
   const currentDate = new Date()
 
   // Páginas estáticas principais
