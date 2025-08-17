@@ -2,7 +2,7 @@
 const nextConfig = {
   // Image Optimization - Mobile First
   images: {
-    domains: ['shakirabr.com', 'www.shakirabr.com'],
+    domains: ['shakirabr.com', 'www.shakirabr.com', 'img.shields.io'],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],

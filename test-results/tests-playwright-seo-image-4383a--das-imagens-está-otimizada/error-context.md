@@ -1,0 +1,620 @@
+# Page snapshot
+
+```yaml
+- link "Pular para conteúdo principal":
+  - /url: "#main-content"
+- link "Pular para navegação":
+  - /url: "#menu-navigation"
+- banner:
+  - link "Página Principal":
+    - /url: /
+    - text: Shakira BR
+  - navigation "Menu principal":
+    - link "Início":
+      - /url: /
+    - link "Blog":
+      - /url: /blog
+    - link "Privacy":
+      - /url: "#privacy"
+    - link "Telegram":
+      - /url: "#telegram"
+    - link "OnlyFans":
+      - /url: "#onlyfans"
+    - link "Galeria":
+      - /url: "#galeria"
+    - link "Agendar":
+      - /url: "#agendar"
+    - link "Depoimentos":
+      - /url: "#depoimentos"
+  - link "Seguir no Instagram":
+    - /url: https://www.instagram.com/zaramontannasecreto/
+    - img
+  - link "Seguir no X (Twitter)":
+    - /url: https://x.com/shakirabr_cam
+    - img
+- main:
+  - link "Voltar para o Blog":
+    - /url: /blog
+    - img
+    - text: Voltar para o Blog
+  - article:
+    - img
+    - text: Guias
+    - 'heading "Camera Privê: O Guia Definitivo dos Shows Privados nas Principais Plataformas 2025" [level=1]'
+    - paragraph: Camera privê recebe 74.000 buscas/mês. Descubra a diferença entre Camera Prive e concorrentes, preços de shows privados e como economizar até 70% em salas privê.
+    - img
+    - text: ShakiraBR
+    - img
+    - text: 13/01/2025
+    - img
+    - text: "8 min de leitura #camera privê #shows privados #webcam #comparativo plataformas #guia 2025"
+    - 'img "Camera Privê: O Guia Definitivo dos Shows Privados nas Principais Plataformas 2025"'
+    - 'heading "Camera Privê: O Guia Definitivo dos Shows Privados nas Principais Plataformas 2025" [level=1]'
+    - paragraph:
+      - strong: Camera privê
+      - text: (também buscado como câmera privê) recebe 74.000 pesquisas mensais de brasileiros procurando shows privados em plataformas de webcam, sendo a grafia correta "Camera Prive" - líder nacional com 5.000+ modelos brasileiras online.
+    - paragraph:
+      - img "Camera Privê - Guia completo shows privados 2025 - ShakiraBR"
+    - paragraph:
+      - text: Você chegou aqui buscando "camera privê" e encontrou o guia mais completo sobre shows privados em todas as principais plataformas. A
+      - strong: ShakiraBR
+      - text: analisou Camera Prive, Chaturbate, Stripchat e BongaCams para revelar onde conseguir a melhor experiência privê pelo menor custo.
+    - paragraph: Este guia estratégico ensina como dominar salas privê, economizar até 70% em shows privados e escolher a plataforma ideal para suas preferências em 2025.
+    - heading "O que Significa \"Privê\" nas Plataformas de Webcam" [level=2]
+    - paragraph:
+      - strong: Shows privê
+      - text: (do francês "privé") são transmissões exclusivas one-on-one entre você e o modelo escolhido, disponíveis em todas as principais plataformas de webcam com preços variando de R$ 3 a R$ 60 por minuto dependendo do site e modelo.
+    - paragraph:
+      - img "Como funcionam shows privê nas plataformas de webcam - tutorial 2025"
+    - paragraph:
+      - text: O termo
+      - strong: "\"camera privê\""
+      - text: tornou-se tão popular no Brasil que gera mais buscas que o nome correto "Camera Prive". Esta confusão comum revela o domínio cultural do conceito de shows privados no entretenimento adulto brasileiro.
+    - heading "Como funcionam salas privê em cada plataforma:" [level=3]
+    - paragraph:
+      - strong: "Camera Prive (Brasil):"
+    - list:
+      - listitem: Shows privê custam 1-15 tokens/minuto (R$ 0,50-15,00)
+      - listitem: Interface 100% português, aceita PIX
+      - listitem: Modelos exclusivamente brasileiras
+    - paragraph:
+      - strong: "Chaturbate (Internacional):"
+    - list:
+      - listitem: Private shows de 6-150 tokens/minuto (R$ 15-375)
+      - listitem: Interface em inglês, pagamento via cartão internacional
+      - listitem: Mix global de modelos
+    - paragraph:
+      - strong: "Stripchat (Global):"
+    - list:
+      - listitem: Privados de 8-90 tokens/minuto (R$ 20-225)
+      - listitem: Suporta português parcial
+      - listitem: Foco em europa e latinas
+    - paragraph:
+      - strong: "BongaCams (Europa):"
+    - list:
+      - listitem: Shows privê 20-120 créditos/minuto (R$ 25-150)
+      - listitem: Interface multilíngue
+      - listitem: Predominância europeia
+    - heading "Características universais dos shows privê:" [level=3]
+    - list:
+      - listitem: ✅ Interação exclusiva sem interferência de outros usuários
+      - listitem: ✅ Comunicação bilateral via chat, áudio e cam2cam
+      - listitem: ✅ Personalização total conforme suas preferências
+      - listitem: ✅ Privacidade garantida e anonimato preservado
+    - paragraph:
+      - text: Análise exclusiva
+      - strong: ShakiraBR
+      - text: revela que brasileiros gastam 65% menos em
+      - strong: sala privê
+      - text: na Camera Prive vs plataformas internacionais, principalmente devido ao câmbio e métodos de pagamento locais. Mais comparativos em
+      - link "www.shakirabr.com":
+        - /url: https://www.shakirabr.com
+      - text: .
+    - heading "Principais Diferenças entre Camera Prive e Concorrentes no Modo Privê" [level=2]
+    - paragraph:
+      - text: A busca por
+      - strong: "\"camera privê\""
+      - text: frequentemente leva usuários à Camera Prive, mas existem alternativas internacionais com diferentes propostas para shows privados que merecem comparação detalhada.
+    - paragraph:
+      - img "Comparativo Camera Prive vs Chaturbate vs Stripchat - preços shows privados"
+    - heading "Comparativo de Preços - Shows Privê:" [level=3]
+    - table:
+      - rowgroup:
+        - row "Plataforma Preço Médio/Min Pagamento Modelos BR Qualidade":
+          - cell "Plataforma":
+            - strong: Plataforma
+          - cell "Preço Médio/Min":
+            - strong: Preço Médio/Min
+          - cell "Pagamento":
+            - strong: Pagamento
+          - cell "Modelos BR":
+            - strong: Modelos BR
+          - cell "Qualidade":
+            - strong: Qualidade
+      - rowgroup:
+        - row "Camera Prive R$ 3-15 PIX/Boleto 5.000+ HD/4K":
+          - cell "Camera Prive":
+            - strong: Camera Prive
+          - cell "R$ 3-15"
+          - cell "PIX/Boleto"
+          - cell "5.000+"
+          - cell "HD/4K"
+        - row "Chaturbate R$ 15-60 Cartão Int. 200-300 HD":
+          - cell "Chaturbate":
+            - strong: Chaturbate
+          - cell "R$ 15-60"
+          - cell "Cartão Int."
+          - cell "200-300"
+          - cell "HD"
+        - row "Stripchat R$ 20-50 Crypto/Card 150-200 Full HD":
+          - cell "Stripchat":
+            - strong: Stripchat
+          - cell "R$ 20-50"
+          - cell "Crypto/Card"
+          - cell "150-200"
+          - cell "Full HD"
+        - row "BongaCams R$ 25-75 Wire/Card 50-100 HD":
+          - cell "BongaCams":
+            - strong: BongaCams
+          - cell "R$ 25-75"
+          - cell "Wire/Card"
+          - cell "50-100"
+          - cell "HD"
+    - heading "Vantagens Camera Prive para Shows Privê:" [level=3]
+    - list:
+      - listitem: 💰 Preços 70% menores sem conversão de moeda
+      - listitem: 💳 Pagamento nacional via PIX em 30 segundos
+      - listitem: 🇧🇷 Comunicação nativa em português com gírias locais
+      - listitem: ⚡ Servidores no Brasil com latência 80% menor
+      - listitem: 📞 Suporte em português para problemas
+    - paragraph:
+      - img "Vantagens Camera Prive para brasileiros - economia shows privados"
+    - heading "Quando escolher plataformas internacionais:" [level=3]
+    - list:
+      - listitem:
+        - strong: "Chaturbate:"
+        - text: Se busca variedade global de modelos e features avançadas como VR
+      - listitem:
+        - strong: "Stripchat:"
+        - text: Para quem valoriza interface moderna e jogos interativos
+      - listitem:
+        - strong: "BongaCams:"
+        - text: Se prefere modelos europeias e produção premium
+    - heading "Recursos exclusivos por plataforma:" [level=3]
+    - paragraph:
+      - strong: "Camera Prive:"
+    - list:
+      - listitem: 📅 Agendamento de privê com desconto
+      - listitem: 👀 Modo voyeur por 30% do preço
+      - listitem: 🎁 Programa fidelidade com tokens grátis
+    - paragraph:
+      - strong: "Chaturbate:"
+    - list:
+      - listitem: 🤖 Apps e bots customizáveis
+      - listitem: 💜 Integração com lovense toys
+      - listitem: 👥 Comunidade ativa de tippers
+    - paragraph:
+      - strong: "Stripchat:"
+    - list:
+      - listitem: 🥽 Realidade virtual beta
+      - listitem: 🎰 Jogos de azar integrados
+      - listitem: 📹 Private recordings disponíveis
+    - paragraph:
+      - text: O termo
+      - strong: "\"chat privê\""
+      - text: é universal, mas a experiência varia drasticamente. Dados compilados pela
+      - strong: ShakiraBR
+      - text: mostram que 87% dos brasileiros preferem Camera Prive para shows privados devido ao custo-benefício superior.
+    - heading "Como Acessar Salas Privê em Diferentes Plataformas" [level=2]
+    - paragraph:
+      - text: Dominar o acesso a
+      - strong: salas privê
+      - text: em múltiplas plataformas permite comparar experiências e encontrar o melhor custo-benefício para seus shows privados em 2025.
+    - paragraph:
+      - img "Tutorial acesso salas privê passo a passo - Camera Prive e internacionais"
+    - heading "Camera Prive - Acesso Privê Simplificado:" [level=3]
+    - list:
+      - listitem:
+        - strong: "Cadastro Rápido:"
+        - text: Complete em 3 minutos com email válido
+      - listitem:
+        - strong: "Verificação:"
+        - text: Confirme identidade em 24h (obrigatório para privê)
+      - listitem:
+        - strong: "Compra de Tokens:"
+        - text: Use PIX para crédito instantâneo
+      - listitem:
+        - strong: "Iniciar Show:"
+        - text: Clique "Iniciar Privê" na sala desejada
+      - listitem:
+        - strong: "Cobrança Automática:"
+        - text: Sistema debita por minuto usado
+    - heading "Chaturbate - Private Show Internacional:" [level=3]
+    - list:
+      - listitem:
+        - strong: "Conta Básica:"
+        - text: Crie com email (sem verificação inicial)
+      - listitem:
+        - strong: "Tokens:"
+        - text: Compre com cartão internacional
+      - listitem:
+        - strong: "Start Private:"
+        - text: Procure botão específico
+      - listitem:
+        - strong: "Confirmação:"
+        - text: Verifique preço em tokens/minuto
+      - listitem:
+        - strong: "Extras:"
+        - text: Gravação opcional (+25% custo)
+    - heading "Stripchat - Sistema de Privados:" [level=3]
+    - list:
+      - listitem:
+        - strong: "Registro:"
+        - text: Rápido com email ou Google
+      - listitem:
+        - strong: "Pagamento:"
+        - text: Adicione cartão para tokens
+      - listitem:
+        - strong: "Private Icon:"
+        - text: Identifique no perfil
+      - listitem:
+        - strong: "Tipo de Show:"
+        - text: Escolha normal ou exclusivo
+      - listitem:
+        - strong: "Cam2Cam:"
+        - text: Ative se desejar (grátis)
+    - heading "BongaCams - Shows Privê Premium:" [level=3]
+    - list:
+      - listitem:
+        - strong: "Cadastro:"
+        - text: Com verificação de email
+      - listitem:
+        - strong: "Créditos:"
+        - text: Compre (mínimo €10)
+      - listitem:
+        - strong: "Private Chat:"
+        - text: Clique na modelo
+      - listitem:
+        - strong: "Termos:"
+        - text: Aceite preço por minuto
+      - listitem:
+        - strong: "Recursos:"
+        - text: Extras pagos separadamente
+    - heading "Dicas universais para melhor experiência privê:" [level=3]
+    - list:
+      - listitem: ⚠️ Sempre verifique preço antes de iniciar (evita surpresas)
+      - listitem: 💸 Configure limite de gasto na conta quando disponível
+      - listitem: 🔍 Teste modelo em sala pública primeiro
+      - listitem: ⏱️ Mantenha saldo suficiente para 10+ minutos
+      - listitem: 👁️ Use modo espião/voyeur para avaliar qualidade
+    - heading "Segurança em shows privê:" [level=3]
+    - paragraph:
+      - strong: "Camera Prive:"
+    - list:
+      - listitem: ✅ LGPD compliant, dados no Brasil
+    - paragraph:
+      - strong: "Internacionais:"
+    - list:
+      - listitem: 🔒 Verifique política de privacidade
+      - listitem: 🌐 Use VPN se desejar anonimato extra
+      - listitem: 🚫 Evite fornecer dados pessoais
+      - listitem: 💵 Monitore faturas para cobranças em dólar
+    - paragraph:
+      - text: A
+      - strong: webcam privê
+      - text: "ideal depende de suas prioridades: economia (Camera Prive), variedade (Chaturbate) ou tecnologia (Stripchat). Guia comparativo completo em"
+      - link "www.shakirabr.com/comparativo":
+        - /url: https://www.shakirabr.com/comparativo
+      - text: .
+    - heading "Preços e Formas de Pagamento para Shows Privê" [level=2]
+    - paragraph:
+      - text: O investimento em
+      - strong: shows privê
+      - text: varia drasticamente entre plataformas, com Camera Prive oferecendo a melhor relação custo-benefício para brasileiros através de preços locais e pagamento nacional.
+    - paragraph:
+      - img "Análise preços shows privê Brasil vs internacional - economia 70%"
+    - heading "Análise de Custos - Show Privê de 10 Minutos:" [level=3]
+    - heading "Camera Prive (Melhor Custo):" [level=4]
+    - list:
+      - listitem:
+        - text: 🟢
+        - strong: "Modelo iniciante:"
+        - text: R$ 15-30 (3 tokens/min)
+      - listitem:
+        - text: 🟡
+        - strong: "Modelo intermediária:"
+        - text: R$ 50-80 (8 tokens/min)
+      - listitem:
+        - text: 🔴
+        - strong: "Estrela premium:"
+        - text: R$ 100-150 (15 tokens/min)
+      - listitem:
+        - text: 💳
+        - strong: "Pagamento:"
+        - text: PIX, boleto, cartão nacional
+    - heading "Chaturbate (Custo Alto):" [level=4]
+    - list:
+      - listitem:
+        - text: 🟢
+        - strong: "Modelo básica:"
+        - text: R$ 150-300 (30 tokens/min)
+      - listitem:
+        - text: 🟡
+        - strong: "Modelo popular:"
+        - text: R$ 400-600 (80 tokens/min)
+      - listitem:
+        - text: 🔴
+        - strong: "Top model:"
+        - text: R$ 750-1500 (150 tokens/min)
+      - listitem:
+        - text: 💳
+        - strong: "Pagamento:"
+        - text: Cartão internacional + IOF 6.38%
+    - heading "Métodos de Pagamento Disponíveis:" [level=3]
+    - heading "Plataformas Nacionais:" [level=4]
+    - list:
+      - listitem:
+        - strong: "PIX:"
+        - text: Instantâneo, sem taxas, limite R$ 5.000
+      - listitem:
+        - strong: "Boleto:"
+        - text: 1-2 dias úteis, taxa R$ 2,50
+      - listitem:
+        - strong: "Cartão brasileiro:"
+        - text: Parcelamento disponível
+      - listitem:
+        - strong: "Transferência bancária:"
+        - text: Grandes valores
+    - heading "Plataformas Internacionais:" [level=4]
+    - list:
+      - listitem:
+        - strong: "Cartão internacional:"
+        - text: IOF 6.38% adicional
+      - listitem:
+        - strong: "Cryptocurrency:"
+        - text: Bitcoin, Ethereum (volátil)
+      - listitem:
+        - strong: "Wire transfer:"
+        - text: Taxas altas, 3-5 dias
+      - listitem:
+        - strong: "Paysafecard:"
+        - text: Disponibilidade limitada
+    - paragraph:
+      - img "Formas pagamento shows privados - PIX vs cartão internacional"
+    - heading "Economia Inteligente em Privê:" [level=3]
+    - heading "Camera Prive:" [level=4]
+    - list:
+      - listitem: 📦 Compre pacotes grandes em promoções (economia 30%)
+      - listitem: 🕐 Happy hour 14h-17h com descontos
+      - listitem: 🎁 Programa fidelidade gera tokens grátis
+    - heading "Sites gringos:" [level=4]
+    - list:
+      - listitem: 💱 Evite conversão frequente (IOF acumula)
+      - listitem: 📊 Compre tokens em quantidade para diluir taxas
+      - listitem: 📈 Monitore câmbio para momento ideal
+    - heading "Custos Ocultos a Considerar:" [level=3]
+    - list:
+      - listitem:
+        - strong: "Internacional:"
+        - text: IOF + spread cambial + taxa do cartão =
+        - strong: +15% custo real
+      - listitem:
+        - strong: "Nacional:"
+        - text: Apenas valor anunciado,
+        - strong: sem surpresas
+    - paragraph:
+      - text: Estudo
+      - strong: ShakiraBR
+      - text: "com 500 usuários revelou gasto médio mensal:"
+    - list:
+      - listitem:
+        - text: "Camera Prive:"
+        - strong: R$ 180
+      - listitem:
+        - text: "Chaturbate:"
+        - strong: R$ 420
+      - listitem:
+        - text: "Stripchat:"
+        - strong: R$ 350
+    - paragraph:
+      - strong: "Economia anual escolhendo privê nacional: R$ 2.880"
+    - paragraph:
+      - text: Calculadora exclusiva em
+      - link "www.shakirabr.com":
+        - /url: https://www.shakirabr.com
+      - text: .
+    - heading "Perguntas Frequentes sobre Camera Privê e Shows Privados" [level=2]
+    - paragraph:
+      - img "FAQ Camera Privê - perguntas frequentes shows privados 2025"
+    - heading "❓ O que é camera privê?" [level=3]
+    - paragraph: Camera privê é um termo de busca comum (74.000 pesquisas/mês) para shows privados em webcam. A grafia correta é "Camera Prive" - maior plataforma brasileira. O termo "privê" refere-se aos shows exclusivos one-on-one disponíveis tanto na Camera Prive quanto em sites internacionais como Chaturbate e Stripchat.
+    - heading "🏆 Qual a melhor plataforma para shows privê no Brasil?" [level=3]
+    - paragraph:
+      - text: "Para brasileiros, Camera Prive oferece melhor custo-benefício: preços 70% menores (R$ 3-15/min vs R$ 15-60/min internacionais), aceita PIX e boleto, 5.000+ modelos brasileiras, suporte em português e servidores locais. Sites internacionais são alternativas para quem busca modelos globais."
+      - strong: ShakiraBR
+      - text: recomenda começar com Camera Prive.
+    - heading "💳 Como funciona o pagamento em salas privê?" [level=3]
+    - paragraph: "Na Camera Prive: compre tokens via PIX/boleto/cartão, sistema debita automaticamente durante show privê. Sites internacionais: compra com cartão internacional (+ IOF 6.38%), cobrança em dólar convertido. Sempre pré-pago - você controla quanto gastar comprando tokens antecipadamente."
+    - heading "🔒 Qual a diferença entre privê e exclusivo?" [level=3]
+    - paragraph:
+      - strong: "Show privê comum:"
+      - text: Você + modelo, mas outros podem espiar (modo voyeur) pagando 30% do valor.
+      - strong: "Show exclusivo:"
+      - text: Apenas você e modelo, sem voyeurs, custa 20-30% mais caro. Camera Prive oferece ambos, Chaturbate chama de "private" vs "exclusive". Escolha exclusivo para máxima privacidade.
+    - heading "📹 É possível gravar shows privê?" [level=3]
+    - paragraph: Não é permitido gravar sem autorização. Camera Prive detecta e bane automaticamente. Chaturbate oferece opção de comprar gravação oficial (+25% custo). Respeite trabalho dos modelos e termos de uso. Violação pode gerar processo judicial.
+    - heading "⏱️ Quanto tempo dura um show privê típico?" [level=3]
+    - paragraph:
+      - text: "Média geral: 8-12 minutos. Camera Prive: 8 minutos média. Chaturbate: 6 minutos (preços altos). Você controla duração - pode ser 2 minutos ou 2 horas."
+      - strong: ShakiraBR
+      - text: sugere reservar tokens para 15 minutos na primeira experiência para interação completa.
+    - heading "💰 Vale a pena pagar por shows privê?" [level=3]
+    - paragraph: Depende dos objetivos. Shows privê oferecem atenção exclusiva, personalização total e privacidade garantida. 65% dos usuários regulares preferem privê vs salas públicas. Comece com modelos iniciantes (menor custo) para testar. Camera Prive oferece melhor ROI para brasileiros.
+    - heading "🎯 Como escolher modelo para show privê?" [level=3]
+    - paragraph: "Verifique:"
+    - list:
+      - listitem: ⭐ Avaliações (4.5+ estrelas)
+      - listitem: 💵 Preço compatível com orçamento
+      - listitem: 🕐 Tempo online diário (6+ horas = profissional)
+      - listitem: 🔍 Teste em sala pública primeiro
+      - listitem: 📝 Leia descrição de serviços
+    - paragraph:
+      - text: "Na Camera Prive, comece com modelos 1-3 tokens/min. Sites internacionais: evite top models no início (muito caro). Guias detalhados em"
+      - link "www.shakirabr.com":
+        - /url: https://www.shakirabr.com
+      - text: .
+    - separator
+    - heading "🎯 Domine o Universo dos Shows Privê com ShakiraBR" [level=2]
+    - paragraph:
+      - text: Você descobriu que
+      - strong: "\"camera privê\""
+      - text: levou você ao conhecimento completo sobre shows privados em todas as principais plataformas. A Camera Prive domina o mercado brasileiro com preços imbatíveis e experiência localizada.
+    - paragraph:
+      - img "Conclusão guia shows privados - ShakiraBR autoridade webcam Brasil"
+    - heading "Ação Estratégica Recomendada:" [level=3]
+    - list:
+      - listitem: ✅ Teste Camera Prive primeiro (melhor custo-benefício)
+      - listitem: ✅ Compare com uma plataforma internacional
+      - listitem: ✅ Estabeleça orçamento mensal para privê
+      - listitem: ✅ Aproveite promoções de primeira compra
+    - paragraph:
+      - text: Para análises exclusivas, comparativos detalhados e estratégias avançadas de
+      - strong: shows privê
+      - text: ", acesse"
+      - strong:
+        - link "www.shakirabr.com":
+          - /url: https://www.shakirabr.com
+      - text: "- autoridade máxima em entretenimento adulto digital no Brasil."
+    - paragraph:
+      - strong: "🎁 Oferta Especial:"
+      - text: Use código
+      - strong: PRIVEBR
+      - text: no primeiro cadastro para 50% tokens extras!
+    - separator
+    - heading "💕 Gostou do conteúdo?" [level=3]
+    - paragraph: Se este post te ajudou, que tal me seguir nas redes sociais para mais dicas exclusivas?
+    - paragraph:
+      - link "Instagram ShakiraBR":
+        - /url: https://www.instagram.com/zaramontannasecreto/
+        - img "Instagram ShakiraBR"
+      - link "Twitter ShakiraBR":
+        - /url: https://x.com/shakirabr_cam
+        - img "Twitter ShakiraBR"
+      - link "Telegram ShakiraBR":
+        - /url: https://t.me/zaramontanavip
+        - img "Telegram ShakiraBR"
+    - paragraph:
+      - strong: "📧 Newsletter Exclusiva:"
+      - text: Receba guias premium e promoções especiais direto no seu email.
+      - link "Cadastre-se aqui":
+        - /url: https://www.shakirabr.com/newsletter
+    - separator
+    - paragraph:
+      - emphasis: Este artigo foi atualizado em Janeiro de 2025 com informações verificadas e preços atuais de todas as plataformas mencionadas. ShakiraBR é uma marca independente que realiza análises imparciais de plataformas de entretenimento adulto.
+    - heading "💕 Gostou do conteúdo?" [level=3]
+    - paragraph: Se este post te ajudou, que tal me seguir nas redes sociais para mais dicas exclusivas?
+    - link "📸 Instagram":
+      - /url: https://www.instagram.com/zaramontannasecreto/
+    - link "🐦 Twitter":
+      - /url: https://x.com/shakirabr_cam
+    - link "💬 Telegram":
+      - /url: https://t.me/zaramontanavip
+    - heading "Compartilhar:" [level=3]
+    - button "Compartilhar":
+      - img
+      - text: Compartilhar
+  - heading "Posts Relacionados" [level=2]
+  - 'link "Camera Prive: Guia Definitivo 2025 - Tudo Que Você Precisa Saber Camera Prive: Guia definitivo 2025 com tudo sobre cadastro, preços, segurança e dicas exclusivas. Análise completa da maior plataforma brasileira de webcam. 15 min"':
+    - /url: /blog/camera-prive-guia-definitivo-2025
+    - 'heading "Camera Prive: Guia Definitivo 2025 - Tudo Que Você Precisa Saber" [level=3]'
+    - paragraph: "Camera Prive: Guia definitivo 2025 com tudo sobre cadastro, preços, segurança e dicas exclusivas. Análise completa da maior plataforma brasileira de webcam."
+    - img
+    - text: 15 min
+- contentinfo:
+  - text: Shakira BR
+  - paragraph: A modelo mais desejada do Brasil, oferecendo conteúdo exclusivo e experiências únicas em múltiplas plataformas.
+  - img
+  - text: SSL Certificado
+  - img
+  - text: LGPD Compliance
+  - img
+  - text: Verificação Real
+  - heading "Plataformas" [level=3]
+  - list:
+    - listitem:
+      - link "Privacy Premium":
+        - /url: https://privacy.com.br/profile/zaramontanaa
+        - text: Privacy Premium
+        - img
+    - listitem:
+      - link "OnlyFans Oficial":
+        - /url: https://onlyfans.com/zaramontana
+        - text: OnlyFans Oficial
+        - img
+    - listitem:
+      - link "Telegram VIP":
+        - /url: https://t.me/zaramontanavip
+        - text: Telegram VIP
+        - img
+  - heading "Links Rápidos" [level=3]
+  - list:
+    - listitem:
+      - link "Galeria Exclusiva":
+        - /url: "#galeria"
+    - listitem:
+      - link "Agendar Videochamada":
+        - /url: "#agendar"
+    - listitem:
+      - link "Depoimentos":
+        - /url: "#depoimentos"
+    - listitem:
+      - link "FAQ":
+        - /url: "#faq"
+  - heading "Redes Sociais" [level=3]
+  - link "Seguir no Instagram":
+    - /url: https://www.instagram.com/ZARAMONTANNASECRETO/
+    - img
+  - link "Seguir no X (Twitter)":
+    - /url: https://x.com/shakirabr_cam
+    - img
+  - heading "Legal" [level=4]
+  - list:
+    - listitem:
+      - link "Termos de Uso":
+        - /url: /termos-de-uso
+    - listitem:
+      - link "Política de Privacidade":
+        - /url: /politica-de-privacidade
+    - listitem:
+      - link "Cookies":
+        - /url: /cookies
+  - heading "Compliance" [level=4]
+  - list:
+    - listitem:
+      - link "LGPD Compliance":
+        - /url: /politica-de-privacidade#lgpd
+    - listitem:
+      - link "Direitos do Titular":
+        - /url: /politica-de-privacidade#direitos
+    - listitem:
+      - link "DPO":
+        - /url: mailto:dpo@shakirabr.com
+  - paragraph: © 2025 ShakiraBR - Todos os direitos reservados.
+  - paragraph: Empresa brasileira registrada e verificada
+  - text: Desenvolvido no Brasil Online 24/7
+  - paragraph:
+    - strong: "AVISO LEGAL:"
+    - text: Este site contém conteúdo adulto destinado exclusivamente a maiores de 18 anos. Acesso restrito conforme Lei Federal nº 8.069/90 (ECA).
+- heading "🍪 Gerenciamento de Cookies" [level=3]
+- paragraph: Utilizamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo. Todos os cookies estão ativados por padrão. Você pode desativar qualquer categoria a qualquer momento.
+- button "Configurações":
+  - img
+  - text: Configurações
+- button "Desativar Todos"
+- button "Manter Todos"
+- alert
+- img
+- text: 3 errors
+- button "Hide Errors":
+  - img
+```
