@@ -17,6 +17,18 @@ const nextConfig = {
   // Redirects
   async redirects() {
     return [
+      // Redirect non-www to www for all pages (301 permanent)
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'shakirabr.com',
+          },
+        ],
+        destination: 'https://www.shakirabr.com/:path*',
+        permanent: true,
+      },
       {
         source: '/home',
         destination: '/',
