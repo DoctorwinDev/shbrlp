@@ -130,7 +130,6 @@ export default async function BlogPost({ params }: BlogPageProps) {
       "caption": post.title
     },
     "articleSection": post.category,
-    "keywords": post.keywords.join(', '),
     "about": post.tags.map(tag => ({
       "@type": "Thing",
       "name": tag
