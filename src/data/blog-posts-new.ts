@@ -568,7 +568,7 @@ Para análises exclusivas e guias detalhados sobre outras plataformas, visite **
     metaDescription: 'Ensaio sensual em casa: 15 dicas profissionais para fotos incríveis com celular. Poses, iluminação, ângulos e edição. Guia completo 2025 by ShakiraBR.',
     publishedAt: '2025-01-15',
     updatedAt: '2025-01-15',
-    author: 'ShakiraBR',
+    author: 'Shakira BR',
     category: 'Lifestyle',
     tags: ['ensaio sensual', 'fotografia', 'poses', 'autoestima', 'sensualidade'],
     keywords: ['ensaio sensual', 'fotos sensuais em casa', 'poses sensuais', 'fotografia sensual', 'ensaio fotográfico caseiro', 'como fazer fotos sensuais', 'poses femininas', 'autoestima feminina'],
