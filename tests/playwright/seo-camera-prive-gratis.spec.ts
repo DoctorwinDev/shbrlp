@@ -19,7 +19,7 @@ test.describe('SEO Validation - Camera Prive Gratis Article', () => {
     
     // Description
     const metaDescription = page.locator('meta[name="description"]');
-    await expect(metaDescription).toHaveAttribute('content', /Camera Prive gratis funciona/);
+    await expect(metaDescription).toHaveAttribute('content', /Camera Prive GRATIS vale a pena/);
     
     // Keywords
     const metaKeywords = page.locator('meta[name="keywords"]');
@@ -35,7 +35,7 @@ test.describe('SEO Validation - Camera Prive Gratis Article', () => {
     await expect(ogTitle).toHaveAttribute('content', /Camera Prive Gratis/);
     
     const ogDescription = page.locator('meta[property="og:description"]');
-    await expect(ogDescription).toHaveAttribute('content', /Camera Prive gratis funciona/);
+    await expect(ogDescription).toHaveAttribute('content', /Camera Prive GRATIS vale a pena/);
     
     const ogImage = page.locator('meta[property="og:image"]');
     await expect(ogImage).toHaveAttribute('content', /camera-prive-gratis-2025.*header-gratis-vale-pena/);
