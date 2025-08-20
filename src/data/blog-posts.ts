@@ -335,6 +335,7 @@ Se este post te ajudou, que tal me seguir nas redes sociais para mais dicas excl
   {
     title: 'Camera Prive Gratis: Vale a Pena? Guia Completo 2025',
     slug: 'camera-prive-gratis',
+    excerpt: 'Camera Prive gratis: descubra o que realmente funciona na versão gratuita, limitações, dicas para maximizar sem pagar e quando vale investir. Guia ShakiraBR 2025.',
     metaDescription: 'Camera Prive gratis funciona? Análise completa da versão gratuita, o que está disponível sem pagar, limitações e estratégias para aproveitar ao máximo.',
     publishedAt: '2025-01-15',
     updatedAt: '2025-01-15',
