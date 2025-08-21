@@ -60,14 +60,14 @@ test.describe('SEO Validation - ARTIGO PILAR Famosas Brasileiras', () => {
     const imageCount = await images.count();
     expect(imageCount).toBeGreaterThan(10); // 11 imagens + badges
     
-    // Verificar imagem principal (header)
-    const headerImg = page.locator('img[src*="header-famosas-brasileiras-2025"]');
+    // Verificar imagem principal (header) - pode ter alt text padrão como featured image
+    const headerImg = page.locator('img[src*="header-famosas-brasileiras-2025"]').first();
     await expect(headerImg).toBeVisible();
-    await expect(headerImg).toHaveAttribute('alt', /REVELADO.*ShakiraBR.*superam.*famosa/);
+    await expect(headerImg).toHaveAttribute('alt', /Famosas Brasileiras Nuas.*2025/);
     
     // Verificar algumas imagens específicas com alt persuasivo
     const comparativoImg = page.locator('img[src*="famosas-vs-premium-comparativo"]');
-    await expect(comparativoImg).toHaveAttribute('alt', /DIFERENÇA BRUTAL.*ShakiraBR.*superam.*aspectos/);
+    await expect(comparativoImg).toHaveAttribute('alt', /Comparativo CHOCANTE.*famosas tradicionais.*modelos premium/);
     
     const rankingImg = page.locator('img[src*="ranking-famosas-brasileiras-2025"]');
     await expect(rankingImg).toHaveAttribute('alt', /RANKING OFICIAL.*ShakiraBR.*TODAS/);
