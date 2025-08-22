@@ -23,30 +23,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/politica-de-privacidade`, 
       lastModified: currentDate, 
       changeFrequency: 'monthly' as const, 
-      priority: 0.3 
+      priority: 0.4 
     },
     { 
       url: `${baseUrl}/termos-de-uso`, 
       lastModified: currentDate, 
       changeFrequency: 'monthly' as const, 
-      priority: 0.3 
+      priority: 0.4 
     },
     { 
       url: `${baseUrl}/cookies`, 
       lastModified: currentDate, 
       changeFrequency: 'monthly' as const, 
-      priority: 0.3 
+      priority: 0.4 
     },
   ]
 
-  // Posts do blog
+  // Posts do blog com prioridades otimizadas
   const blogPosts = getAllPosts()
-  const blogPages = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+  const blogPages = blogPosts.map((post) => {
+    // Artigos PILAR (featured) têm prioridade máxima
+    const priority = post.featured ? 0.9 : 0.8
+    
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
+      changeFrequency: 'weekly' as const,
+      priority,
+    }
+  })
 
   // Categorias do blog (se houver)
   const categories = Array.from(new Set(blogPosts.map(post => post.category)))
