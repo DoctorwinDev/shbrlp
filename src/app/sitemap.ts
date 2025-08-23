@@ -43,12 +43,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = getAllPosts()
   const blogPages = blogPosts.map((post) => {
     // Artigos PILAR (featured) têm prioridade máxima
-    const priority = post.featured ? 0.9 : 0.8
+    // Artigos recentes (últimos 7 dias) ganham boost de prioridade
+    const postDate = new Date(post.updatedAt)
+    const daysSinceUpdate = Math.floor((currentDate.getTime() - postDate.getTime()) / (1000 * 60 * 60 * 24))
+    const isRecent = daysSinceUpdate <= 7
+    
+    let priority = 0.8
+    if (post.featured) {
+      priority = isRecent ? 1.0 : 0.9
+    } else if (isRecent) {
+      priority = 0.85
+    }
     
     return {
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updatedAt),
-      changeFrequency: 'weekly' as const,
+      lastModified: currentDate, // Sempre currentDate para forçar re-crawl
+      changeFrequency: isRecent ? 'daily' as const : 'weekly' as const,
       priority,
     }
   })
