@@ -87,5 +87,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }))
 
-  return [...staticPages, ...blogPages, ...categoryPages, ...tagPages]
+  // Garantir ordem de prioridade: páginas estáticas primeiro, depois blog posts por prioridade
+  const sortedBlogPages = blogPages.sort((a, b) => b.priority - a.priority)
+  
+  return [
+    ...staticPages,
+    ...sortedBlogPages,
+    ...categoryPages,
+    ...tagPages
+  ]
 } 
