@@ -73,14 +73,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://shakirabr.com'),
+      metadataBase: new URL('https://www.shakirabr.com'),
   alternates: {
-    canonical: 'https://shakirabr.com',
-    languages: {
-      'pt-BR': 'https://shakirabr.com',
-      'en-US': 'https://shakirabr.com/en',
-      'es-ES': 'https://shakirabr.com/es',
-    },
+    canonical: 'https://www.shakirabr.com',
+          languages: {
+        'pt-BR': 'https://www.shakirabr.com',
+        'en-US': 'https://www.shakirabr.com/en',
+        'es-ES': 'https://www.shakirabr.com/es',
+      },
   },
   robots: {
     index: true,
@@ -96,13 +96,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://shakirabr.com',
+    url: 'https://www.shakirabr.com',
     title: 'Shakira BR - Modelo Premium Brasileira | Conteúdo Exclusivo',
     description: 'Conteúdo exclusivo da modelo brasileira Shakira. Privacy, OnlyFans, Telegram VIP. Acesso seguro e discreto.',
     siteName: 'Shakira BR',
     images: [
       {
-        url: 'https://shakirabr.com/hero-latest-image.jpeg',
+        url: 'https://www.shakirabr.com/hero-latest-image.jpeg',
         width: 1200,
         height: 630,
         alt: 'Shakira BR - Modelo Premium Brasileira',
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shakira BR - Modelo Premium Brasileira | Conteúdo Exclusivo',
     description: 'Conteúdo exclusivo da modelo brasileira Shakira. Privacy, OnlyFans, Telegram VIP. Acesso seguro e discreto.',
-    images: ['https://shakirabr.com/hero-latest-image.jpeg'],
+    images: ['https://www.shakirabr.com/hero-latest-image.jpeg'],
     site: '@shakirabr_cam',
     creator: '@shakirabr_cam',
   },
@@ -134,7 +134,7 @@ export const metadata: Metadata = {
     'DC.date': '2025-01-15',
     'DC.type': 'InteractiveResource',
     'DC.format': 'text/html',
-    'DC.identifier': 'https://shakirabr.com',
+    'DC.identifier': 'https://www.shakirabr.com',
     'DC.language': 'pt-BR',
     'DC.coverage': 'Worldwide',
     'DC.rights': 'Copyright 2025 Shakira BR',

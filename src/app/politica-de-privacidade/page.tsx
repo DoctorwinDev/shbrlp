@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Política de Privacidade - ShakiraBr',
   description: 'Política de Privacidade completa do ShakiraBr em conformidade com a LGPD. Saiba como protegemos seus dados pessoais.',
   alternates: {
-    canonical: 'https://shakirabr.com/politica-de-privacidade',
+    canonical: 'https://www.shakirabr.com/politica-de-privacidade',
   },
 }
 

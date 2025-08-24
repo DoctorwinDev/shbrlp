@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Política de Cookies - ShakiraBr',
   description: 'Informações detalhadas sobre cookies e tecnologias de rastreamento utilizadas no ShakiraBr.',
   alternates: {
-    canonical: 'https://shakirabr.com/cookies',
+    canonical: 'https://www.shakirabr.com/cookies',
   },
 }
 

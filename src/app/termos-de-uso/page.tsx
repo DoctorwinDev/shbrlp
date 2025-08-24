@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Termos de Uso - ShakiraBr',
   description: 'Termos de Uso completos do ShakiraBr em conformidade com LGPD e regulamentações internacionais.',
   alternates: {
-    canonical: 'https://shakirabr.com/termos-de-uso',
+    canonical: 'https://www.shakirabr.com/termos-de-uso',
   },
 }
 
